@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import Header from "../components/Header";
-import Body from "../components/Body";
-import Footer from "../components/Footer";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
-class Main extends Component {
+export default class Tour extends Component {
   render() {
     return (
       <div>
@@ -11,7 +10,6 @@ class Main extends Component {
           <Header />
         </header>
         <main>
-          <Body />
         </main>
         <footer>
           <Footer />
@@ -21,4 +19,3 @@ class Main extends Component {
   }
 }
 
-export default Main;

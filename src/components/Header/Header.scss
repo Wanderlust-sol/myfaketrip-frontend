@@ -1,0 +1,96 @@
+/*reset*/
+ul{
+    list-style:none;
+}
+a{
+    text-decoration:none;color:#222;letter-spacing:-1px;
+}
+
+
+/*공통*/
+.container{
+    width:1076px;margin:auto;
+}
+
+/*header*/
+header{
+    width:100%;height:123px;
+    background-color:skyblue;
+}
+
+/*headerTop*/
+.headerTop{
+    height:73px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.logo{
+    h1{
+        a{
+            display:block;
+            width:128px;height:28px;
+            background:url(../../img/myfaketrip_logo_color.png) no-repeat;
+            background-size:contain;
+            text-indent:-9999px;
+        }
+    }
+}
+.myPage{
+    display:flex;
+    div{
+        &:nth-child(2){
+            margin-left:10px;
+        }
+        a{  
+            display:block;
+            height:36px;
+            font-size:15px;color:#fff;
+            font-weight:600;
+            line-height:22px;
+            padding:6px 12px;
+            border-radius:2px;
+            transition:0.5s;
+            &:hover{
+                background-color:rgba(255,255,255,0.2);
+            }
+        }
+    }
+}
+.myPage{
+    div:last-child{
+        margin-left:20px;
+        margin-right:20px;
+        a{  
+            padding:6px 32px;
+            font-size:14px;
+            border:1px solid #fff;
+        }
+    }
+}
+
+/*nav*/
+.menu{
+    height:50px;
+    div{
+        ul{
+            display:flex;
+            li{
+                a{  
+                    display:block;
+                    line-height:50px;
+                    height:50px;
+                    margin-right:25px;
+                    padding:0 4px;
+                    color:rgba(255,255,255,0.7);
+                    font-weight:600;
+                    font-size:16px;
+                    &:hover{
+                        box-sizing:border-box;
+                        border-bottom:3px solid rgba(255,255,255,0.7);
+                    }
+                }
+            }
+        }
+    }
+}
