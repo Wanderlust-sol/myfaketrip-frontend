@@ -6,14 +6,10 @@ export default class Tour extends Component {
   render() {
     return (
       <div>
-        <header>
-          <Header />
-        </header>
+        <Header />
         <main>
         </main>
-        <footer>
-          <Footer />
-        </footer>
+        <Footer />
       </div>
     );
   }
