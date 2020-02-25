@@ -1,0 +1,85 @@
+//상세페이지 nav바
+.offer_nav {
+  background-color: white;
+  width: 100%;
+  height: 56px;
+  line-height: 56px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 1px 0 0 rgba(0, 0, 0, 0.1);
+  position: fixed;
+  display: none;
+  //   display: flex;
+  justify-content: center;
+
+  font-size: 15px;
+
+  .offer_nav_list,
+  .container {
+    width: 1076px;
+  }
+
+  span {
+    margin-right: 32px;
+    color: #495056;
+    padding-bottom: 17px;
+  }
+  span:hover {
+    // box-shadow: inset 0 -3px 0 #51abf3;
+    box-shadow: inset 0 -3px 0 #dcdcdc;
+  }
+}
+
+//상세페이지 가장 큰 container
+.offer_container {
+  width: 100%;
+
+  .container {
+    width: 1076px;
+    margin: auto;
+    display: flex;
+  }
+}
+
+//상세페이지 메인
+.offer_main {
+  margin-right: 40px;
+
+  .offer_main_title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #343a40;
+    margin-top: 50px;
+  }
+
+  .offer_main_inner-bar {
+    font-size: 14px;
+    display: flex;
+    margin-bottom: 35px;
+
+    a {
+      text-decoration: none;
+      color: #848c94;
+    }
+    p {
+      color: #848c94;
+    }
+
+    .offer_main_inner-bar-star {
+      font-size: 12px;
+      color: #51abf3;
+      margin-left: 20px;
+      margin-right: 4px;
+      margin-top: 2px;
+    }
+  }
+}
+
+.offer_side {
+  background-color: blue;
+}
+
+.offer_side_third-box {
+  width: 296px;
+  height: 74px;
+  background-image: url("../../img/urailpass.jpg");
+  background-size: cover;
+}
