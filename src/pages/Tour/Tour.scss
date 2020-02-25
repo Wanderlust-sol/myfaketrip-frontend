@@ -1,0 +1,270 @@
+* {
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.Tour {
+    margin: 0 auto;
+
+    .article {
+        position: relative;
+        height: 302px;
+        border-top: 1px solid #1583db;
+        background: #2b96ed;
+        text-align: center;
+        h2 {
+            font-size: 36px;
+            color: #fff;
+            font-weight: 600;
+            margin: 56px 0 16px 0;
+            text-align: center;
+        }
+
+        .search_bar {
+            width: 430px;
+            height: 56px;
+            position: relative;
+            margin: 0 auto;
+            
+
+            input {
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                line-height: 56px;
+                border: 1px solid hsla(0,0%,100%,.4);
+                background-color: hsla(0,0%,100%,.1);
+                font-size: 16px;
+                border-radius: 4px;
+            
+           } 
+           input::placeholder {
+               color: #fff;
+           }
+        }
+
+
+        @mixin cities_img {
+            position: relative;
+            float: left;
+            width: 138px;
+            height: 92px;
+            background-size: 138px 92px;
+            background-repeat: no-repeat;
+            display: block;
+            border-radius: 4px;
+            box-shadow: 0 3px 8px 0 rgba(0,0,0,.3), 0 0 1px 0 rgba(0,0,0,.3);
+
+        }
+
+        @mixin cities_bg {
+            .slider_bg {
+                width: 100%;
+                height: 100%;
+                background-image: linear-gradient(166deg,#fff 40%,hsla(0,0%,100%,0) 68%);
+                border-radius: 4px;
+            }
+            
+            span {
+                position: absolute;
+                display: block;
+                top: 14px;
+                color: #343a40;
+                font-size: 18px;
+                font-weight: 700;
+                padding: 0 12px;
+            }
+        }
+
+        $slider_margin: 15px;
+
+        .cities_slider {
+            position: absolute;
+            bottom: -20px;
+            width: 1060px;
+            height: 92px;
+            left: 50%;
+            margin-left: -530px;
+            .cities_container{
+                background: red;
+
+                .cities {
+                    @include cities_img;
+                    @include cities_bg;
+                    margin-right: $slider_margin; 
+                }
+        }
+            // .cities_barcelona {
+            //     @include cities_img;
+            //     @include cities_bg;
+            //     background-image: url(../../img/Tour/barcelona.jpg);
+            //     margin-right: $slider_margin;        
+            // }
+            // .cities_seoul {
+            //     @include cities_img;
+            //     @include cities_bg;
+            //     background-image: url(../../img/Tour/seoul.jpg); 
+            //     margin-right: $slider_margin;
+            // }
+            // .cities_paris {
+            //     @include cities_img;
+            //     @include cities_bg;
+            //     background-image: url(../../img/Tour/paris.jpg);
+            //     margin-right: $slider_margin;
+            // }
+            // .cities_taipei {
+            //     @include cities_img;
+            //     @include cities_bg;
+            //     background-image: url(../../img/Tour/taipei.jpg);
+            //     margin-right: $slider_margin;
+            // }
+            // .cities_gyeonggi {
+            //     @include cities_img;
+            //     @include cities_bg;
+            //     background-image: url(../../img/Tour/gyeonggi.jpg);
+            //     margin-right: $slider_margin;
+            // }
+            // .cities_firenze {
+            //     @include cities_img;
+            //     @include cities_bg;
+            //     background-image: url(../../img/Tour/firenze.jpg);
+            //     margin-right: $slider_margin;
+            // }
+            // .cities_roma {
+            //     @include cities_img;
+            //     @include cities_bg;
+            //     background-image: url(../../img/Tour/roma.jpg);
+            // }
+            // .cities_osaka {
+            //     @include cities_img;
+            //     @include cities_bg;
+            //     background-image: url(../../img/Tour/osaka.jpg);
+            //     margin-right: $slider_margin; 
+            // }
+            // .cities_gangwon {
+            //     @include cities_img;
+            //     @include cities_bg;
+            //     background-image: url(../../img/Tour/gangwon.jpg);
+            //     margin-right: $slider_margin; 
+            // }
+            // .cities_sydney {
+            //     @include cities_img;
+            //     @include cities_bg;
+            //     background-image: url(../../img/Tour/sydney.jpg);
+            //     margin-right: $slider_margin; 
+            // }
+            // .cities_lasvegas {
+            //     @include cities_img;
+            //     @include cities_bg;
+            //     background-image: url(../../img/Tour/lasvegas.jpg);
+            //     margin-right: $slider_margin; 
+            // }
+
+            // .cities_all {
+            //     @include cities_img;
+            //     background-image: url(../../img/Tour/all.png);
+            //     span {
+            //         position: absolute;
+            //         display: block;
+            //         top: 14px;
+            //         color: #fff;
+            //         font-size: 18px;
+            //         font-weight: 700;
+            //         padding: 0 12px;
+            //     }
+            //}
+
+        }
+
+    }
+
+    $max_width: 1060px;
+
+        .point_box {
+            width: $max_width;
+            height: 120px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            border: 1px solid #e7f4fd;
+            background: #f5fbff;
+            border-radius: 4px;
+            margin: 50px auto;
+            padding: 0 32px;
+
+
+            div {
+                margin-left: 20px;
+                .point_title {
+                    font-size: 19px;
+                    font-weight: 700;
+                    color: #212529;
+
+                    span {
+                        color: #2b96ed;
+                    }
+                }
+                .point_sub {
+                    font-size: 15px;
+                    color: #495056;
+                }
+            }
+            button {
+                padding: 0 16px;
+                height: 40px;
+                position: absolute;
+                right: 30px;
+                border: 1px solid #51abf3;
+                border-radius: 2px;
+                color: #fff;
+                background: #51abf3;
+                font-size: 14px;
+                font-weight: 700;
+            }
+        }
+
+    .info_tour {
+        width: $max_width;
+        margin: 0 auto;
+        
+
+        h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+        .info_box {
+            display: flex;
+            border: 1px solid #dee2e6;
+            background: #f8f9fa;
+            padding: 42px 20px;
+            justify-content: space-around;
+            font-size: 14px;
+
+            li {
+                padding: 0 40px;
+                .info_title {
+                    display: flex;
+                    align-items: center;
+
+                    a {
+                        margin-left: 10px;
+                        color: #2b96ed;
+                        font-weight: 700;
+    
+                        img {
+                            margin-left: 4px;
+                        }
+                    }
+                }
+                
+                .info_cnt {
+                    margin-top: 10px;
+                    color: #666d75;
+                    line-height: 1.71;
+                }
+            }
+        }
+    }
+}
