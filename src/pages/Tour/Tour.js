@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "../../components/Header/Header";
 import Cities from "../../components/Cities/Cities"
 import Product from "../../components/Product/Product"
-//import Footer from "../../components/Footer/Footer";
+import Footer from "../../components/Footer/Footer";
 import { Slide } from 'react-slideshow-image';
 import "./Tour.scss";
 
@@ -32,6 +32,7 @@ class Tour extends Component {
     return (
       <div className="Tour">
         <Header />
+        <div className="topMargin">
         <div className="article">
             <div className="article_search">
                 <h2>어디로 떠나세요?</h2>
@@ -187,8 +188,10 @@ class Tour extends Component {
                 </li>
             </ul>
         </div>
-
-      </div>
+        </div>
+        
+      <Footer />
+    </div>
     );
   }
 }

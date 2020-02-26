@@ -1,8 +1,22 @@
 import React, { Component } from "react";
+import { headerData } from './HeaderData';
 import './Header.scss';
 
 export default class Header extends Component {
-  render() {
+  constructor(){
+    super();
+    this.state={
+      index: 0,
+    } 
+  }
+
+navList=(num)=>{
+  this.setState({
+    index: num
+  })
+}
+ 
+  render(){
     return (
       <header>
         {/* header */}
@@ -28,13 +42,16 @@ export default class Header extends Component {
         <nav className="menu container">
           <div>
             <ul>
-              <li><a href="1.html">투어&#38;티켓</a></li>
-              <li><a href="2.html">항공권</a></li>
-              <li><a href="3.html">숙소</a></li>
-              <li><a href="4.html">특가여행</a></li>
-              <li><a href="5.html">패키지</a></li>
-              <li><a href="6.html">여행자보험</a></li>
-              <li><a href="7.html">여행준비</a></li>
+              {headerData.map(el=>
+              <li key={el.id}>
+                <div
+                className={this.state.index === el.id ? "color" : null}
+                onClick={() => this.navList(el.id)}
+                >
+                {el.title}
+                </div>
+              </li>
+              )}
             </ul>
           </div>
         </nav>
@@ -42,4 +59,3 @@ export default class Header extends Component {
     );
   }
 }
-
