@@ -1,40 +1,47 @@
 $themecolor: #51abf3;
+$blk: #343a40;
+$boldS: 1px solid #dee2e6;
 
-hr {
-  border: 1px solid #dee2e6;
-}
-
+//상세페이지 공통 스타일 적용
 .offer {
-  border-top: 1px solid #dee2e6;
-}
-
-//상세페이지 nav바
-.offer_nav {
-  background-color: white;
-  width: 100%;
-  height: 56px;
-  line-height: 56px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 1px 0 0 rgba(0, 0, 0, 0.1);
-  position: fixed;
-  top: 0;
-  display: none;
-  //   display: flex;
-  justify-content: center;
-
-  font-size: 15px;
-
-  .offer_nav_list {
-    width: 1076px;
+  border-top: $boldS;
+  line-height: 25px;
+  hr {
+    border: $boldS;
   }
 
-  span {
-    margin-right: 32px;
-    color: #495056;
-    padding-bottom: 17px;
+  p,
+  div {
+    color: $blk;
   }
-  span:hover {
-    // box-shadow: inset 0 -3px 0 #51abf3;
-    box-shadow: inset 0 -3px 0 #dcdcdc;
+  //상세페이지 nav바
+  .offer_nav {
+    background-color: white;
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 1px 0 0 rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    display: none;
+    //   display: flex;
+    justify-content: center;
+
+    font-size: 15px;
+
+    .offer_nav_list {
+      width: 1076px;
+    }
+
+    span {
+      margin-right: 32px;
+      color: #495056;
+      padding-bottom: 17px;
+    }
+    span:hover {
+      // box-shadow: inset 0 -3px 0 #51abf3;
+      box-shadow: inset 0 -3px 0 #dcdcdc;
+    }
   }
 }
 
@@ -55,6 +62,7 @@ hr {
   .offer_main_title {
     font-size: 32px;
     font-weight: 700;
+    line-height: 1.25;
     color: #343a40;
     margin-top: 48px;
   }
@@ -62,7 +70,7 @@ hr {
   .offer_main_inner-bar {
     display: flex;
     margin-top: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 23px;
 
     a {
       color: #848c94;
@@ -77,7 +85,9 @@ hr {
       color: $themecolor;
       margin-left: 20px;
       margin-right: 4px;
-      margin-top: 2px;
+
+      display: flex;
+      align-items: center;
     }
   }
 
@@ -105,6 +115,7 @@ hr {
     .offer_main_price_question_desc {
       font-weight: 700;
       color: $themecolor;
+      margin-right: 4px;
     }
   }
 
@@ -114,7 +125,7 @@ hr {
     font-size: 16px;
     color: #343a40;
     text-align: left;
-    border: 1px solid #dee2e6;
+    border: $boldS;
     border-radius: 2px;
     padding: 12px 0;
     display: inline-block;
@@ -131,7 +142,7 @@ hr {
       width: 250px;
       height: 48px;
       font-size: 16px;
-      border: 1px solid #dee2e6;
+      border: $boldS;
       background-color: white;
 
       option {
@@ -158,12 +169,112 @@ hr {
   }
 }
 
-.offer_main_intro_subtitle {
-  font-size: 24px;
-  font-weight: 700;
-  color: #343a40;
-  margin-top: 40px;
-  margin-bottom: 25px;
+//바르셀로나 건축학개론 설명 부분
+.offer_main_intro-wrapper {
+  margin: 32px 0;
+
+  .offer_main_intro_subtitle {
+    font-size: 24px;
+    font-weight: 700;
+    color: #343a40;
+  }
+
+  .offer_main_intro_detail {
+    font-size: 15px;
+    margin: 16px 0;
+    position: relative;
+
+    .intro_with-more {
+      max-height: 400px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .intro_with-more-hidden {
+      width: 100%;
+      height: 184px;
+      text-align: center;
+      background: linear-gradient(
+        180deg,
+        hsla(0, 0%, 100%, 0) 0,
+        #fff 50%,
+        #fff
+      );
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      .moreBtn {
+        font-size: 16px;
+        font-weight: 700;
+        color: #495056;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+        border: 1px solid #ced4da;
+        border-radius: 2px;
+        padding: 16px 40px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        cursor: pointer;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  //필독 공지사항
+  .offer_main_intro_notice {
+    background-color: #fff8e1;
+    padding: 24px 16px 24px 52px;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 30px;
+      left: 24px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+  }
+}
+
+//간단 대표 리뷰 1개
+.offer_main_mini-reviews {
+  margin: 24px 0;
+  display: flex;
+
+  .offer_main_mini-reviews-left {
+    width: 80px;
+    margin-right: 26px;
+    display: inline-block;
+
+    .mini-reviews-rate {
+      font-size: 32px;
+    }
+
+    .offer_main_mini-reviews-sub {
+      .mini-reviews-star-rating {
+        font-size: 14px;
+        margin-top: 8px;
+        margin-bottom: -10px;
+      }
+
+      p {
+        font-size: 12px;
+        color: #848c94;
+      }
+    }
+  }
+
+  .offer_main_mini-reviews-right {
+    width: 610px;
+    display: inline-block;
+  }
 }
 
 .offer_side {
