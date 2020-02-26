@@ -5,6 +5,7 @@ import Login from "./pages/Login/Login";
 import Partner from "./pages/Partner/Partner";
 
 
+import Offer from "./pages/Offer/Offer";
 
 class Routes extends React.Component {
   render() {
@@ -15,6 +16,7 @@ class Routes extends React.Component {
           <Route exact path="/login" component={Login} />
           <Route exact path="/partner" component={Partner} />
           <Route exact path="/tour" component={Tour} />
+          <Route exact path="/offer" component={Offer} />
         </Switch>
       </Router>
     );
