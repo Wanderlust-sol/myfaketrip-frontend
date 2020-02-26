@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import '../../styles/Reset.scss';
 import './Header.scss';
 
 export default class Header extends Component {
