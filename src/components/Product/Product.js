@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { MdStar } from "react-icons/md"
 import "./Product.scss"
 
 class Product extends Component {
@@ -13,26 +14,29 @@ class Product extends Component {
                 </div>
                 <div className="product_cnt">
                     <div className="category">
-                        <ul>
-                            <li>티켓/교통패스</li>
-                            <li>강원도</li>
-                        </ul>
+                        티켓/교통패스 ・ 강원도
                     </div>
                     <h3 className="product_title">
                         [펭수 그립톡 한정판] 비발디파크 스노위랜드 종일권/AFTER2 이용권
                     </h3>
                     <div className="product_info">
                         <div className="review">
-                            <div></div>
-                            <span></span>
+                            <div>
+                                <MdStar className="" />
+                                <MdStar />
+                                <MdStar />
+                                <MdStar />
+                                <MdStar />
+                            </div>
+                            <span>41</span>
                         </div>
                         <div className="price">
                             <span className="price_origin">
-                                "43,000"
+                                43,000
                                 <span>원</span>
                             </span>
                             <span className="price_main">
-                                "26,000"
+                                26,000
                                 <span>원</span>
                             </span>
                             <span className="price_standard">/ 1인</span>

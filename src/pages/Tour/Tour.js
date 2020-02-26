@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import "./Tour.scss";
 import Header from "../../components/Header/Header";
 import Cities from "../../components/Cities/Cities"
 import Product from "../../components/Product/Product"
 //import Footer from "../../components/Footer/Footer";
 import { Slide } from 'react-slideshow-image';
+import "./Tour.scss";
 
 class Tour extends Component {
   render() {
@@ -42,6 +42,7 @@ class Tour extends Component {
             </div>
             <Cities></Cities>
         </div>
+
 
         <div className="slide-container">
           <Slide {...properties}>
@@ -118,12 +119,6 @@ class Tour extends Component {
           </Slide>
         </div>
 
-        <div className="product_lately">
-          <h2>
-            최근 본 상품
-          </h2>
-          <Product></Product>
-        </div>
         <div className="point_box">
           <p>
               <img src="https://www.myrealtrip.com/webpack/04805fd6ae2e4dd1317124b6cf1c89fb.svg" alt="add"/>
@@ -138,6 +133,14 @@ class Tour extends Component {
           </div>
           <button>포인트 받기</button>
         </div>
+
+        <div className="product_lately">
+          <h2>
+            최근 본 상품
+          </h2>
+          <Product></Product>
+        </div>
+        
 
 
         <div className="info_tour">

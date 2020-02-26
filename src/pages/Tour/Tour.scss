@@ -104,6 +104,15 @@
         }
     }
 
+
+    .product_lately {
+        width: $max_width;
+        margin: 50px auto;
+        h2 {
+            margin-bottom: 10px;
+        }
+    }
+
     .info_tour {
         width: $max_width;
         margin: 0 auto;

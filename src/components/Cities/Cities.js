@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Slider from "react-slick"
-import "./Cities.scss";
 import {CitiesData} from "./CitiesData";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "./Cities.scss";
 
 
 const cities = CitiesData.map(city => {
