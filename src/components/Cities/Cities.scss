@@ -1,0 +1,48 @@
+@mixin cities_img {
+
+    width: 138px;
+    height: 92px;
+    background-size: 138px 92px;
+    background-repeat: no-repeat;
+    display: block;
+    border-radius: 4px;
+    box-shadow: 0 3px 8px 0 rgba(0,0,0,.3), 0 0 1px 0 rgba(0,0,0,.3);
+
+}
+
+@mixin cities_bg {
+    .slider_bg {
+        position: absolute;
+        top: 0;
+        width: 138px;
+        height: 92px;
+        position: absolute;
+        background-image: linear-gradient(166deg,#fff 40%,hsla(0,0%,100%,0) 68%);
+        border-radius: 4px;
+    }
+    
+    span {
+        position: absolute;
+        display: block;
+        top: 14px;
+        color: #343a40;
+        font-size: 18px;
+        font-weight: 700;
+        padding: 0 12px;
+    }
+}
+
+.cities_slider {
+    position: relative;
+    bottom: -50px;
+    width: 1060px;
+    height: 92px;
+    left: 50%;
+    margin-left: -530px;
+
+        .cities {
+            @include cities_img;
+            @include cities_bg;
+        }
+   
+}

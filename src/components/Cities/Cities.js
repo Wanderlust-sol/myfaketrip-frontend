@@ -1,39 +1,40 @@
 import React, { Component } from "react";
 import Slider from "react-slick"
-import CitiesData from "./CitiesData";
+import "./Cities.scss";
+import {CitiesData} from "./CitiesData";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-//import { baseUrl } from "../../img/Tour/C";
+
+
+const cities = CitiesData.map(city => {
+    return (
+        <div key={city.id} >
+            <div style={{backgroundImage: `url(${city.img})`}} className="cities">
+                <div className="slider_bg"></div>
+                <span>
+                    {city.name} 
+                </span> 
+            </div>
+        </div>   
+    )
+})
+
 
 class Cities extends Component {
     
     render() {
 
         const settings = {
-            dots: true,
-            infinite: true,
+            dots: false,
+            infinite: false,
             speed: 500,
             slidesToShow: 6,
-            slidesToScroll: 2
+            slidesToScroll: 6
         }
         return (
-            // <div>Hello</div>
-            <div >
-                {CitiesData.map(city => {
-                    return (
-                        <a href="#" key={city.id} className="cities_container">
-                            {/* <div 
-                                className="cities" 
-                                style={{'backgroundColor': "red"}} /> */}
-                            <img src={city.img} className="cities"/>
-                            <div className="slider_bg"></div>
-                            <span>
-                                {city.name}
-                            </span>
-                        </a>
-                    )
-                })}; 
-            </div>
+            <Slider {...settings} className="cities_slider" >
+                {cities}  
+            </Slider>
            
         )
     }

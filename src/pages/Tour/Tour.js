@@ -1,53 +1,143 @@
 import React, { Component } from "react";
 import "./Tour.scss";
+import Header from "../../components/Header/Header";
 import Cities from "../../components/Cities/Cities"
-import Slider from "react-slick"
+import Product from "../../components/Product/Product"
+//import Footer from "../../components/Footer/Footer";
+import { Slide } from 'react-slideshow-image';
 
 class Tour extends Component {
   render() {
+    const slideImages = [
+      "https://d2ur7st6jjikze.cloudfront.net/cms/1088_original_1580783352.png?1580783352",
+      "https://d2ur7st6jjikze.cloudfront.net/cms/478_original_1577953842.jpg?1577953842",
+      "https://d2ur7st6jjikze.cloudfront.net/cms/1083_original_1575021499.jpg?1575021499",
+      "https://d2ur7st6jjikze.cloudfront.net/cms/642_original_1577942354.jpg?1577942354",
+      "https://d2ur7st6jjikze.cloudfront.net/cms/808_original_1572410642.jpg?1572410642",
+      "https://d2ur7st6jjikze.cloudfront.net/cms/49_original_1562301682.jpg?1562301682",
+      "https://d2ur7st6jjikze.cloudfront.net/cms/845_original_1571384568.jpg?1571384568",
+      "https://d2ur7st6jjikze.cloudfront.net/cms/906_original_1576239819.jpg?1576239819",
+      "https://d2ur7st6jjikze.cloudfront.net/cms/785_original_1573540876.jpg?1573540876",
+      "https://d2ur7st6jjikze.cloudfront.net/cms/586_original_1562301689.jpg?1562301689"
+    ];
+  
+    const properties = {
+      duration: 5000,
+      transitionDuration: 500,
+      infinite: true,
+      indicators: true,
+      arrows: true
+    }
+
     return (
       <div className="Tour">
-          <div className="article">
-              <div className="article_search">
-                  <h2>어디로 떠나세요?</h2>
-                  <div className="search_bar">
-                        <p></p>
-                      <input type="search" placeholder="여행지나 상품을 검색해보세요!"/>
-                  </div>
-              </div>
-              <Cities></Cities>
-          </div>
-          <div className="main_slider">
-              <div className="slider_wrapper">
-                  <div></div>
-              </div>
-              <ul className="slider_button">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-          </div>
-          <div className="point_box">
-            <p>
-                <img src="https://www.myrealtrip.com/webpack/04805fd6ae2e4dd1317124b6cf1c89fb.svg" alt="add"/>
-            </p>
-            <div>
-                <p className="point_title">
-                    친구 초대하면 
-                    <span> 무제한 포인트</span>
-                    를 드립니다!
-                </p>
-                <p className="point_sub">친구에게 5,000원 쿠폰을 선물하고 2,000 포인트를 받으세요.</p>
+        <Header />
+        <div className="article">
+            <div className="article_search">
+                <h2>어디로 떠나세요?</h2>
+                <div className="search_bar">
+                      <p></p>
+                    <input type="search" placeholder="여행지나 상품을 검색해보세요!"/>
+                </div>
             </div>
-            <button>포인트 받기</button>
+            <Cities></Cities>
+        </div>
+
+        <div className="slide-container">
+          <Slide {...properties}>
+            <div className="each-slide">
+              <div 
+                style={{'backgroundImage': `url(${slideImages[0]})`}}
+                className="main_img"
+              >
+              </div>
+            </div>
+            <div className="each-slide">
+              <div 
+                style={{'backgroundImage': `url(${slideImages[1]})`}}
+                className="main_img"
+              >
+              </div>
+            </div>
+            <div className="each-slide">
+              <div 
+                style={{'backgroundImage': `url(${slideImages[2]})`}}
+                className="main_img"
+              >
+              </div>
+            </div>
+            <div className="each-slide">
+              <div 
+                style={{'backgroundImage': `url(${slideImages[3]})`}}
+                className="main_img"
+              >
+              </div>
+            </div>
+            <div className="each-slide">
+              <div 
+                style={{'backgroundImage': `url(${slideImages[4]})`}}
+                className="main_img"
+              >
+              </div>
+            </div>
+            <div className="each-slide">
+              <div 
+                style={{'backgroundImage': `url(${slideImages[5]})`}}
+                className="main_img"
+              >
+              </div>
+            </div>
+            <div className="each-slide">
+              <div 
+                style={{'backgroundImage': `url(${slideImages[6]})`}}
+                className="main_img"
+              >
+              </div>
+            </div>
+            <div className="each-slide">
+              <div 
+                style={{'backgroundImage': `url(${slideImages[7]})`}}
+                className="main_img"
+              >
+              </div>
+            </div>
+            <div className="each-slide">
+              <div 
+                style={{'backgroundImage': `url(${slideImages[8]})`}}
+                className="main_img"
+              >
+              </div>
+            </div>
+            <div className="each-slide">
+              <div 
+                style={{'backgroundImage': `url(${slideImages[9]})`}}
+                className="main_img"
+              >
+              </div>
+            </div>
+          </Slide>
+        </div>
+
+        <div className="product_lately">
+          <h2>
+            최근 본 상품
+          </h2>
+          <Product></Product>
+        </div>
+        <div className="point_box">
+          <p>
+              <img src="https://www.myrealtrip.com/webpack/04805fd6ae2e4dd1317124b6cf1c89fb.svg" alt="add"/>
+          </p>
+          <div>
+              <p className="point_title">
+                  친구 초대하면 
+                  <span> 무제한 포인트</span>
+                  를 드립니다!
+              </p>
+              <p className="point_sub">친구에게 5,000원 쿠폰을 선물하고 2,000 포인트를 받으세요.</p>
           </div>
+          <button>포인트 받기</button>
+        </div>
 
 
         <div className="info_tour">
@@ -94,6 +184,7 @@ class Tour extends Component {
                 </li>
             </ul>
         </div>
+
       </div>
     );
   }
