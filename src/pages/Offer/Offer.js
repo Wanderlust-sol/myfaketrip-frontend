@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import Course from "../../components/Course/Course";
+import Comment from "../../components/Comment/Comment";
+import AddComment from "../../components/Comment/AddComment";
 import "./Offer.scss";
 import { IoIosOptions } from "react-icons/io";
-import spain1 from "../../img/spain1.jpg";
+import { MdStar } from "react-icons/md";
 import spain2 from "../../img/spain2.jpg";
 import spain3 from "../../img/spain3.jpg";
 import spain4 from "../../img/spain4.jpg";
 import Lucia from "../../img/Lucia.png";
-import { AiFillStar } from "react-icons/ai";
 
 export default class Offer extends Component {
   render() {
@@ -24,7 +27,7 @@ export default class Offer extends Component {
             </div>
           </div>
           <div className="offer_container">
-            <div className="container">
+            <div className="offer_container_box">
               <div className="offer_main">
                 <div className="offer_main_title">
                   [소수/커피제공/택시투어] (오전반일) GAUDI 가우디 바르셀로나
@@ -36,19 +39,25 @@ export default class Offer extends Component {
                       스페인
                     </a>
                   </p>
-                  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjQ0VENERBIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTYgNGw0IDQuMDAyTDYuMDA1IDEyIi8+Cjwvc3ZnPgo=" />
-                  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgdmlld0JveD0iMCAwIDEwIDEwIj4KICAgIDxwYXRoIGZpbGw9IiM4NDhDOTQiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTMuNTcxIDRhMS40MyAxLjQzIDAgMSAxIDIuODU5LjAwMUExLjQzIDEuNDMgMCAwIDEgMy41NyA0ek0xIDRjMCAzIDQgNiA0IDZzNC0zIDQtNmMwLTIuMjExLTEuNzg5LTQtNC00LTIuMjExIDAtNCAxLjc4OS00IDR6Ii8+Cjwvc3ZnPgo=" />
+                  <img
+                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjQ0VENERBIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTYgNGw0IDQuMDAyTDYuMDA1IDEyIi8+Cjwvc3ZnPgo="
+                    alt="right-arrow-icon"
+                  />
+                  <img
+                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgdmlld0JveD0iMCAwIDEwIDEwIj4KICAgIDxwYXRoIGZpbGw9IiM4NDhDOTQiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTMuNTcxIDRhMS40MyAxLjQzIDAgMSAxIDIuODU5LjAwMUExLjQzIDEuNDMgMCAwIDEgMy41NyA0ek0xIDRjMCAzIDQgNiA0IDZzNC0zIDQtNmMwLTIuMjExLTEuNzg5LTQtNC00LTIuMjExIDAtNCAxLjc4OS00IDR6Ii8+Cjwvc3ZnPgo="
+                    alt="point-icon"
+                  />
                   <p>
                     <a href="https://www.myrealtrip.com/cities?key_name=Barcelona">
                       바르셀로나
                     </a>
                   </p>
                   <div className="offer_main_inner-bar-star">
-                    <AiFillStar />
-                    <AiFillStar />
-                    <AiFillStar />
-                    <AiFillStar />
-                    <AiFillStar />
+                    <MdStar className="star_blue" />
+                    <MdStar className="star_blue" />
+                    <MdStar className="star_blue" />
+                    <MdStar className="star_blue" />
+                    <MdStar className="star_blue" />
                   </div>
                   <p>후기 112개</p>
                 </div>
@@ -174,24 +183,24 @@ export default class Offer extends Component {
                     <p className="mini-reviews-rate">4.9</p>
                     <div className="offer_main_mini-reviews-sub">
                       <div className="mini-reviews-star-rating">
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
+                        <MdStar className="star_black" />
+                        <MdStar className="star_black" />
+                        <MdStar className="star_black" />
+                        <MdStar className="star_black" />
+                        <MdStar className="star_black" />
                       </div>
                       <p>후기 112개</p>
                     </div>
                   </div>
                   <div className="offer_main_mini-reviews-right">
                     <div className="mini-reviews-star">
-                      <AiFillStar />
-                      <AiFillStar />
-                      <AiFillStar />
-                      <AiFillStar />
-                      <AiFillStar />
+                      <MdStar className="star_blue" />
+                      <MdStar className="star_blue" />
+                      <MdStar className="star_blue" />
+                      <MdStar className="star_blue" />
+                      <MdStar className="star_blue" />
+                      <p>이**</p>
                     </div>
-                    <p>이**</p>
                     <div className="mini-reviews-stats">
                       40대 ∙ 혼자 가는 여행 ∙ 2020-02-21
                     </div>
@@ -205,7 +214,10 @@ export default class Offer extends Component {
                     <div className="mini-reviews-with-more">
                       <span>
                         후기 전체보기
-                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjMkI5NkVEIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTEyIDZsLTQuMDAyIDRMNCA2LjAwNSIvPgo8L3N2Zz4K" />
+                        <img
+                          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjMkI5NkVEIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTEyIDZsLTQuMDAyIDRMNCA2LjAwNSIvPgo8L3N2Zz4K"
+                          alt="bottom-arrow-icon"
+                        />
                       </span>
                     </div>
                   </div>
@@ -213,6 +225,7 @@ export default class Offer extends Component {
                 <hr />
                 <div className="offer_main_others">
                   <h5>여행자들이 함께 본 상품</h5>
+                  <div></div>
                 </div>
                 <hr />
                 <div className="offer_main_note">
@@ -250,50 +263,29 @@ export default class Offer extends Component {
                 <hr />
                 <div className="offer_main_meeting-point">
                   <h1>만나는 장소</h1>
-                  <img
-                    src="https://www.myrealtrip.com/webpack/63a3141ac6b918b94f2b1688ffc92fb4.png"
-                    alt="map-icon"
-                  />
-                  <div className="offer_main_meeting-poting-detail">
-                    <p>버버리 매장 앞</p>
-                    <p>
-                      지도 보기
-                      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjMkI5NkVEIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTEyIDZsLTQuMDAyIDRMNCA2LjAwNSIvPgo8L3N2Zz4K" />
-                    </p>
+                  <div>
+                    <div>
+                      <img
+                        className="map-icon"
+                        src="https://www.myrealtrip.com/webpack/63a3141ac6b918b94f2b1688ffc92fb4.png"
+                        alt="map-icon"
+                      />
+                    </div>
+                    <div className="offer_main_meeting-point-detail">
+                      <p className="detail-title">버버리 매장 앞</p>
+                      <span>
+                        지도 보기
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjMkI5NkVEIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTEyIDZsLTQuMDAyIDRMNCA2LjAwNSIvPgo8L3N2Zz4K" />
+                      </span>
+                    </div>
                   </div>
                 </div>
                 <hr />
                 <div className="offer_main_course">
-                  <p>코스 소개</p>
-                  <div className="offer_main_course_content">
-                    <div className="offer_main_course_map-wrapper">
-                      <img
-                        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiM0OTUwNTYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTEwIDE4Yy00LTQuNDA5LTYtNy43MjYtNi05Ljk1M0M0IDQuNzA3IDYuNjg2IDIgMTAgMnM2IDIuNzA3IDYgNi4wNDdjMCAyLjIyNy0yIDUuNTQ0LTYgOS45NTN6bTAtNy43NWEyLjI1IDIuMjUgMCAxIDAgMC00LjUgMi4yNSAyLjI1IDAgMCAwIDAgNC41eiIvPgo8L3N2Zz4K"
-                        alt="map-icon"
-                      />
-                      <div className="offer_main_course_map-line"></div>
-                    </div>
-                    <div className="offer_main_course_desc">
-                      <img src={spain1} alt="casa-batllo" />
-                      <div className="offer_main_course_desc-title">
-                        ☞까사바뜨요 (외부관람)
-                      </div>
-                      <div className="offer_main_course_desc-detail">
-                        바뜨요씨는 누구?
-                        <br />
-                        그 당시 부자들의 유행이 있었다는데~?
-                        <br />
-                        바르셀로나 앞 지중해를 담은 듯한 아름다운 집 까사바뜨요
-                        <br />
-                        까딸루냐의 신화 산조르디 전설 까지 가우디의 민족정신과
-                        신앙심 그리고 자연에 대한 사랑까지
-                        <br />
-                        까사바뜨요 앞에서 이야기가 3가지! 이 모든 이야기들을
-                        만나보아요!
-                      </div>
-                    </div>
-                  </div>
-                  <div className="offer_main_course_content">
+                  <p className="offer_main_course_title">코스 소개</p>
+                  <Course />
+
+                  {/* <div className="offer_main_course_content">
                     <div className="offer_main_course_map-wrapper">
                       <img
                         src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiM0OTUwNTYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTEwIDE4Yy00LTQuNDA5LTYtNy43MjYtNi05Ljk1M0M0IDQuNzA3IDYuNjg2IDIgMTAgMnM2IDIuNzA3IDYgNi4wNDdjMCAyLjIyNy0yIDUuNTQ0LTYgOS45NTN6bTAtNy43NWEyLjI1IDIuMjUgMCAxIDAgMC00LjUgMi4yNSAyLjI1IDAgMCAwIDAgNC41eiIvPgo8L3N2Zz4K"
@@ -381,10 +373,10 @@ export default class Offer extends Component {
                         안토니오 가우디의 마지막 같이 함께 들어보아요.
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
-                <hr />
-                <div className="offer_main_require">
+                {/* <hr /> */}
+                {/* <div className="offer_main_require">
                   <h1>필수 안내</h1>
                   <div>
                     ※ 투어는 정시 출발입니다. ※
@@ -582,7 +574,7 @@ export default class Offer extends Component {
                     <span>접기</span>
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjMkI5NkVEIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTQgMTBsNC4wMDItNEwxMiA5Ljk5NSIvPgo8L3N2Zz4K" />
                   </div>
-                </div>
+                </div> */}
                 <hr />
                 <div className="offer_main_guide">
                   <div className="offer_main_guide_header">
@@ -591,7 +583,7 @@ export default class Offer extends Component {
                       <span>Lucia 가이드</span>
                     </div>
                     <button>
-                      <div>
+                      <div className="guide_message">
                         <img
                           src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxwYXRoIGZpbGw9IiM0OTUwNTYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTEzLjUgNWwtNiAzLjc1TDEuNSA1VjMuNWw2IDMuNzUgNi0zLjc1VjV6bTAtM2gtMTJDLjY3NSAyIC4wMDggMi42NzUuMDA4IDMuNUwwIDEyLjVjMCAuODI1LjY3NSAxLjUgMS41IDEuNWgxMmMuODI1IDAgMS41LS42NzUgMS41LTEuNXYtOWMwLS44MjUtLjY3NS0xLjUtMS41LTEuNXoiLz4KPC9zdmc+Cg=="
                           alt="message-icon"
@@ -688,7 +680,7 @@ export default class Offer extends Component {
                     </div>
                   </div>
                 </div>
-                <hr />
+                {/* <hr />
                 <div className="offer_main_refund">
                   <div className="offer_main_refund_header">
                     <h1>취소 및 환불 규정</h1>
@@ -820,9 +812,9 @@ export default class Offer extends Component {
                       <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjMkI5NkVEIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTQgMTBsNC4wMDItNEwxMiA5Ljk5NSIvPgo8L3N2Zz4K" />
                     </div>
                   </div>
-                </div>
+                </div> */}
                 <hr />
-                <div className="offer_main_photo-reviews-wrapper">
+                {/* <div className="offer_main_photo-reviews-wrapper">
                   <h4>여행자 후기 사진</h4>
                   <div className="photos-reviews">
                     <ul>
@@ -840,99 +832,88 @@ export default class Offer extends Component {
                       </li>
                     </ul>
                   </div>
-                </div>
+                </div> */}
                 <div className="offer_main_reviews">
                   <div className="offer_main_reviews_header">
                     <span>후기</span>
-                    <span>112</span>
+                    <span className="reviews_num">112</span>
                   </div>
                   <div className="offer_main_reviews_detail">
-                    <div className="reviews_detail_rating">
-                      <p className="reviews_detail_rating-average">4.9</p>
-                      <div className="reviews_detail_rating-star">
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
+                    <div className="detail_rating">
+                      <p className="detail_rating-average">4.9</p>
+                      <div className="detail_rating-star">
+                        <MdStar className="star" />
+                        <MdStar className="star" />
+                        <MdStar className="star" />
+                        <MdStar className="star" />
+                        <MdStar className="star" />
                       </div>
                     </div>
-                    <div className="reviews_detail_stats">
-                      <div className="reviews_detail_stats-title">
+                    <div className="detail_stats">
+                      <div className="detail_stats-title">
                         20대, 친구들과 가는 여행으로 구매가 많은 상품
                       </div>
-                      <div className="reviews_detail_stats-star-wrapper">
-                        <div className="reviews_detail_stats-stars">
-                          <AiFillStar />
-                          <AiFillStar />
-                          <AiFillStar />
-                          <AiFillStar />
-                          <AiFillStar />
+                      <div className="detail_stats-star-wrapper">
+                        <div className="detail_stats-stars">
+                          <MdStar className="star_blue small_star " />
+                          <MdStar className="star_blue small_star" />
+                          <MdStar className="star_blue small_star" />
+                          <MdStar className="star_blue small_star" />
+                          <MdStar className="star_blue small_star" />
                         </div>
-                        <div className="reviews_detail_stats-bar"></div>
-                        <div className="reveiws_detail_stats-count">109</div>
+                        <div className="detail_stats-bar">
+                          <div className="stats-bar_blue1"></div>
+                        </div>
+                        <div className="detail_stats-count">109</div>
                       </div>
-                      <div className="reviews_detail_stats-star-wrapper">
-                        <div className="reviews_detail_stats-stars">
-                          <AiFillStar />
-                          <AiFillStar />
-                          <AiFillStar />
-                          <AiFillStar />
+                      <div className="detail_stats-star-wrapper">
+                        <div className="detail_stats-stars">
+                          <MdStar className="star_blue small_star" />
+                          <MdStar className="star_blue small_star" />
+                          <MdStar className="star_blue small_star" />
+                          <MdStar className="star_blue small_star" />
                         </div>
-                        <div className="reviews_detail_stats-bar"></div>
-                        <div className="reveiws_detail_stats-count">2</div>
+                        <div className="detail_stats-bar">
+                          <div className="stats-bar_blue2"></div>
+                        </div>
+                        <div className="detail_stats-count">2</div>
                       </div>
-                      <div className="reviews_detail_stats-star-wrapper">
-                        <div className="reviews_detail_stats-stars">
-                          <AiFillStar />
-                          <AiFillStar />
-                          <AiFillStar />
+                      <div className="detail_stats-star-wrapper">
+                        <div className="detail_stats-stars">
+                          <MdStar className="star_blue small_star" />
+                          <MdStar className="star_blue small_star" />
+                          <MdStar className="star_blue small_star" />
                         </div>
-                        <div className="reviews_detail_stats-bar"></div>
-                        <div className="reveiws_detail_stats-count">0</div>
+                        <div className="detail_stats-bar">
+                          <div className="stats-bar_blue3"></div>
+                        </div>
+                        <div className="detail_stats-count">0</div>
                       </div>
-                      <div className="reviews_detail_stats-star-wrapper">
-                        <div className="reviews_detail_stats-stars">
-                          <AiFillStar />
-                          <AiFillStar />
+                      <div className="detail_stats-star-wrapper">
+                        <div className="detail_stats-stars">
+                          <MdStar className="star_blue small_star" />
+                          <MdStar className="star_blue small_star" />
                         </div>
-                        <div className="reviews_detail_stats-bar"></div>
-                        <div className="reveiws_detail_stats-count">0</div>
+                        <div className="detail_stats-bar">
+                          <div className="stats-bar_blue4"></div>
+                        </div>
+                        <div className="detail_stats-count">0</div>
                       </div>
-                      <div className="reviews_detail_stats-star-wrapper">
-                        <div className="reviews_detail_stats-stars">
-                          <AiFillStar />
+                      <div className="detail_stats-star-wrapper">
+                        <div className="detail_stats-stars">
+                          <MdStar className="star_blue small_star" />
                         </div>
-                        <div className="reviews_detail_stats-bar"></div>
-                        <div className="reveiws_detail_stats-count">1</div>
+                        <div className="detail_stats-bar">
+                          <div className="stats-bar_blue5"></div>
+                        </div>
+                        <div className="detail_stats-count">1</div>
                       </div>
                     </div>
                   </div>
+                  <AddComment />
                   <div className="offer_main_reviews_list">
-                    <div className="reviews_list_wrapper">
-                      <div className="reviews_list-photo">
-                        <img src="https://d2ur7st6jjikze.cloudfront.net/reviews/30162/862788_large_1582237991.jpg?1582237991" />
-                      </div>
-                      <div className="reviews_list-star">
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                      </div>
-                      <p className="reviews_list-writer">이**</p>
-                      <div className="reviews_list-purpose">
-                        40대 ∙ 혼자 가는 여행 ∙ 2020-02-21
-                      </div>
-                      <div className="reviews_list-content">
-                        가우디와 그의 주변에 관한 꼭 필요한 설명을 편안하게
-                        해주셔서 좋았습니다. 반일 일정이 저에게는 알맞았고,
-                        흥미롭고 관심가는 곳은 다시 방문하면 좋을 것 같습니다.
-                        투어 마치고 추천해 주신 식당에서의 점심식사도
-                        만족스러웠습니다.
-                      </div>
-                    </div>
-                    <div className="reviews_list_reply">
+                    <Comment />
+                    {/* <div className="reviews_list_reply">
                       <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgdmlld0JveD0iMCAwIDEwIDEwIj4KICAgIDxwYXRoIGZpbGw9IiNDRUQ0REEiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTIgOGg4djJIMFYwaDJ2OHoiLz4KPC9zdmc+Cg==" />
                       <p className="reveiws_list_reply-guide">Lucia 가이드</p>
                       <p className="reveiws_list_reply-message">
@@ -942,105 +923,110 @@ export default class Offer extends Component {
                         열심히 해야겠다고 생각합니다 항상 건강하시고 늘
                         행복하시길 바라겠습니다~ 고맙습니다 :)
                       </p>
-                    </div>
+                    </div> */}
                   </div>
-                  <hr />
                 </div>
-                <div className="offer_main_reviews_list_more">
+                {/* <div className="offer_main_reviews_list_more">
                   <button>
                     후기 더 보기
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjNDk1MDU2IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTEyIDZsLTQuMDAyIDRMNCA2LjAwNSIvPgo8L3N2Zz4K" />
                   </button>
-                </div>
+                </div> */}
               </div>
+
+              {/* 상세페이지 사이드바 */}
               <div className="offer_side">
-                <div className="offer_side_main-box">
-                  <div className="offer_side_main-box_body">
-                    <div className="main-box_body-price">
-                      <span className="main-box_body-price-main">38,500</span>
-                      <span className="main-box_body-price-won">원</span>
-                      <span className="main-box_body-price-perperson">
-                        /1인
-                      </span>
+                <div>
+                  <div className="offer_side_main-box">
+                    <div className="offer_side_main-box_body">
+                      <div>
+                        <div className="main-box_body-price">
+                          <span className="price-main">38,500</span>
+                          <span className="price-won">원</span>
+                          <span className="price-perperson">/1인</span>
+                        </div>
+                        <div className="main-box_body-share">
+                          <img
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjNDk1MDU2IiBzdHJva2Utd2lkdGg9IjEuMjUiPgogICAgICAgIDxjaXJjbGUgY3g9IjYuMjIyIiBjeT0iMTIiIHI9IjIuMjIyIi8+CiAgICAgICAgPGNpcmNsZSBjeD0iMTcuNDQ0IiBjeT0iNi4yMjIiIHI9IjIuMjIyIi8+CiAgICAgICAgPHBhdGggc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgZD0iTTE0LjUgNy41bC01LjYxMSAyLjgzMyIvPgogICAgICAgIDxjaXJjbGUgY3g9IjE3LjQ0NCIgY3k9IjE3Ljc3OCIgcj0iMi4yMjIiIHRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIC0xIDAgMzUuNTU2KSIvPgogICAgICAgIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiIGQ9Ik0xNC41IDE2LjVsLTUuNjExLTIuODMzIi8+CiAgICA8L2c+Cjwvc3ZnPgo="
+                            alt="share-icon"
+                          />
+                        </div>
+                      </div>
+                      <table className="main-box_body_table">
+                        <tbody>
+                          <tr>
+                            <td className="main-box_traveler">1~7인</td>
+                            <td className="main-box_travel-price">38,500원</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div>
+                        <button className="main-box_body-booking">
+                          예약하기
+                        </button>
+                      </div>
+                      <div>
+                        <button className="main-box_body-wish">
+                          <img
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjQ0VENERBIiBzdHJva2Utd2lkdGg9IjEuNSIgZD0iTTEyLjEwNSAxOS41ODZsNy4wMTItNy4wMTJhNC41ODMgNC41ODMgMCAxIDAtNi40ODItNi40ODJsLS41My41My0uNTMtLjUzYTQuNTgzIDQuNTgzIDAgMCAwLTYuNDgzIDYuNDgybDcuMDEzIDcuMDEyeiIvPgo8L3N2Zz4K"
+                            alt="heart-icon"
+                          />
+                          위시리스트에 담기
+                        </button>
+                      </div>
+                      <p className="main-box_body-wish-num">
+                        696명이 이 상품을 위시리스트에 담았습니다.
+                      </p>
                     </div>
-                    <div className="main-box_body-share">
+                    <div className="offer_side_main-box_question">
+                      <div className="main-box_question-guide guide_profile">
+                        <img src={Lucia} alt="Lucia" />
+                        <span>Lucia 가이드</span>
+                      </div>
+                      <div className="main-box_question-message">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxwYXRoIGZpbGw9IiMyQjk2RUQiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTEzLjUgNWwtNiAzLjc1TDEuNSA1VjMuNWw2IDMuNzUgNi0zLjc1VjV6bTAtM2gtMTJDLjY3NSAyIC4wMDggMi42NzUuMDA4IDMuNUwwIDEyLjVjMCAuODI1LjY3NSAxLjUgMS41IDEuNWgxMmMuODI1IDAgMS41LS42NzUgMS41LTEuNXYtOWMwLS44MjUtLjY3NS0xLjUtMS41LTEuNXoiLz4KPC9zdmc+Cg==" />
+                        문의하기
+                      </div>
+                    </div>
+                  </div>
+                  <div className="offer_side_second-box">
+                    <div>
                       <img
-                        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjNDk1MDU2IiBzdHJva2Utd2lkdGg9IjEuMjUiPgogICAgICAgIDxjaXJjbGUgY3g9IjYuMjIyIiBjeT0iMTIiIHI9IjIuMjIyIi8+CiAgICAgICAgPGNpcmNsZSBjeD0iMTcuNDQ0IiBjeT0iNi4yMjIiIHI9IjIuMjIyIi8+CiAgICAgICAgPHBhdGggc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgZD0iTTE0LjUgNy41bC01LjYxMSAyLjgzMyIvPgogICAgICAgIDxjaXJjbGUgY3g9IjE3LjQ0NCIgY3k9IjE3Ljc3OCIgcj0iMi4yMjIiIHRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIC0xIDAgMzUuNTU2KSIvPgogICAgICAgIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiIGQ9Ik0xNC41IDE2LjVsLTUuNjExLTIuODMzIi8+CiAgICA8L2c+Cjwvc3ZnPgo="
-                        alt="share-icon"
+                        src="https://www.myrealtrip.com/webpack/4fde7b029a47d9c9085b1109115b61a6.svg"
+                        alt="group-tour-icon"
                       />
-                    </div>
-                    <table className="main-box_body_table">
-                      <tbody>
-                        <tr>
-                          <td className="main-box_traveler">1~7인</td>
-                          <td className="main-box_travel-price">38,500원</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <div>
-                      <button className="main-box_body-booking">
-                        예약하기
-                      </button>
+                      <p>그룹 투어</p>
                     </div>
                     <div>
-                      <button className="main-box_body-wish">
-                        <img
-                          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjQ0VENERBIiBzdHJva2Utd2lkdGg9IjEuNSIgZD0iTTEyLjEwNSAxOS41ODZsNy4wMTItNy4wMTJhNC41ODMgNC41ODMgMCAxIDAtNi40ODItNi40ODJsLS41My41My0uNTMtLjUzYTQuNTgzIDQuNTgzIDAgMCAwLTYuNDgzIDYuNDgybDcuMDEzIDcuMDEyeiIvPgo8L3N2Zz4K"
-                          alt="heart-icon"
-                        />
-                        위시리스트에 담기
-                      </button>
+                      <img
+                        src="https://www.myrealtrip.com/webpack/b34853506a08c2451b12ce43faa97855.svg"
+                        alt="timer-icon"
+                      />
+                      <p>5시간 소요</p>
                     </div>
-                    <p className="main-box_body-wish-num">
-                      696명이 이 상품을 위시리스트에 담았습니다.
-                    </p>
-                  </div>
-                  <div className="offer_side_main-box_question">
-                    <div className="main-box_question-guide guide_profile">
-                      <img src={Lucia} alt="Lucia" />
-                      <span>Lucia 가이드</span>
+                    <div>
+                      <img
+                        src="https://www.myrealtrip.com/webpack/2c8393277372adca59f84d8143dd0637.svg"
+                        alt="globe-icon"
+                      />
+                      <p>한국어</p>
                     </div>
-                    <div className="main-box_question-message">
-                      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxwYXRoIGZpbGw9IiMyQjk2RUQiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTEzLjUgNWwtNiAzLjc1TDEuNSA1VjMuNWw2IDMuNzUgNi0zLjc1VjV6bTAtM2gtMTJDLjY3NSAyIC4wMDggMi42NzUuMDA4IDMuNUwwIDEyLjVjMCAuODI1LjY3NSAxLjUgMS41IDEuNWgxMmMuODI1IDAgMS41LS42NzUgMS41LTEuNXYtOWMwLS44MjUtLjY3NS0xLjUtMS41LTEuNXoiLz4KPC9zdmc+Cg==" />
-                      문의하기
-                    </div>
-                  </div>
-                </div>
-                <div className="offer_side_second-box">
-                  <div>
-                    <img
-                      src="https://www.myrealtrip.com/webpack/4fde7b029a47d9c9085b1109115b61a6.svg"
-                      alt="group-tour-icon"
-                    />
-                    <p>그룹 투어</p>
-                  </div>
-                  <div>
-                    <img
-                      src="https://www.myrealtrip.com/webpack/b34853506a08c2451b12ce43faa97855.svg"
-                      alt="timer-icon"
-                    />
-                    <p>5시간 소요</p>
-                  </div>
-                  <div>
-                    <img
-                      src="https://www.myrealtrip.com/webpack/2c8393277372adca59f84d8143dd0637.svg"
-                      alt="globe-icon"
-                    />
-                    <p>한국어</p>
                   </div>
                 </div>
                 <div className="offer_side_third-box"></div>
               </div>
             </div>
           </div>
-          <div className="offer_recommend">
+          {/* <div className="offer_recommend">
             <h4 className="offer_recommend-title">바르셀로나 추천 호텔</h4>
             <div className="offer_recommend_list"></div>
-          </div>
+          </div> */}
+          <hr />
           <div className="offer_num">
             <sapn className="offer_num-product">상품번호:</sapn>
-            <sapn className="offer_num-numer">30162</sapn>
+            <sapn className="offer_num-number">30162</sapn>
           </div>
+          <hr />
         </div>
       </div>
     );

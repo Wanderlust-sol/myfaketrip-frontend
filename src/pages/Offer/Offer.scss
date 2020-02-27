@@ -6,12 +6,17 @@ $boldS: 1px solid #dee2e6;
 .offer {
   border-top: $boldS;
   line-height: 25px;
+  color: $blk;
+
   hr {
     border: $boldS;
   }
 
   p,
-  div {
+  div,
+  h1,
+  h4,
+  h5 {
     color: $blk;
   }
   //상세페이지 nav바
@@ -43,249 +48,759 @@ $boldS: 1px solid #dee2e6;
       box-shadow: inset 0 -3px 0 #dcdcdc;
     }
   }
-}
-
-//상세페이지 가장 큰 container
-.offer_container {
-  width: 100%;
-
-  .container {
-    width: 1076px;
-    margin: auto;
-    display: flex;
-  }
-}
-
-//상세페이지 메인
-.offer_main {
-  width: 700px;
-  .offer_main_title {
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 1.25;
-    color: #343a40;
-    margin-top: 48px;
-  }
-
-  .offer_main_inner-bar {
-    display: flex;
-    margin-top: 10px;
-    margin-bottom: 23px;
-
-    a {
-      color: #848c94;
-    }
-    p {
-      font-size: 14px;
-      color: #848c94;
-    }
-
-    .offer_main_inner-bar-star {
-      font-size: 12px;
-      color: $themecolor;
-      margin-left: 20px;
-      margin-right: 4px;
-
-      display: flex;
-      align-items: center;
-    }
-  }
-
-  .offer_main_photos {
+  //상세페이지 가장 큰 container
+  .offer_container {
     width: 100%;
-    height: 646px;
-    border: 1px solid black;
-    margin-bottom: 30px;
-  }
-}
 
-.offer_main_price {
-  margin-top: 30px;
-
-  div {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 13px;
-
-    .offer_main_price_title {
-      font-size: 18px;
-      font-weight: 700;
-      color: black;
-    }
-    .offer_main_price_question_desc {
-      font-weight: 700;
-      color: $themecolor;
-      margin-right: 4px;
-    }
-  }
-
-  .offer_main_price_date {
-    width: 250px;
-    height: 48px;
-    font-size: 16px;
-    color: #343a40;
-    text-align: left;
-    border: $boldS;
-    border-radius: 2px;
-    padding: 12px 0;
-    display: inline-block;
-
-    img {
-      margin-left: 13px;
-      margin-right: 8px;
-      margin-top: -2px;
-    }
-  }
-
-  .offer_main_price_option {
-    select {
-      width: 250px;
-      height: 48px;
-      font-size: 16px;
-      border: $boldS;
-      background-color: white;
-
-      option {
-        color: #343a40;
-      }
-    }
-
-    // .offer_main_price_select {
-    //   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjNTFBQkYzIiBzdHJva2Utd2lkdGg9IjEuMjUiPgogICAgICAgIDxwYXRoIGQ9Ik05LjYyOCA0LjYyNWwuMDI1IDQuNzVoOC4zNGEyLjM3NSAyLjM3NSAwIDEgMCAwLTQuNzVIOS42Mjd6Ii8+CiAgICAgICAgPGNpcmNsZSBjeD0iNyIgY3k9IjciIHI9IjMuMzc1Ii8+CiAgICAgICAgPHBhdGggZD0iTTE0LjM3MiAxOS4zNzVsLS4wMjUtNC43NWgtOC4zNGEyLjM3NSAyLjM3NSAwIDEgMCAwIDQuNzVoOC4zNjV6Ii8+CiAgICAgICAgPGNpcmNsZSBjeD0iMTciIGN5PSIxNyIgcj0iMy4zNzUiIHRyYW5zZm9ybT0icm90YXRlKC0xODAgMTcgMTcpIi8+CiAgICA8L2c+Cjwvc3ZnPgo=");
-    // }
-  }
-
-  .offer_main_price_check-price {
-    button {
-      width: 160px;
-      height: 48px;
-      font-size: 15px;
-      font-weight: 700;
-      color: #ced4da;
-      background-color: #f5f6f7;
-      border: 0;
-      border-radius: 2px;
-    }
-  }
-}
-
-//바르셀로나 건축학개론 설명 부분
-.offer_main_intro-wrapper {
-  margin: 32px 0;
-
-  .offer_main_intro_subtitle {
-    font-size: 24px;
-    font-weight: 700;
-    color: #343a40;
-  }
-
-  .offer_main_intro_detail {
-    font-size: 15px;
-    margin: 16px 0;
-    position: relative;
-
-    .intro_with-more {
-      max-height: 400px;
-      overflow: hidden;
+    .offer_container_box {
+      width: 1076px;
+      margin: auto;
+      display: flex;
       position: relative;
-    }
 
-    .intro_with-more-hidden {
-      width: 100%;
-      height: 184px;
-      text-align: center;
-      background: linear-gradient(
-        180deg,
-        hsla(0, 0%, 100%, 0) 0,
-        #fff 50%,
-        #fff
-      );
-      position: absolute;
-      bottom: 0;
-      left: 0;
+      //상세페이지 메인
+      .offer_main {
+        width: 700px;
+        .offer_main_title {
+          font-size: 32px;
+          font-weight: 700;
+          line-height: 1.25;
+          color: $blk;
+          margin-top: 48px;
+        }
 
-      .moreBtn {
-        font-size: 16px;
-        font-weight: 700;
-        color: #495056;
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
-        border: 1px solid #ced4da;
-        border-radius: 2px;
-        padding: 16px 40px;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
+        .offer_main_inner-bar {
+          display: flex;
+          margin-top: 10px;
+          margin-bottom: 23px;
 
-        cursor: pointer;
-        &:focus {
-          outline: none;
+          a {
+            color: #848c94;
+            margin-left: 4px;
+          }
+          p {
+            font-size: 14px;
+            color: #848c94;
+          }
+
+          .offer_main_inner-bar-star {
+            margin-left: 20px;
+            margin-right: 4px;
+
+            display: flex;
+            align-items: center;
+          }
+        }
+
+        .offer_main_photos {
+          width: 100%;
+          height: 646px;
+          border: 1px solid black;
+          margin-bottom: 30px;
+        }
+
+        .offer_main_price {
+          margin-top: 30px;
+
+          div {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 13px;
+
+            .offer_main_price_title {
+              font-size: 18px;
+              font-weight: 700;
+              color: black;
+            }
+            .offer_main_price_question_desc {
+              font-weight: 700;
+              color: $themecolor;
+              margin-right: 4px;
+              cursor: pointer;
+            }
+          }
+
+          .offer_main_price_date {
+            width: 250px;
+            height: 48px;
+            font-size: 16px;
+            color: $blk;
+            text-align: left;
+            border: $boldS;
+            border-radius: 2px;
+            padding: 12px 0;
+            display: inline-block;
+            cursor: pointer;
+
+            img {
+              margin-left: 13px;
+              margin-right: 8px;
+              margin-top: -2px;
+            }
+          }
+
+          .offer_main_price_option {
+            select {
+              width: 250px;
+              height: 48px;
+              font-size: 16px;
+              border: $boldS;
+              background-color: white;
+
+              option {
+                color: #343a40;
+              }
+            }
+
+            // .offer_main_price_select {
+            //   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjNTFBQkYzIiBzdHJva2Utd2lkdGg9IjEuMjUiPgogICAgICAgIDxwYXRoIGQ9Ik05LjYyOCA0LjYyNWwuMDI1IDQuNzVoOC4zNGEyLjM3NSAyLjM3NSAwIDEgMCAwLTQuNzVIOS42Mjd6Ii8+CiAgICAgICAgPGNpcmNsZSBjeD0iNyIgY3k9IjciIHI9IjMuMzc1Ii8+CiAgICAgICAgPHBhdGggZD0iTTE0LjM3MiAxOS4zNzVsLS4wMjUtNC43NWgtOC4zNGEyLjM3NSAyLjM3NSAwIDEgMCAwIDQuNzVoOC4zNjV6Ii8+CiAgICAgICAgPGNpcmNsZSBjeD0iMTciIGN5PSIxNyIgcj0iMy4zNzUiIHRyYW5zZm9ybT0icm90YXRlKC0xODAgMTcgMTcpIi8+CiAgICA8L2c+Cjwvc3ZnPgo=");
+            // }
+          }
+
+          .offer_main_price_check-price {
+            button {
+              width: 160px;
+              height: 48px;
+              font-size: 15px;
+              font-weight: 700;
+              color: #ced4da;
+              background-color: #f5f6f7;
+              border: 0;
+              border-radius: 2px;
+            }
+          }
+        }
+
+        //바르셀로나 건축학개론 설명 부분
+        .offer_main_intro-wrapper {
+          margin: 32px 0;
+          .offer_main_intro {
+            .offer_main_intro_subtitle {
+              font-size: 24px;
+              font-weight: 700;
+              color: #343a40;
+            }
+
+            .offer_main_intro_detail {
+              font-size: 15px;
+              margin: 16px 0;
+              position: relative;
+
+              .intro_with-more {
+                max-height: 400px;
+                overflow: hidden;
+                position: relative;
+              }
+
+              .intro_with-more-hidden {
+                width: 100%;
+                height: 184px;
+                text-align: center;
+                background: linear-gradient(
+                  180deg,
+                  hsla(0, 0%, 100%, 0) 0,
+                  #fff 50%,
+                  #fff
+                );
+                position: absolute;
+                bottom: 0;
+                left: 0;
+
+                .moreBtn {
+                  font-size: 16px;
+                  font-weight: 700;
+                  color: #495056;
+                  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+                  border: 1px solid #ced4da;
+                  border-radius: 2px;
+                  padding: 16px 40px;
+                  position: absolute;
+                  bottom: 0;
+                  left: 50%;
+                  transform: translateX(-50%);
+
+                  cursor: pointer;
+                  &:focus {
+                    outline: none;
+                  }
+                }
+              }
+            }
+          }
+          //필독 공지사항
+          .offer_main_intro_notice {
+            background-color: #fff8e1;
+            padding: 24px 16px 24px 52px;
+            position: relative;
+
+            img {
+              position: absolute;
+              top: 30px;
+              left: 24px;
+            }
+
+            p {
+              font-size: 15px;
+            }
+          }
+        }
+
+        //간단 대표 리뷰 1개
+        .offer_main_mini-reviews {
+          margin: 24px 0;
+          display: flex;
+
+          .offer_main_mini-reviews-left {
+            width: 64px;
+            margin-right: 26px;
+            display: inline-block;
+
+            .mini-reviews-rate {
+              font-size: 32px;
+            }
+
+            .offer_main_mini-reviews-sub {
+              .mini-reviews-star-rating {
+                font-size: 14px;
+                margin-top: 8px;
+                margin-bottom: -10px;
+              }
+
+              p {
+                font-size: 12px;
+                color: #848c94;
+              }
+            }
+          }
+
+          .offer_main_mini-reviews-right {
+            width: 610px;
+            display: inline-block;
+
+            .mini-reviews-star {
+              display: flex;
+              align-items: center;
+
+              p {
+                font-size: 14px;
+                margin-left: 6px;
+                display: inline-block;
+              }
+            }
+
+            .mini-reviews-stats {
+              font-size: 12px;
+              color: #848c94;
+            }
+
+            .mini-reviews-content {
+              font-size: 15px;
+            }
+
+            .mini-reviews-with-more {
+              max-height: 75px;
+
+              span {
+                font-size: 14px;
+                font-weight: 700;
+                color: #2b96ed;
+                display: flex;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+
+        //여행자들이 함께 본 상품
+        .offer_main_others {
+          margin: 32px 0;
+
+          h5 {
+            font-size: 24px;
+            font-weight: 700;
+          }
+          div {
+            width: 100%;
+            height: 310px;
+            border: 1px solid black;
+            margin-top: 20px;
+          }
+        }
+
+        //포함사항, 불포함 사항
+        .offer_main_note {
+          margin: 24px 0;
+
+          .offer_main_note_content {
+            h4 {
+              font-size: 18px;
+            }
+            p {
+              font-size: 15px;
+              margin-top: 8px;
+              margin-bottom: 24px;
+            }
+          }
+          .offer_main_note_with-more {
+            font-size: 15px;
+            font-weight: 700;
+            color: #2b96ed;
+            span {
+              cursor: pointer;
+              display: flex;
+            }
+          }
+        }
+
+        //만나는 시간
+        .offer_main_meeting-time {
+          margin: 32px 0;
+
+          h1 {
+            font-size: 24px;
+            font-weight: 700;
+          }
+
+          h5 {
+            font-size: 15px;
+            font-weight: 500;
+            margin-top: 7px;
+          }
+        }
+
+        //만나는 장소
+        .offer_main_meeting-point {
+          margin: 32px 0;
+
+          h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+          }
+
+          div {
+            display: flex;
+
+            .map-icon {
+              width: 70px;
+            }
+
+            .offer_main_meeting-point-detail {
+              width: 610px;
+              margin-left: 20px;
+              display: flex;
+              flex-direction: column;
+
+              .detail-title {
+                font-size: 18px;
+                font-weight: 700;
+              }
+
+              span {
+                font-size: 14px;
+                font-weight: 700;
+                color: #2b96ed;
+                display: flex;
+              }
+            }
+          }
+        }
+
+        //코스 소개
+        .offer_main_course {
+          margin: 32px 0;
+          .offer_main_course_title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+          }
+        }
+
+        //가이드 소개
+        .offer_main_guide {
+          margin: 32px 0;
+
+          .offer_main_guide_header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 14px;
+
+            .guide_profile {
+              display: flex;
+              align-items: center;
+
+              img {
+                width: 56px;
+                border-radius: 50%;
+                margin-right: 18px;
+              }
+
+              span {
+                font-size: 18px;
+                font-weight: 700;
+              }
+            }
+            button {
+              height: 40px;
+              border: 1px solid #ced4da;
+
+              .guide_message {
+                font-size: 14px;
+                font-weight: 700;
+                color: #495056;
+                padding: 0 16px;
+
+                img {
+                  margin-right: 5px;
+                }
+              }
+            }
+          }
+
+          .offer_main_guide_content {
+            font-size: 15px;
+
+            .guide_content-detail {
+              max-height: 250px;
+              overflow: hidden;
+            }
+
+            .guide_content-more {
+              font-size: 14px;
+              font-weight: 700;
+              color: #2b96ed;
+              margin-top: 12px;
+              display: flex;
+              cursor: pointer;
+            }
+          }
+        }
+
+        //후기
+        .offer_main_reviews {
+          .offer_main_reviews_header {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 32px 0;
+
+            .reviews_num {
+              color: #2b96ed;
+              margin-left: 8px;
+            }
+          }
+
+          .offer_main_reviews_detail {
+            height: 165px;
+            margin-bottom: 24px;
+            display: flex;
+
+            .detail_rating {
+              width: 217px;
+              height: 100%;
+              border-radius: 2px;
+              background-color: #f8f9fa;
+              text-align: center;
+              margin-right: 8px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+
+              .detail_rating-average {
+                font-size: 48px;
+                font-weight: 700;
+                color: #343a40;
+                margin-bottom: 25px;
+              }
+
+              .detail_rating-star {
+                .star {
+                  width: 32px;
+                  height: 32px;
+                  color: #343a40;
+                  margin: -2px;
+                }
+              }
+            }
+
+            .detail_stats {
+              width: 475px;
+              height: 100%;
+              padding: 24px;
+              border-radius: 2px;
+              background-color: #f8f9fa;
+              text-align: center;
+
+              .detail_stats-title {
+                font-size: 14px;
+                font-weight: 500;
+                color: #2b96ed;
+              }
+
+              .detail_stats-star-wrapper {
+                margin: 8px 0;
+                height: 10px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .detail_stats-stars {
+                  width: 40px;
+                  display: flex;
+                  justify-content: flex-end;
+
+                  .small_star {
+                    width: 11px;
+                  }
+                }
+
+                .detail_stats-bar {
+                  width: 288px;
+                  height: 4px;
+                  border-radius: 4px;
+                  background-color: #dee2e6;
+                  position: relative;
+                  margin-left: 8px;
+
+                  .stats-bar_blue1 {
+                    width: 288px;
+                    height: 4px;
+                    left: -8px;
+                    border-radius: 4px;
+                    background-color: #51abf3;
+                    position: absolute;
+                    margin-left: 8px;
+                  }
+                }
+
+                .detail_stats-count {
+                  margin-left: 8px;
+                  font-size: 12px;
+                  color: #848c94;
+                  width: 36px;
+                  text-align: left;
+                }
+              }
+            }
+          }
         }
       }
     }
   }
-
-  //필독 공지사항
-  .offer_main_intro_notice {
-    background-color: #fff8e1;
-    padding: 24px 16px 24px 52px;
-    position: relative;
-
-    img {
-      position: absolute;
-      top: 30px;
-      left: 24px;
-    }
-
-    p {
-      font-size: 15px;
-    }
-  }
-}
-
-//간단 대표 리뷰 1개
-.offer_main_mini-reviews {
-  margin: 24px 0;
-  display: flex;
-
-  .offer_main_mini-reviews-left {
-    width: 80px;
-    margin-right: 26px;
-    display: inline-block;
-
-    .mini-reviews-rate {
-      font-size: 32px;
-    }
-
-    .offer_main_mini-reviews-sub {
-      .mini-reviews-star-rating {
-        font-size: 14px;
-        margin-top: 8px;
-        margin-bottom: -10px;
-      }
-
-      p {
-        font-size: 12px;
-        color: #848c94;
-      }
-    }
-  }
-
-  .offer_main_mini-reviews-right {
-    width: 610px;
-    display: inline-block;
-  }
 }
 
 .offer_side {
-  background-color: blue;
   width: 320px;
   margin-left: 2.5em;
+  top: 50px;
+  right: 0;
+  position: absolute;
+  // position: fixed;
+  div {
+    // display: flex;
+
+    //첫번째 사이드 박스
+    .offer_side_main-box {
+      border-radius: 2px;
+      box-shadow: 0 0 0 1px rgba(52, 58, 64, 0.15),
+        0 2px 4px 0 rgba(52, 58, 64, 0.15);
+      width: 100%;
+
+      .offer_side_main-box_body {
+        padding: 24px 24px 16px;
+
+        div {
+          display: flex;
+          justify-content: space-between;
+          .main-box_body-price {
+            font-weight: 700;
+            .price-main {
+              font-size: 24px;
+              line-height: 0.9;
+            }
+            .price-won {
+              font-size: 18px;
+            }
+            .price-perperson {
+              font-size: 13px;
+              font-weight: 400;
+              color: #848c94;
+              margin-left: 4px;
+            }
+          }
+
+          .main-box_body-share {
+            cursor: pointer;
+          }
+        }
+
+        .main-box_body_table {
+          width: 272px;
+          margin-top: 14px;
+          margin-bottom: 14px;
+
+          tbody {
+            vertical-align: middle;
+
+            td {
+              border-top: 1px solid #dee2e6;
+              border-bottom: 1px solid #dee2e6;
+            }
+
+            .main-box_traveler {
+              text-align: center;
+              background-color: #f8f9fa;
+              font-size: 14px;
+              line-height: 2.71;
+            }
+
+            .main-box_travel-price {
+              font-size: 14px;
+              font-weight: 700;
+              line-height: 2.71;
+              color: #343a40;
+              padding-left: 16px;
+            }
+          }
+        }
+
+        .main-box_body-booking {
+          width: 100%;
+          height: 48px;
+          font-size: 16px;
+          font-weight: 700;
+          color: #fff;
+          border-radius: 2px;
+          border: 1px solid #51abf3;
+          background-color: #51abf3;
+          padding: 0 32px;
+          margin-bottom: 8px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #3b9dee;
+          }
+        }
+
+        .main-box_body-wish {
+          width: 100%;
+          height: 40px;
+          font-size: 14px;
+          font-weight: 700;
+          color: #495056;
+          border-radius: 2px;
+          border: 1px solid #ced4da;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          cursor: pointer;
+
+          &:hover {
+            box-shadow: 0.1px 0.1px 0.1px 0.1px #bcc0c5;
+            transition: box-shadow 0.2s ease;
+          }
+          img {
+            margin-right: 4px;
+            margin-top: 1px;
+          }
+        }
+
+        .main-box_body-wish-num {
+          font-size: 13px;
+          color: #848c94;
+          margin-top: 5px;
+          margin-bottom: 16px;
+          text-align: center;
+        }
+      }
+
+      .offer_side_main-box_question {
+        height: 64px;
+        border-top: 1px solid #dee2e6;
+        align-items: center;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        padding: 16px 24px;
+
+        .main-box_question-guide {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+
+          img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            margin-right: 8px;
+          }
+
+          span {
+            max-width: 124px;
+            font-size: 14px;
+            font-weight: 700;
+
+            &:hover {
+              color: #0275d8;
+            }
+          }
+        }
+
+        .main-box_question-message {
+          font-size: 14px;
+          font-weight: 700;
+          color: #2b96ed;
+          display: flex;
+          cursor: pointer;
+
+          img {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+    //두번째 사이드 박스
+    .offer_side_second-box {
+      border-radius: 2px;
+      background-color: #f5f6f7;
+      margin-top: 16px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #666d75;
+      padding: 8px 0;
+      div {
+        margin-left: 20px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        display: flex;
+
+        img {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  //세번째 사이드 박스
+  .offer_side_third-box {
+    width: 320px;
+    height: 74px;
+    background-image: url("../../img/urailpass.jpg");
+    background-size: cover;
+    margin-top: 16px;
+  }
 }
 
-.offer_side_third-box {
-  width: 296px;
-  height: 74px;
-  background-image: url("../../img/urailpass.jpg");
-  background-size: cover;
+//상품번호
+.offer_num {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  background-color: #fff;
+  text-align: center;
+  padding: 40px;
+
+  .offer_num-number {
+    color: #2b96ed;
+  }
 }
