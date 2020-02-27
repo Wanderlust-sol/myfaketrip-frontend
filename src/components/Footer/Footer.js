@@ -10,11 +10,11 @@ class Footer extends Component {
           <div className="cs">
             <h3>고객센터</h3>
             <h5>1670-8208</h5>
-            <p>
+            <p className="footerTxt">
               <span>일반문의</span>09:00-22:00
               <span>&#47; 실시간 항공권 문의</span>09:00-18:00
             </p>
-            <p>
+            <p className="footerTxt">
               <span>연중무휴 &#47; 점심</span>12:00-13:00
             </p>
             <button>1:1 채팅상담</button>
@@ -106,13 +106,13 @@ class Footer extends Component {
           </div>
           
          
-          <p>
+          <p className="footerTxt">
           상호명 (주)마이리얼트립 | 대표 이동건 | 개인정보보호책임자 류종민 | 사업자등록번호 209-81-55339 
           <span><a href="1.html">사업자정보확인</a></span>
            | 통신판매업신고번호 2019-서울서초-0260<br />
           주소 서울특별시 서초구 강남대로 327, 대륭서초타워 18층(서초동) | 이메일 help@myrealtrip.com | 마케팅/제휴 문의 marketing@myrealtrip.com
           </p>
-          <p>
+          <p className="footerTxt">
             자사는 서울특별시관광협회 공제영업보증보험에 가입되어 있습니다. 마이리얼트립은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 상품·거래정보 및 거래에 대하여 책임을 지지않습니다.
           </p>
         </div>
