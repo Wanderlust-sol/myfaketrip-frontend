@@ -1,10 +1,11 @@
 $loginfont:#495056;
+$txtfont:#666d75;
 
 .login{
     padding:123px;
     color:$loginfont;
     .loginWrap{
-        width:430px;height:587px;
+        width:430px;
         margin:64px auto 0;
         padding:48px;
         border:1px solid #dee2e6;
@@ -27,6 +28,9 @@ $loginfont:#495056;
                 img{
                     margin-right:8px;
                 }
+                &:hover{
+                    box-shadow:0 1px 3px 0 rgba(0,0,0,0.2);
+                }
             }
         }
         .or{
@@ -45,9 +49,19 @@ $loginfont:#495056;
             }
         }
         .loginForm{
-            height:245px;
+
             label{
                 width:100%;
+                &:hover{
+                    input{
+                        border:1px solid #222;
+                    }
+                }
+                div.wrongTxt{
+                    p{
+                        color:#ff8000;
+                    }
+                }
                 p{
                     font-size:14px;
                     margin:8px 0;
@@ -55,10 +69,27 @@ $loginfont:#495056;
                 input{
                     width:100%;height:40px;
                     text-indent:10px;
+                    font-size:14px;
                     border:1px solid #dee2e6;
                     border-radius:2px;
                     &::placeholder{
                         font-size:14px;
+                    }
+                    &:focus{
+                        box-shadow:inset 0 0 0 2px #2b96ed;
+                        outline: none;
+                        border: none;
+                    }
+                    &.txtCorrect{
+                        box-shadow: inset 0 0 0 2px #33b893;
+                        border:none;
+                    }
+                    &.txtCorrect:focus{
+                        box-shadow: inset 0 0 0 2px #33b893;
+                    }
+                    &.txtWrong{
+                        box-shadow: inset 0 0 0 2px #ff8000;
+                        border: none;
                     }
                 }
             }
@@ -75,13 +106,27 @@ $loginfont:#495056;
                     input{
                         display:inline-block;
                         width:20px;height:20px;
+                        vertical-align:bottom;
                         font-size:14px;
+                        border:2px solid #495056;
                         box-sizing:border-box;
+
+                        &:hover{
+                            border: 2px solid #adb5bd;
+                        }
+                        &:focus{
+                            outline:none;
+                            box-shadow:none;
+                        }
                     }
                 }
                 p{
-                    font-size:14px;
-                    color:#666d75;
+                    font-size:13px;
+                    color:$txtfont;
+                    cursor: pointer;
+                    &:hover{
+                        color:rgb(55, 58, 60);
+                    }
                 }
             }
             .loginCom{
@@ -92,6 +137,16 @@ $loginfont:#495056;
                 background-color: #51abf3;
                 opacity:0.3;
                 border-radius:3px;
+                pointer-events: none;
+            }
+            .loginSubmit{
+                width:100%;height:48px;
+                color:#fff;
+                font-size:16px;
+                font-weight:600;
+                background-color: #51abf3;
+                opacity:1;
+                border-radius:3px;
             }
         }
         .needSignUp{
@@ -100,10 +155,13 @@ $loginfont:#495056;
             span{
                 margin-right:5px;
                 font-size:12px;
+                color:$txtfont;
+                &:nth-of-type(2){
+                    text-decoration:underline;
+                    cursor: pointer;
+                }
             }
-            &:nth-of-type(2){
-                text-decoration:underline;
-            }
+            
         }
     }
 }
