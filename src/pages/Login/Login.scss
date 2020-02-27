@@ -1,5 +1,6 @@
 $loginfont:#495056;
 $txtfont:#666d75;
+$backcolor:#51abf3;
 
 .login{
     padding:123px;
@@ -25,6 +26,7 @@ $txtfont:#666d75;
                 font-size:16px;
                 font-weight:600;
                 color:$loginfont;
+                outline:none;
                 img{
                     margin-right:8px;
                 }
@@ -103,21 +105,29 @@ $txtfont:#666d75;
                     font-size:14px;
                     color:#343a40;
                     display:flex;
+                    position: relative;
                     input{
-                        display:inline-block;
-                        width:20px;height:20px;
+                        width:12px;height:12px;
                         vertical-align:bottom;
-                        font-size:14px;
-                        border:2px solid #495056;
-                        box-sizing:border-box;
-
+                        visibility: hidden;
+                        position: absolute;top:0;left:0;
+                    }
+                    span{
+                        width:20px;height:20px;
+                        margin-right:10px;
+                        border: 1px solid #ced4da;
+                        border-radius:2px;
+                        transition:0.5s;
                         &:hover{
                             border: 2px solid #adb5bd;
                         }
-                        &:focus{
-                            outline:none;
-                            box-shadow:none;
-                        }
+                    }
+                    img{
+                        width:20px;height:20px;
+                        margin-right:10px;
+                        border:1px solid $backcolor;
+                        border-radius:2px;
+                        background-color:$backcolor;
                     }
                 }
                 p{
@@ -134,7 +144,7 @@ $txtfont:#666d75;
                 color:#fff;
                 font-size:16px;
                 font-weight:600;
-                background-color: #51abf3;
+                background-color:$backcolor;
                 opacity:0.3;
                 border-radius:3px;
                 pointer-events: none;
@@ -144,7 +154,7 @@ $txtfont:#666d75;
                 color:#fff;
                 font-size:16px;
                 font-weight:600;
-                background-color: #51abf3;
+                background-color:$backcolor;
                 opacity:1;
                 border-radius:3px;
             }
