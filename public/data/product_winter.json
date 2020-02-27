@@ -1,0 +1,76 @@
+{
+    "product_winter": [
+        {
+            "thumnail" : "https://d2ur7st6jjikze.cloudfront.net/offer_photos/75543/463022_medium_1581308353.jpg?1581308353",
+            "product_type": "티켓/교통패스",
+            "city_name": "강원도",
+            "product_name" : "[펭수 그립톡 한정판] 비발디파크 스키 리프트권 + 장비렌탈 PKG 이용권",
+            "grade": 2,
+            "origin_price": 92000,
+            "price" : 38500
+        },
+        {
+            "thumnail" : "https://d2ur7st6jjikze.cloudfront.net/offer_photos/72166/443926_medium_1579533177.jpg?1579533177",
+            "product_type": "티켓/교통패스",
+            "city_name": "강원도",
+            "product_name" : "[펭수 그립톡 한정판] 비발디파크 스노위랜드 종일권/AFTER2 이용권",
+            "grade": 4.2,
+            "origin_price": 4000,
+            "price" : 26000
+        },     
+        {
+            "thumnail" : "https://d2ur7st6jjikze.cloudfront.net/offer_photos/71646/440586_medium_1578634637.jpg?1578634637",
+            "product_type": "티켓/교통패스",
+            "city_name": "강원도",
+            "product_name" : "[최저가] 비발디파크 스노위랜드 야간권 이용권 (~2/29)",
+            "grade": 3.9,
+            "origin_price": 33000,
+            "price" : 26100
+        },
+        {
+            "thumnail" : "https://d2ur7st6jjikze.cloudfront.net/offer_photos/43365/397677_medium_1580799749.jpg?1580799749",
+            "product_type": "티켓/교통패스",
+            "city_name": "서울",
+            "product_name" : "[파격특가] 에버랜드 종일&오후권 (~3/15)",
+            "grade": 4.7,
+            "origin_price": 56000,
+            "price" : 21900
+        },     
+        {
+            "thumnail" : "https://d2ur7st6jjikze.cloudfront.net/offer_photos/70816/435661_medium_1578618153.jpg?1578618153",
+            "product_type": "티켓/교통패스",
+            "city_name": "서울",
+            "product_name" : "[최저가] 서울 롯데월드 자유이용권(종합/After4/After7) (~3/3)",
+            "grade": 3.8,
+            "origin_price": 46000,
+            "price" : 19800
+        },
+        {
+            "thumnail" : "https://d2ur7st6jjikze.cloudfront.net/offer_photos/74089/454296_medium_1579057051.jpg?1579057051",
+            "product_type": "티켓/교통패스",
+            "city_name": "강원도",
+            "product_name" : "[쿠폰할인] 평창 용평리조트 피크시즌 스키 리프트권 & 렌탈권 (~3/1)",
+            "grade": 4.4,
+            "origin_price": 63000,
+            "price" : 46200
+        },
+        {
+            "thumnail" : "https://d2ur7st6jjikze.cloudfront.net/offer_photos/72063/443310_medium_1581918638.jpg?1581918638",
+            "product_type": "티켓/교통패스",
+            "city_name": "강원도",
+            "product_name" : "평창 휘닉스파크 스키 리프트권 + 렌탈권 (~3/31)",
+            "grade": 4.8,
+            "origin_price": 41000,
+            "price" : 20100
+        },
+        {
+            "thumnail" : "https://d2ur7st6jjikze.cloudfront.net/offer_photos/73464/451068_medium_1578472708.jpg?1578472708 ㅇ",
+            "product_type": "티켓/교통패스",
+            "city_name": "강원도",
+            "product_name" : "[강원 춘천] 엘리시안 강촌 스키 리프트권 or 렌탈권 (~03.01)",
+            "grade": 3.9,
+            "origin_price": 20500,
+            "price" : 10700
+        }
+    ]
+}

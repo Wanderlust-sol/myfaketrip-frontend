@@ -1,3 +1,4 @@
+
 .product_container {
     width: 250px;
     height: 311px;
@@ -15,13 +16,21 @@
 
         img {
             width: 100%;
-            margin-top: -20px;
+            margin-top: -11px;
+            position: relative;
+        }
+        .wishlist {  
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            top: 15px;
+            right: 10px;
 
         }
         
     }
     .product_cnt {
-        position: absolute;
+        position: relative;
         width: 100%;
         height: 145px;
         background: #fff;
@@ -39,5 +48,44 @@
             line-height: 1.47;
         }
 
+        .product_info {
+           position: absolute;
+            bottom: 16px;
+
+            .review {
+                display: flex;
+
+                span {
+                    color: #848c94;
+                    font-size: 12px;
+                    margin-left: 4px;
+                }
+            }
+
+            .price {
+                display: flex;
+                align-items: center;
+
+                .price_origin {
+                    color: #848c94;
+                    font-size: 12px;
+                    margin-top: 2px;
+                    text-decoration: line-through;
+                }
+
+                .price_main {
+                    color: #666d75;
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+
+                .price_standard {
+                    color: #848c94;
+                    font-size: 12px;
+                    margin-left: 2px;
+                    margin-top: 1px;
+                }
+            }
+        }
     }
 }

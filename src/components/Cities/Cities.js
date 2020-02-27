@@ -8,14 +8,18 @@ import "./Cities.scss";
 
 const cities = CitiesData.map(city => {
     return (
-        <div key={city.id} >
-            <div style={{backgroundImage: `url(${city.img})`}} className="cities">
-                <div className="slider_bg"></div>
-                <span>
-                    {city.name} 
-                </span> 
-            </div>
-        </div>   
+
+            // <div style={{backgroundImage: `url(${city.img})`}} className="cities" key={city.id}>
+            //     {/* <div className="slider_bg"></div>
+            //     <span>
+            //         {city.name} 
+            //     </span>  */}
+            // </div>
+    <div className="test">
+        <div className="inner_div" style={{backgroundImage: `url(${city.img})`, backgroundSize: "cover"}}>
+            
+        </div>
+    </div>
     )
 })
 
