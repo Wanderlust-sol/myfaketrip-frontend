@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "../../components/Header/Header";
 import Cities from "../../components/Cities/Cities"
 import Product from "../../components/Product/Product"
-//import Footer from "../../components/Footer/Footer";
+import Footer from "../../components/Footer/Footer";
 import { Slide } from 'react-slideshow-image';
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css";
@@ -90,6 +90,7 @@ class Tour extends Component {
 
       <div className="Tour">
         <Header />
+        <div className="topMargin">
         <div className="article">
             <div className="article_search">
                 <h2>어디로 떠나세요?</h2>
@@ -276,7 +277,10 @@ class Tour extends Component {
               </ul>
           </div>
         </div>
-      </div>
+        </div>
+        
+      <Footer />
+    </div>
     );
   }
 }

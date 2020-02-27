@@ -1,0 +1,109 @@
+$loginfont:#495056;
+
+.login{
+    padding:123px;
+    color:$loginfont;
+    .loginWrap{
+        width:430px;height:587px;
+        margin:64px auto 0;
+        padding:48px;
+        border:1px solid #dee2e6;
+        border-radius:2px;
+        div{
+            width:332px;
+            margin-bottom:16px;
+        }
+        .snsLogin{
+            height:160px;
+            display:flex;
+            flex-direction:column;
+            justify-content:space-between;
+            button{
+                width:100%;height:48px;
+                border-radius:3px;
+                font-size:16px;
+                font-weight:600;
+                color:$loginfont;
+                img{
+                    margin-right:8px;
+                }
+            }
+        }
+        .or{
+            height:18px;
+            display:flex;
+            justify-content: space-between;
+            align-items:center;
+            hr{
+                width:40%; height:1px;
+                border-top:1px solid #dee2e6;
+                background-color: #dee2e6;
+            }
+            span{
+                font-size:12px;
+                color:#adb5bd;
+            }
+        }
+        .loginForm{
+            height:245px;
+            label{
+                width:100%;
+                p{
+                    font-size:14px;
+                    margin:8px 0;
+                }
+                input{
+                    width:100%;height:40px;
+                    text-indent:10px;
+                    border:1px solid #dee2e6;
+                    border-radius:2px;
+                    &::placeholder{
+                        font-size:14px;
+                    }
+                }
+            }
+            .checkLogin{
+                width:100%;
+                margin:15px 0 ;
+                display:flex;
+                justify-content: space-between;
+                label{
+                    width:40%;
+                    font-size:14px;
+                    color:#343a40;
+                    display:flex;
+                    input{
+                        display:inline-block;
+                        width:20px;height:20px;
+                        font-size:14px;
+                        box-sizing:border-box;
+                    }
+                }
+                p{
+                    font-size:14px;
+                    color:#666d75;
+                }
+            }
+            .loginCom{
+                width:100%;height:48px;
+                color:#fff;
+                font-size:16px;
+                font-weight:600;
+                background-color: #51abf3;
+                opacity:0.3;
+                border-radius:3px;
+            }
+        }
+        .needSignUp{
+            width:100%;height:18px;
+            text-align:center;
+            span{
+                margin-right:5px;
+                font-size:12px;
+            }
+            &:nth-of-type(2){
+                text-decoration:underline;
+            }
+        }
+    }
+}

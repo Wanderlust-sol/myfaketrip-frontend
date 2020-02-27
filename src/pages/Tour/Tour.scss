@@ -3,10 +3,11 @@
 
     .article {
         position: relative;
-        height: 302px;
-        border-top: 1px solid #1583db;
+        height: 425px;
         background: #2b96ed;
         text-align: center;
+        padding-top:123px;
+        margin-top:-123px;
         h2 {
             font-size: 36px;
             color: #fff;

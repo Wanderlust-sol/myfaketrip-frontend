@@ -7,7 +7,9 @@
 /*header*/
 header{
     width:100%;height:123px;
-    background-color:skyblue;//임시배경
+    z-index:100;
+    position: relative;
+    border-bottom: 1px solid #1583db;
 }
 
 /*headerTop*/
@@ -22,7 +24,7 @@ header{
         a{
             display:block;
             width:128px;height:28px;
-            background:url(../../img/myfaketrip_logo_color.png) no-repeat;
+            background:url(../../img/myfaketrip_logo.png) no-repeat;
             background-size:contain;
             text-indent:-9999px;
         }
