@@ -16,15 +16,3 @@ export const snsLogin=[
     }
 ]
 
-export const loginForm=[
-    {
-        title:"이메일 *",
-        type:"email",
-        holder:"ID@example.com",
-    },
-    {
-        title:"비밀번호 *",
-        type:"password",
-        holder:"비밀번호를 입력해주세요.",
-    },
-]
