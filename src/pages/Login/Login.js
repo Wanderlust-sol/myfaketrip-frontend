@@ -1,50 +1,85 @@
 import React, { Component } from "react";
+import { snsLogin } from "./FormData";
 import "../../styles/Common.scss";
+import "./Login.scss";
 
 export default class Login extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      emailValue:"",
+      pwValue:"",
+    }
+  }
+
+  emailChangeHandler=(event)=>{
+    console.log(event.target.value)
+    this.setState({
+      emailValue:event.target.value
+    })
+  }
+  pwChangeHandler=(e)=>{
+    this.setState({
+      pwValue:e.target.value
+    })
+  }
+
+
   render() {
     return (
-      <div>
-        <div className="login_area">
-          <div className="login_container">
-            <ul>
-              <li>
-                <button>
-                  <img
-                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZmlsbD0iI0ZGRiIgZD0iTS02NDItMjUwSDc5OHY4MDBILTY0MnoiLz4KICAgICAgICA8cGF0aCBmaWxsPSIjRkZGIiBzdHJva2U9IiNFOUVDRUYiIGQ9Ik0tMTM1LTYyLjVhMS41IDEuNSAwIDAgMC0xLjUgMS41djU3MmExLjUgMS41IDAgMCAwIDEuNSAxLjVoNDI2YTEuNSAxLjUgMCAwIDAgMS41LTEuNVYtNjFhMS41IDEuNSAwIDAgMC0xLjUtMS41aC00MjZ6Ii8+CiAgICAgICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTg5IC0xNSkiPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iMzMzIiBoZWlnaHQ9IjQ3IiB4PSIuNSIgeT0iLjUiIGZpbGw9IiNGRkYiIHN0cm9rZT0iI0NFRDREQSIgcng9IjIiLz4KICAgICAgICAgICAgPHBhdGggZmlsbD0iI0Y3RTMxNyIgZD0iTTEwNS40NDggMTVIOTAuNTUyYy0uODU0IDAtMS41NTIuNjk4LTEuNTUyIDEuNTUydjE0Ljg5NmMwIC44NTQuNjk4IDEuNTUyIDEuNTUyIDEuNTUyaDE0Ljg5NmMuODU0IDAgMS41NTItLjY5OCAxLjU1Mi0xLjU1MlYxNi41NTJjMC0uODU0LS42OTgtMS41NTItMS41NTItMS41NTIiLz4KICAgICAgICAgICAgPHBhdGggZmlsbD0iIzM4MUUxRiIgZD0iTTk4IDE5Yy0zLjMxNCAwLTYgMi4xMjQtNiA0Ljc0MyAwIDEuNzA1IDEuMTM4IDMuMiAyLjg0NiA0LjAzNi0uMTI1LjQ2OC0uNDU0IDEuNjk3LS41MiAxLjk2LS4wODEuMzI2LjEyLjMyMi4yNTEuMjM0LjEwNC0uMDY4IDEuNjQ0LTEuMTE2IDIuMzEtMS41NjguMzYuMDUzLjczMi4wODIgMS4xMTMuMDgyIDMuMzE0IDAgNi0yLjEyNCA2LTQuNzQ0IDAtMi42Mi0yLjY4Ni00Ljc0My02LTQuNzQzIi8+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K"
-                    alt="kakao"
-                  />
-                  <span>카카오로 로그인</span>
-                </button>
-              </li>
-              <li>
-                <button>
-                  <img
-                    src="https://img.icons8.com/color/48/000000/facebook.png"
-                    alt="facebook"
-                    width="24px"
-                  />
-                  <span>페이스북으로 로그인</span>
-                </button>
-              </li>
-              <li>
-                <button>
-                  <img
-                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZmlsbD0iI0ZGRiIgZD0iTS02NTAtMzA2SDc5MFY5MjFILTY1MHoiLz4KICAgICAgICA8cGF0aCBmaWxsPSIjRkZGIiBzdHJva2U9IiNFOUVDRUYiIGQ9Ik0tMTQzLTExOC41YTEuNSAxLjUgMCAwIDAtMS41IDEuNXY5MzNhMS41IDEuNSAwIDAgMCAxLjUgMS41aDQyNmExLjUgMS41IDAgMCAwIDEuNS0xLjV2LTkzM2ExLjUgMS41IDAgMCAwLTEuNS0xLjVoLTQyNnoiLz4KICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtOTcgLTE1KSI+CiAgICAgICAgICAgIDxyZWN0IHdpZHRoPSIzMzMiIGhlaWdodD0iNDciIHg9Ii41IiB5PSIuNSIgZmlsbD0iI0ZGRiIgc3Ryb2tlPSIjQ0VENERBIiByeD0iMiIvPgogICAgICAgICAgICA8cGF0aCBmaWxsPSIjMUVDODAwIiBkPSJNMTEzLjQ0OCAxNUg5OC41NTJjLS44NTQgMC0xLjU1Mi42OTgtMS41NTIgMS41NTJ2MTQuODk2YzAgLjg1NC42OTggMS41NTIgMS41NTIgMS41NTJoMTQuODk2Yy44NTQgMCAxLjU1Mi0uNjk4IDEuNTUyLTEuNTUyVjE2LjU1MmMwLS44NTQtLjY5OC0xLjU1Mi0xLjU1Mi0xLjU1MiIvPgogICAgICAgICAgICA8cGF0aCBmaWxsPSIjRkZGIiBkPSJNMTA3LjQwMyAyMHY0LjAzNkwxMDQuNjM4IDIwaC0yLjk4OHY4aDIuOTc4di00LjAzNkwxMDcuMzk0IDI4aDIuOTg3di04eiIvPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg=="
-                    alt="naver"
-                  />
-                  <span>네이버로 로그인</span>
-                </button>
-              </li>
-            </ul>
-            <div className="login_seperate">
-              <hr />
-              <span>또는</span>
-              <hr />
+      <div className="login">
+        <div className="loginWrap">
+          <div className="snsLogin">
+            {snsLogin.map(el=>
+            <button className={el.class}>
+              <img src={el.img} alt={el.title}/>
+              {el.title}
+              </button>)}
+          </div>
+          <div className="or">
+            <hr/>
+            <span>또는</span>
+            <hr/>
+          </div>
+          <div className="loginForm">
+            <label htmlFor="email">
+              <p className="loginTitle">이메일 *</p>
+              <input 
+                type="email"
+                id="email"
+                placeholder="ID@example.com"
+                value={this.state.emailValue}
+                onChange={this.emailChangeHandler}
+                />
+            </label>
+            <label htmlFor="password">
+              <p className="loginTitle">비밀번호 *</p>
+              <input 
+              type="password"
+              id="password"
+              placeholder="비밀번호를 입력해주세요."
+              value={this.state.pwValue}
+              onChange={this.pwChangeHandler}
+              />
+            </label>
+            <div className="checkLogin">
+              <label htmlFor="checkLogin">
+                <input 
+                type="checkbox"
+                id="checkLogin"
+                />
+                로그인 상태 유지  
+              </label>
+              <p>비밀번호 찾기</p>
             </div>
+            <button className="loginCom">이메일로 로그인</button>
+          </div>
+          <div className="needSignUp">
+            <span>아직 마이리얼트립 회원이 아니신가요?</span>
+            <span>회원가입</span>
           </div>
         </div>
-      </div>
+      </div>  
     );
   }
 }
