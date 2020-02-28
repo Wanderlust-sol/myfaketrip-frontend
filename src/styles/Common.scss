@@ -11,6 +11,13 @@
   margin: -1.5px;
 }
 
+// 라이브러리 기본설정
+.slick-slider {
+  &.cities_slider {
+    &.slick-initialized {
+      position: relative;
+    }
+  }
 .star_black {
   width: 14px;
   height: 14px;
