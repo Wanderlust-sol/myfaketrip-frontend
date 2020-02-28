@@ -1,0 +1,32 @@
+.slide-container {
+  margin-bottom: 40px;
+
+  .main_img {
+    width: 1060px;
+    height: 280px;
+    background-size: 1060px 280px;
+    background-repeat: no-repeat;
+  }
+}
+
+.react-slideshow-container:hover {
+  .nav {
+    opacity: 1;
+    transition: opacity 0.5s;
+  }
+}
+
+.react-slideshow-container {
+  position: relative;
+  .nav {
+    opacity: 0;
+    &:nth-of-type(1) {
+      position: absolute;
+      left: 20px;
+    }
+    &:nth-of-type(3) {
+      position: absolute;
+      right: 20px;
+    }
+  }
+}
