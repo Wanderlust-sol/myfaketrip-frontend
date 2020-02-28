@@ -4,19 +4,60 @@ import Footer from "../../components/Footer/Footer";
 import Course from "../../components/Course/Course";
 import Comment from "../../components/Comment/Comment";
 import AddComment from "../../components/Comment/AddComment";
+import Show from "../../components/WithMore/Show";
+import Hide from "../../components/WithMore/Hide";
 import "./Offer.scss";
-import { IoIosOptions } from "react-icons/io";
+// import { IoIosOptions } from "react-icons/io";
 import { MdStar } from "react-icons/md";
-import spain2 from "../../img/spain2.jpg";
-import spain3 from "../../img/spain3.jpg";
-import spain4 from "../../img/spain4.jpg";
+// import spain2 from "../../img/spain2.jpg";
+// import spain3 from "../../img/spain3.jpg";
+// import spain4 from "../../img/spain4.jpg";
 import Lucia from "../../img/Lucia.png";
 
 export default class Offer extends Component {
+  constructor() {
+    super();
+    this.state = {
+      withmore1: false,
+      withmore2: false
+    };
+    this.scrollDiv = React.createRef();
+  }
+
+  withMoreClick1 = () => {
+    if (!this.state.withmore1) {
+      this.setState({ withmore1: true });
+    } else {
+      this.setState({ withmore1: false });
+    }
+  };
+
+  withMoreClick2 = () => {
+    if (!this.state.withmore2) {
+      this.setState({ withmore2: true });
+    } else {
+      this.setState({ withmore2: false });
+    }
+  };
+
+  //   componentDidMount() {
+  //     window.addEventListener("scroll", this.onScroll);
+  //   }
+
+  //   shouldComponentUpdate(nextProps, nextState) {
+  //       const top = ReactDOM.findDOMNode(this).getBoundingClientRect().top;
+  //       (top < 0) &&
+  //       return true;
+  //   }
+  //   onScroll = e => {
+  //     const scrollTop = ("scroll", e.srcElement.scrollingElement.scrollTop);
+  //     this.setState({ scrollTop });
+  //   };
+
   render() {
     return (
       <div>
-        <Header />
+        <Header style={{ backgroundColor: "#1583db" }} />
         <div className="offer">
           <div className="offer_nav">
             <div className="offer_nav_list">
@@ -143,7 +184,7 @@ export default class Offer extends Component {
                         <br />
                         바르셀로나 루시아 가이드와 함께 해주세요 :)
                       </div>
-                      <div className="intro_with-more-hidden">
+                      <div className="intro_with-more-hidden none">
                         <button className="moreBtn">
                           상세 더보기
                           <img
@@ -212,7 +253,13 @@ export default class Offer extends Component {
                       만족스러웠습니다.
                     </div>
                     <div className="mini-reviews-with-more">
-                      <span>
+                      <span
+                        onClick={() => {
+                          this.scrollDiv.current.scrollIntoView({
+                            behavior: "smooth"
+                          });
+                        }}
+                      >
                         후기 전체보기
                         <img
                           src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjMkI5NkVEIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTEyIDZsLTQuMDAyIDRMNCA2LjAwNSIvPgo8L3N2Zz4K"
@@ -230,29 +277,37 @@ export default class Offer extends Component {
                 <hr />
                 <div className="offer_main_note">
                   <div className="offer_main_note_content">
-                    <h4>포함사항</h4>
-                    <p>
-                      ▶ 가이드 투어 비용
-                      <br />
-                      ▶ 커피제공
-                      <br />
-                      ▶ 무선수신기 무료 대여(개인 이어폰 필수 지참)
-                      <br />* 수신기 분실 시 수신기 값 100유로 지불
-                      하셔야합니다*
-                    </p>
-                    <h4>불포함사항</h4>
-                    <p>
-                      ▶ 입장료 (구엘공원 11유로,성가족성당)
-                      <br />
-                      ▶ 택시비 (1인 6유로)
-                      <br />▶ 개인 이어폰
-                    </p>
+                    <div
+                      className={
+                        !this.state.withmore1
+                          ? "note_with_more"
+                          : "more_visible"
+                      }
+                    >
+                      <h4>포함사항</h4>
+                      <p>
+                        ▶ 가이드 투어 비용
+                        <br />
+                        ▶ 커피제공
+                        <br />
+                        ▶ 무선수신기 무료 대여(개인 이어폰 필수 지참)
+                        <br />* 수신기 분실 시 수신기 값 100유로 지불
+                        하셔야합니다*
+                      </p>
+                      <h4>불포함사항</h4>
+                      <p>
+                        ▶ 입장료 (구엘공원 11유로,성가족성당)
+                        <br />
+                        ▶ 택시비 (1인 6유로)
+                        <br />▶ 개인 이어폰
+                      </p>
+                    </div>
                   </div>
-                  <div className="offer_main_note_with-more">
-                    <span>
-                      더 보기
-                      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjMkI5NkVEIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTEyIDZsLTQuMDAyIDRMNCA2LjAwNSIvPgo8L3N2Zz4K" />
-                    </span>
+                  <div
+                    className="offer_main_note_with-more"
+                    onClick={this.withMoreClick1}
+                  >
+                    {!this.state.withmore1 ? <Show /> : <Hide />}
                   </div>
                 </div>
                 <hr />
@@ -593,7 +648,13 @@ export default class Offer extends Component {
                     </button>
                   </div>
                   <div className="offer_main_guide_content">
-                    <div className="guide_content-detail">
+                    <div
+                      className={
+                        !this.state.withmore2
+                          ? "guide_content-detail"
+                          : "more_visible"
+                      }
+                    >
                       12살 어린시절 너무나(?) 활발하고 튼튼했던 나에게 느닷없이
                       찾아와 꿈을 안겨주었던 운동
                       <br />
@@ -674,9 +735,11 @@ export default class Offer extends Component {
                       <br />
                       나는 지금 스페인 바르셀로나에 있다.
                     </div>
-                    <div className="guide_content-more">
-                      <span>접기</span>
-                      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjMkI5NkVEIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTQgMTBsNC4wMDItNEwxMiA5Ljk5NSIvPgo8L3N2Zz4K" />
+                    <div
+                      className="guide_content-more"
+                      onClick={this.withMoreClick2}
+                    >
+                      {!this.state.withmore2 ? <Show /> : <Hide />}
                     </div>
                   </div>
                 </div>
@@ -813,7 +876,7 @@ export default class Offer extends Component {
                     </div>
                   </div>
                 </div> */}
-                <hr />
+                <hr ref={this.scrollDiv} />
                 {/* <div className="offer_main_photo-reviews-wrapper">
                   <h4>여행자 후기 사진</h4>
                   <div className="photos-reviews">
@@ -1026,8 +1089,8 @@ export default class Offer extends Component {
             <sapn className="offer_num-product">상품번호:</sapn>
             <sapn className="offer_num-number">30162</sapn>
           </div>
-          <hr />
         </div>
+        <Footer />
       </div>
     );
   }
