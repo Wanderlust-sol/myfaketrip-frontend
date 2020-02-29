@@ -8,96 +8,11 @@
     text-align: center;
     padding-top: 123px;
     margin-top: -123px;
-    h2 {
-      font-size: 36px;
-      color: #fff;
-      font-weight: 600;
-      margin: 56px 0 16px 0;
-      text-align: center;
-    }
-
-    .search_bar {
-      width: 430px;
-      height: 56px;
-      position: relative;
-      margin: 0 auto;
-
-      img {
-        width: 24px;
-        height: 24px;
-        position: absolute;
-        top: 15px;
-        left: 100px;
-        opacity: 0.8;
-      }
-
-      input {
-        width: 100%;
-        height: 100%;
-        text-indent: 130px;
-        line-height: 56px;
-        border: 1px solid hsla(0, 0%, 100%, 0.4);
-        background-color: hsla(0, 0%, 100%, 0.1);
-        font-size: 16px;
-        border-radius: 4px;
-      }
-
-      input::placeholder {
-        color: #fff;
-      }
-
-      input:focus {
-        background-color: #fff;
-        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjRkZGIiBzdHJva2Utd2lkdGg9IjEuNSI+CiAgICAgICAgPHBhdGggZD0iTTguNjY3IDE0LjU4M2E1LjkxNSA1LjkxNSAwIDAgMCA1LjkxNi01LjkxNkE1LjkxNSA1LjkxNSAwIDAgMCA4LjY2NyAyLjc1IDUuOTE1IDUuOTE1IDAgMCAwIDIuNzUgOC42NjdhNS45MTUgNS45MTUgMCAwIDAgNS45MTcgNS45MTZ6Ii8+CiAgICAgICAgPHBhdGggc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBkPSJNMTMuMTExIDEzLjExMWw0LjQ0NSA0LjQ0NSIvPgogICAgPC9nPgo8L3N2Zz4K");
-      }
-    }
   }
 
   .section {
     width: 1060px;
     margin: 80px auto 200px;
-
-    .point_box {
-      height: 120px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      border: 1px solid #e7f4fd;
-      background: #f5fbff;
-      border-radius: 4px;
-      margin: 50px 0;
-      padding: 0 32px;
-
-      div {
-        margin-left: 20px;
-        .point_title {
-          font-size: 19px;
-          font-weight: 700;
-          color: #212529;
-
-          span {
-            color: #2b96ed;
-          }
-        }
-        .point_sub {
-          font-size: 15px;
-          color: #495056;
-        }
-      }
-      button {
-        padding: 0 16px;
-        height: 40px;
-        position: absolute;
-        right: 30px;
-        border: 1px solid #51abf3;
-        border-radius: 2px;
-        color: #fff;
-        background: #51abf3;
-        font-size: 14px;
-        font-weight: 700;
-        cursor: pointer;
-      }
-    }
 
     @mixin product_wrapper {
       display: flex;
@@ -140,47 +55,6 @@
         width: 1080px;
         margin-left: -10px;
         @include product_wrapper;
-      }
-    }
-
-    .info_tour {
-      h2 {
-        font-size: 24px;
-        font-weight: 700;
-        margin-bottom: 14px;
-      }
-      .info_box {
-        display: flex;
-        border: 1px solid #dee2e6;
-        background: #f8f9fa;
-        padding: 42px 20px;
-        justify-content: space-around;
-        font-size: 14px;
-
-        li {
-          padding: 0 40px;
-          .info_title {
-            display: flex;
-            align-items: center;
-
-            a {
-              margin-left: 10px;
-              color: #2b96ed;
-              font-weight: 700;
-
-              img {
-                margin-left: 4px;
-                margin-top: 4px;
-              }
-            }
-          }
-
-          .info_cnt {
-            margin-top: 10px;
-            color: #666d75;
-            line-height: 1.71;
-          }
-        }
       }
     }
   }
