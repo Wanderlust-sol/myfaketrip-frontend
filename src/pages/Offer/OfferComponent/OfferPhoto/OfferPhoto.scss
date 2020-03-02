@@ -1,0 +1,84 @@
+@import "../../../../styles/Common.scss";
+
+.offer_main_photos {
+  width: 100%;
+  height: 646px;
+  margin-bottom: 30px;
+  .offer_main_photos_view {
+    cursor: pointer;
+
+    .photo_big {
+      width: 700px;
+      height: 467px;
+      background-size: cover;
+      // background-image: url("https://d2ur7st6jjikze.cloudfront.net/offer_photos/30162/193686_large_1525762845.jpg?1525762845");
+      margin-bottom: 5px;
+      position: relative;
+
+      .photo_zoom {
+        width: 96px;
+        height: 32px;
+        line-height: 32px;
+        font-size: 14px;
+        color: $fontgrey;
+        opacity: 0.9;
+        border-radius: 2px;
+        background-color: #fff;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+        margin-top: 8px;
+        margin-right: 8px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        img {
+          margin-right: 4px;
+        }
+      }
+    }
+
+    .photo_grid {
+      display: grid !important;
+      width: 100%;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+      grid-column-gap: 5px;
+      column-gap: 5px;
+
+      .photo_small {
+        width: 100%;
+        height: 172.5px;
+        // background-image: url("https://d2ur7st6jjikze.cloudfront.net/offer_photos/30162/193689_large_1525762779.jpg?1525762779");
+        background-size: cover;
+        position: relative;
+
+        .photo_cover {
+          position: absolute;
+          top: 0;
+          width: 100%;
+          height: inherit;
+          background-color: rgba(0, 0, 0, 0.75);
+        }
+
+        p {
+          width: 50%;
+          font-size: 36px;
+          font-weight: 700;
+          color: #fff;
+          text-align: center;
+          opacity: 0.75;
+          transform: translate(-50%, 45%);
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 50%;
+          margin: auto;
+          position: absolute;
+        }
+      }
+    }
+  }
+}

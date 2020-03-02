@@ -6,23 +6,51 @@ import Comment from "../../components/Comment/Comment";
 import AddComment from "../../components/Comment/AddComment";
 import Show from "../../components/WithMore/Show";
 import Hide from "../../components/WithMore/Hide";
-import "./Offer.scss";
-// import { IoIosOptions } from "react-icons/io";
+import Map from "../../components/Map/Map";
+import OfferSlider from "./OfferComponent/OfferProductSlider/OfferSlider";
+import OfferPhoto from "./OfferComponent/OfferPhoto/OfferPhoto";
+import OfferSide from "./OfferComponent/OfferSide/OfferSide";
+import OfferNav from "./OfferComponent/OfferNav/OfferNav";
 import { MdStar } from "react-icons/md";
 // import spain2 from "../../img/spain2.jpg";
 // import spain3 from "../../img/spain3.jpg";
 // import spain4 from "../../img/spain4.jpg";
 import Lucia from "../../img/Lucia.png";
+import "./Offer.scss";
 
 export default class Offer extends Component {
   constructor() {
     super();
     this.state = {
+      prevScrollpos: window.pageYOffset,
+      innerWidth: window.innerWidth,
+      bottom: 0,
+      visible: true,
+      fixed: true,
       withmore1: false,
-      withmore2: false
+      withmore2: false,
+      mapmore: false,
+      navmode: "product",
+      data: {}
     };
     this.scrollDiv = React.createRef();
   }
+
+  navClick = e => {
+    this.setState({ navmode: e.target.id });
+    let location_id = "";
+    if (e.target.id === "product") {
+      location_id = ".offer_main";
+    } else if (e.target.id === "course") {
+      location_id = ".offer_main_course";
+    } else if (e.target.id === "require") {
+      location_id = ".offer_main_require";
+    } else {
+      location_id = ".offer_main_reviews";
+    }
+    const location = document.querySelector(location_id).offsetTop;
+    window.scrollTo({ top: location, behavior: "smooth" });
+  };
 
   withMoreClick1 = () => {
     if (!this.state.withmore1) {
@@ -40,39 +68,72 @@ export default class Offer extends Component {
     }
   };
 
-  //   componentDidMount() {
-  //     window.addEventListener("scroll", this.onScroll);
-  //   }
+  mapMoreClick = () => {
+    if (!this.state.mapmore) {
+      this.setState({ mapmore: true });
+    } else {
+      this.setState({ mapmore: false });
+    }
+  };
 
-  //   shouldComponentUpdate(nextProps, nextState) {
-  //       const top = ReactDOM.findDOMNode(this).getBoundingClientRect().top;
-  //       (top < 0) &&
-  //       return true;
-  //   }
-  //   onScroll = e => {
-  //     const scrollTop = ("scroll", e.srcElement.scrollingElement.scrollTop);
-  //     this.setState({ scrollTop });
-  //   };
+  componentDidMount() {
+    fetch("http://10.58.4.212:8001/product/30162")
+      .then(res => res.json())
+      .then(res => {
+        this.setState(
+          {
+            data: res.data
+          },
+          () => {
+            console.log(this.state.data);
+          }
+        );
+      });
+
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  componentWillMount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
+  handleScroll = () => {
+    const currentScrollpos = window.pageYOffset;
+    const visible = 220 > currentScrollpos;
+    const fixed = 95 > currentScrollpos;
+    const bottom = document.querySelector(".offer_main_reviews").offsetTop;
+
+    this.setState({
+      prevScrollpos: currentScrollpos,
+      visible,
+      fixed,
+      bottom
+    });
+
+    // if (document.documentElement.scrollTop === 0) {
+    //   this.setState({
+    //     navmode: ""
+    //   });
+    // }
+  };
 
   render() {
     return (
       <div>
-        <Header style={{ backgroundColor: "#1583db" }} />
+        <Header />
         <div className="offer">
-          <div className="offer_nav">
-            <div className="offer_nav_list">
-              <span>상품 소개</span>
-              <span>코스 소개</span>
-              <span>필수 안내</span>
-              <span>후기</span>
-            </div>
-          </div>
+          <OfferNav
+            visible={this.state.visible}
+            navmode={this.state.navmode}
+            onClick={this.navClick}
+          ></OfferNav>
           <div className="offer_container">
             <div className="offer_container_box">
               <div className="offer_main">
                 <div className="offer_main_title">
-                  [소수/커피제공/택시투어] (오전반일) GAUDI 가우디 바르셀로나
-                  건축학개론
+                  {/* [소수/커피제공/택시투어] (오전반일) GAUDI 가우디 바르셀로나
+                  건축학개론 */}
+                  {this.state.data.name}
                 </div>
                 <div className="offer_main_inner-bar">
                   <p>
@@ -102,7 +163,9 @@ export default class Offer extends Component {
                   </div>
                   <p>후기 112개</p>
                 </div>
-                <div className="offer_main_photos"></div>
+                <OfferPhoto
+                  data={this.state.data && this.state.data}
+                ></OfferPhoto>
                 <hr />
                 <div className="offer_main_price">
                   <div>
@@ -253,7 +316,16 @@ export default class Offer extends Component {
                       만족스러웠습니다.
                     </div>
                     <div className="mini-reviews-with-more">
-                      <span
+                      <Show
+                        onClick={() => {
+                          this.scrollDiv.current.scrollIntoView({
+                            behavior: "smooth"
+                          });
+                        }}
+                      >
+                        후기 전체보기
+                      </Show>
+                      {/* <span
                         onClick={() => {
                           this.scrollDiv.current.scrollIntoView({
                             behavior: "smooth"
@@ -265,14 +337,16 @@ export default class Offer extends Component {
                           src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjMkI5NkVEIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTEyIDZsLTQuMDAyIDRMNCA2LjAwNSIvPgo8L3N2Zz4K"
                           alt="bottom-arrow-icon"
                         />
-                      </span>
+                      </span> */}
                     </div>
                   </div>
                 </div>
                 <hr />
                 <div className="offer_main_others">
                   <h5>여행자들이 함께 본 상품</h5>
-                  <div></div>
+                  <div>
+                    <OfferSlider></OfferSlider>
+                  </div>
                 </div>
                 <hr />
                 <div className="offer_main_note">
@@ -307,7 +381,11 @@ export default class Offer extends Component {
                     className="offer_main_note_with-more"
                     onClick={this.withMoreClick1}
                   >
-                    {!this.state.withmore1 ? <Show /> : <Hide />}
+                    {!this.state.withmore1 ? (
+                      <Show>더 보기</Show>
+                    ) : (
+                      <Hide>접기</Hide>
+                    )}
                   </div>
                 </div>
                 <hr />
@@ -328,10 +406,14 @@ export default class Offer extends Component {
                     </div>
                     <div className="offer_main_meeting-point-detail">
                       <p className="detail-title">버버리 매장 앞</p>
-                      <span>
-                        지도 보기
-                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjMkI5NkVEIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTEyIDZsLTQuMDAyIDRMNCA2LjAwNSIvPgo8L3N2Zz4K" />
-                      </span>
+                      {this.state.mapmore && <Map />}
+                      <div onClick={this.mapMoreClick}>
+                        {!this.state.mapmore ? (
+                          <Show>지도 보기</Show>
+                        ) : (
+                          <Hide>지도 숨기기</Hide>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -431,9 +513,9 @@ export default class Offer extends Component {
                   </div> */}
                 </div>
                 {/* <hr /> */}
-                {/* <div className="offer_main_require">
-                  <h1>필수 안내</h1>
-                  <div>
+                <div className="offer_main_require">
+                  {/* <h1>필수 안내</h1> */}
+                  {/* <div>
                     ※ 투어는 정시 출발입니다. ※
                     <br />
                     ※ 절대 지각하지 말아주세요. 기다리는 다른 분들을 위해
@@ -628,13 +710,13 @@ export default class Offer extends Component {
                   <div className="offer_main_require-more">
                     <span>접기</span>
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjMkI5NkVEIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTQgMTBsNC4wMDItNEwxMiA5Ljk5NSIvPgo8L3N2Zz4K" />
-                  </div>
-                </div> */}
+                  </div> */}
+                </div>
                 <hr />
                 <div className="offer_main_guide">
                   <div className="offer_main_guide_header">
                     <div className="guide_profile">
-                      <img src={Lucia} alt="Lucia" />
+                      <img src={Lucia} alt="guide" />
                       <span>Lucia 가이드</span>
                     </div>
                     <button>
@@ -739,143 +821,28 @@ export default class Offer extends Component {
                       className="guide_content-more"
                       onClick={this.withMoreClick2}
                     >
-                      {!this.state.withmore2 ? <Show /> : <Hide />}
+                      {!this.state.withmore2 ? (
+                        <Show>더 보기</Show>
+                      ) : (
+                        <Hide>접기</Hide>
+                      )}
                     </div>
                   </div>
                 </div>
-                {/* <hr />
+                {/* <hr /> */}
                 <div className="offer_main_refund">
-                  <div className="offer_main_refund_header">
+                  {/* <div className="offer_main_refund_header">
                     <h1>취소 및 환불 규정</h1>
                     <button>자세히 보기</button>
                   </div>
                   <div className="offer_main_refund_content">
-                    <div className="refund_content-detail">
-                      가이드투어 취소/환불 안내
-                      <br />
-                      <br />
-                      각 상품 별 취소 환불 약관이 별도 기재되어 있을 경우 별도
-                      기재 내용이 해당 규정으로서 선 적용됩니다.
-                      <br />
-                      <br />
-                      여행자는 가이드약관 제16조 제2항에 따라 여행요금 지급이
-                      이루어진 후 투어 개시일 이전에 여행계약을 임의로 해제하는
-                      경우, 해제 통보 시점에 관한 다음 각 호의 기준에 따라
-                      여행요금이 환불됩니다.
-                      <br />
-                      해제 통보 시점은 환불요청서가 마이리얼트립 플랫폼에 접수된
-                      시간 또는 마이리얼트립 플랫폼 내 ‘메시지’ 기능을 통하여
-                      환불요청 내용이 기록된 시간을 기준으로 합니다.
-                      <br />
-                      [국외여행의 경우]
-                      <br />
-                      - 여행시작 30일전 (~30) 까지 통보시: 여행 요금 전액 환불
-                      <br />
-                      - 여행시작 20일 전까지 (29~20) 통보시: 여행요금에서 가이드
-                      요금의 10%와 마이리얼트립 수수료 공제 후 환불
-                      <br />
-                      - 여행시작 6일 전까지 (19~6) 통보시: 여행요금에서 가이드
-                      요금의 15%와 마이리얼트립 수수료 공제 후 환불
-                      <br />
-                      - 여행시작 1 일 전까지 (1~5) 통보시: 여행요금에서 가이드
-                      요금의 20%와 마이리얼트립 수수료 공제 후 환불
-                      <br />
-                      - 여행시작 시간 기준 24시간 이내 통보시: 여행요금에서
-                      가이드 요금의 50%와 마이리얼트립 수수료 공제 후 환불
-                      <br />
-                      [국내여행의 경우]
-                      <br />
-                      - 여행자가 여행 개시일로부터 3일 이전 통보 시: 여행 요금
-                      전액 환불
-                      <br />
-                      - 여행 개시일로부터 2일 이전 통보 시: 여행요금에서 가이드
-                      요금의 10%와 마이리얼트립 수수료 공제 후 환불
-                      <br />
-                      - 여행 개시일로부터 여행 시작 시간 기준 24시간 이전 통보
-                      시: 여행요금에서 가이드 요금의 20%와 마이리얼트립 수수료
-                      공제 후 환불
-                      <br />
-                      - 여행 시작 시간으로부터 24시간 이내 통보 시: 여행요금에서
-                      가이드 요금의 30%와 마이리얼트립 수수료 공제 후 환불
-                      <br />
-                      다만, 위의 규정에도 불구하고 다음의 경우에는 예외로
-                      합니다.
-                      <br />
-                      1) 여행자가 여행요금을 결제(지급)한 때로부터 24시간 이내에
-                      여행계약을 철회(취소)하는 경우와 여행자가 투어 예약 후
-                      가이드가 확정되기 전에 취소하는 경우는 여행요금을 전액
-                      환불합니다. 단, 여행자가 여행요금을 결제하였다고 하더라도
-                      해당 시점으로부터 24시간 이내 여행이 시작될 경우 (Instant
-                      Booking 예약에 해당하는 경우)는 전액 환불 대상에서
-                      제외합니다.
-                      <br />
-                      2) 상품의 특성에 따라 현지 예약금으로 지불되어야 하는
-                      금액이 있는 경우 해당 예약금의 환불에 대하여는 각 상품의
-                      상세설명보기에서 별도로 고지한 취소환불 약관을 적용합니다.
-                      <br />
-                      <br />
-                      가이드는 가이드약관 제17조 제1항에 따라 여행요금 지급이
-                      이루어진 후 투어 개시일 이전에 여행계약을 임의로 해제하는
-                      경우, 해제 통보 시점에 관한 다음 각 호의 기준에 따라
-                      가이드가 추가 요금을 부담합니다.
-                      <br />
-                      해제 통보 시점은 환불요청서가 마이리얼트립 플랫폼에 접수된
-                      시간 또는 마이리얼트립 플랫폼 내 ‘메시지’ 기능을 통하여
-                      환불요청 내용이 기록된 시간을 기준으로 합니다.
-                      <br />
-                      [국외여행의 경우]
-                      <br />
-                      - 여행시작 30일전 (~30) 까지 통보시: 여행 요금 전액을
-                      여행자에게 환불. 가이드 부담 없음.
-                      <br />
-                      - 여행시작 20일 전까지 (29~20) 통보시: 여행요금에서 가이드
-                      요금의 10%와 마이리얼트립 수수료를 가이드가 부담.
-                      <br />
-                      - 여행시작 6일 전까지 (19~6) 통보시: 여행요금에서 가이드
-                      요금의 15%와 마이리얼트립 수수료를 가이드가 부담.
-                      <br />
-                      - 여행시작 1 일 전까지 (1~5) 통보시: 여행요금에서 가이드
-                      요금의 20%와 마이리얼트립 수수료를 가이드가 부담.
-                      <br />
-                      - 여행시작 시간 기준 24시간 이내 통보시: 여행요금에서
-                      가이드 요금의 50%와 마이리얼트립 수수료를 가이드가 부담.
-                      <br />
-                      [국내여행의 경우]
-                      <br />
-                      - 여행자가 여행 개시일로부터 3일 이전 통보 시: 여행 요금
-                      전액을 여행자에게 환불. 가이드 부담 없음.
-                      <br />
-                      - 여행 개시일로부터 2일 이전 통보 시: 여행요금에서 가이드
-                      요금의 10%와 마이리얼트립 수수료를 가이드가 부담.
-                      <br />
-                      - 여행 개시일로부터 여행 시작 시간 기준 24시간 이전 통보
-                      시: 여행요금에서 가이드 요금의 20%와 마이리얼트립 수수료를
-                      가이드가 부담.
-                      <br />
-                      - 여행 시작 시간으로부터 24시간 이내 통보 시: 여행요금에서
-                      가이드 요금의 30%와 마이리얼트립 수수료를 가이드가 부담.
-                      <br />
-                      다만, 위의 규정에도 불구하고 다음의 경우에는 예외로
-                      합니다.
-                      <br />
-                      1) 여행자가 여행요금을 결제(지급)한 때로부터 24시간 이내에
-                      여행계약을 철회(취소)하는 경우와 여행자가 투어 예약 후
-                      가이드가 확정되기 전에 취소하는 경우는 여행요금을 전액
-                      환불합니다. 단, 여행자가 여행요금을 결제하였다고 하더라도
-                      해당 시점으로부터 24시간 이내 여행이 시작될 경우 (Instant
-                      Booking 예약에 해당하는 경우)는 전액 환불 대상에서
-                      제외합니다.
-                      <br />
-                      2) 상품의 특성에 따라 현지 예약금으로 지불되어야 하는
-                      금액이 있는 경우 해당 예약금의 환불에 대하여는 각 상품의
-                      상세설명보기에서 별도로 고지한 취소환불 약관을 적용합니다.
-                    </div>
+                    <div className="refund_content-detail"></div>
                     <div className="refund_content-more">
                       <span>접기</span>
                       <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjMkI5NkVEIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTQgMTBsNC4wMDItNEwxMiA5Ljk5NSIvPgo8L3N2Zz4K" />
                     </div>
-                  </div>
-                </div> */}
+                  </div> */}
+                </div>
                 <hr ref={this.scrollDiv} />
                 {/* <div className="offer_main_photo-reviews-wrapper">
                   <h4>여행자 후기 사진</h4>
@@ -997,87 +964,12 @@ export default class Offer extends Component {
                 </div> */}
               </div>
 
-              {/* 상세페이지 사이드바 */}
-              <div className="offer_side">
-                <div>
-                  <div className="offer_side_main-box">
-                    <div className="offer_side_main-box_body">
-                      <div>
-                        <div className="main-box_body-price">
-                          <span className="price-main">38,500</span>
-                          <span className="price-won">원</span>
-                          <span className="price-perperson">/1인</span>
-                        </div>
-                        <div className="main-box_body-share">
-                          <img
-                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjNDk1MDU2IiBzdHJva2Utd2lkdGg9IjEuMjUiPgogICAgICAgIDxjaXJjbGUgY3g9IjYuMjIyIiBjeT0iMTIiIHI9IjIuMjIyIi8+CiAgICAgICAgPGNpcmNsZSBjeD0iMTcuNDQ0IiBjeT0iNi4yMjIiIHI9IjIuMjIyIi8+CiAgICAgICAgPHBhdGggc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgZD0iTTE0LjUgNy41bC01LjYxMSAyLjgzMyIvPgogICAgICAgIDxjaXJjbGUgY3g9IjE3LjQ0NCIgY3k9IjE3Ljc3OCIgcj0iMi4yMjIiIHRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIC0xIDAgMzUuNTU2KSIvPgogICAgICAgIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiIGQ9Ik0xNC41IDE2LjVsLTUuNjExLTIuODMzIi8+CiAgICA8L2c+Cjwvc3ZnPgo="
-                            alt="share-icon"
-                          />
-                        </div>
-                      </div>
-                      <table className="main-box_body_table">
-                        <tbody>
-                          <tr>
-                            <td className="main-box_traveler">1~7인</td>
-                            <td className="main-box_travel-price">38,500원</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      <div>
-                        <button className="main-box_body-booking">
-                          예약하기
-                        </button>
-                      </div>
-                      <div>
-                        <button className="main-box_body-wish">
-                          <img
-                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjQ0VENERBIiBzdHJva2Utd2lkdGg9IjEuNSIgZD0iTTEyLjEwNSAxOS41ODZsNy4wMTItNy4wMTJhNC41ODMgNC41ODMgMCAxIDAtNi40ODItNi40ODJsLS41My41My0uNTMtLjUzYTQuNTgzIDQuNTgzIDAgMCAwLTYuNDgzIDYuNDgybDcuMDEzIDcuMDEyeiIvPgo8L3N2Zz4K"
-                            alt="heart-icon"
-                          />
-                          위시리스트에 담기
-                        </button>
-                      </div>
-                      <p className="main-box_body-wish-num">
-                        696명이 이 상품을 위시리스트에 담았습니다.
-                      </p>
-                    </div>
-                    <div className="offer_side_main-box_question">
-                      <div className="main-box_question-guide guide_profile">
-                        <img src={Lucia} alt="Lucia" />
-                        <span>Lucia 가이드</span>
-                      </div>
-                      <div className="main-box_question-message">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxwYXRoIGZpbGw9IiMyQjk2RUQiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTEzLjUgNWwtNiAzLjc1TDEuNSA1VjMuNWw2IDMuNzUgNi0zLjc1VjV6bTAtM2gtMTJDLjY3NSAyIC4wMDggMi42NzUuMDA4IDMuNUwwIDEyLjVjMCAuODI1LjY3NSAxLjUgMS41IDEuNWgxMmMuODI1IDAgMS41LS42NzUgMS41LTEuNXYtOWMwLS44MjUtLjY3NS0xLjUtMS41LTEuNXoiLz4KPC9zdmc+Cg==" />
-                        문의하기
-                      </div>
-                    </div>
-                  </div>
-                  <div className="offer_side_second-box">
-                    <div>
-                      <img
-                        src="https://www.myrealtrip.com/webpack/4fde7b029a47d9c9085b1109115b61a6.svg"
-                        alt="group-tour-icon"
-                      />
-                      <p>그룹 투어</p>
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.myrealtrip.com/webpack/b34853506a08c2451b12ce43faa97855.svg"
-                        alt="timer-icon"
-                      />
-                      <p>5시간 소요</p>
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.myrealtrip.com/webpack/2c8393277372adca59f84d8143dd0637.svg"
-                        alt="globe-icon"
-                      />
-                      <p>한국어</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="offer_side_third-box"></div>
-              </div>
+              <OfferSide
+                fixed={this.state.fixed}
+                prevScrollpos={this.state.prevScrollpos}
+                innerWidth={this.state.innerWidth}
+                bottom={this.state.bottom}
+              ></OfferSide>
             </div>
           </div>
           {/* <div className="offer_recommend">

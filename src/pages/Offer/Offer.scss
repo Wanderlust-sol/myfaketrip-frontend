@@ -1,6 +1,4 @@
-$themecolor: #51abf3;
-$blk: #343a40;
-$boldS: 1px solid #dee2e6;
+@import "../../styles/Common.scss";
 
 //상세페이지 공통 스타일 적용
 .offer {
@@ -18,41 +16,13 @@ $boldS: 1px solid #dee2e6;
   h5 {
     color: $blk;
   }
-  //상세페이지 nav바
-  .offer_nav {
-    width: 100%;
-    height: 56px;
-    font-size: 15px;
-    background-color: white;
-    line-height: 56px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 1px 0 0 rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    display: none;
-    display: flex;
-    justify-content: center;
-    z-index: 150;
 
-    .offer_nav_list {
-      width: 1076px;
-    }
-
-    span {
-      margin-right: 32px;
-      color: #495056;
-      padding-bottom: 17px;
-    }
-    span:hover {
-      // box-shadow: inset 0 -3px 0 #51abf3;
-      box-shadow: inset 0 -3px 0 #dcdcdc;
-    }
-  }
   //상세페이지 가장 큰 container
   .offer_container {
     width: 100%;
 
     .offer_container_box {
-      width: 1076px;
+      width: 1060px;
       margin: auto;
       display: flex;
       position: relative;
@@ -90,13 +60,6 @@ $boldS: 1px solid #dee2e6;
             display: flex;
             align-items: center;
           }
-        }
-
-        .offer_main_photos {
-          width: 100%;
-          height: 646px;
-          border: 1px solid black;
-          margin-bottom: 30px;
         }
 
         .offer_main_price {
@@ -146,15 +109,15 @@ $boldS: 1px solid #dee2e6;
               font-size: 16px;
               border: $boldS;
               background-color: white;
-
+              background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjNTFBQkYzIiBzdHJva2Utd2lkdGg9IjEuMjUiPgogICAgICAgIDxwYXRoIGQ9Ik05LjYyOCA0LjYyNWwuMDI1IDQuNzVoOC4zNGEyLjM3NSAyLjM3NSAwIDEgMCAwLTQuNzVIOS42Mjd6Ii8+CiAgICAgICAgPGNpcmNsZSBjeD0iNyIgY3k9IjciIHI9IjMuMzc1Ii8+CiAgICAgICAgPHBhdGggZD0iTTE0LjM3MiAxOS4zNzVsLS4wMjUtNC43NWgtOC4zNGEyLjM3NSAyLjM3NSAwIDEgMCAwIDQuNzVoOC4zNjV6Ii8+CiAgICAgICAgPGNpcmNsZSBjeD0iMTciIGN5PSIxNyIgcj0iMy4zNzUiIHRyYW5zZm9ybT0icm90YXRlKC0xODAgMTcgMTcpIi8+CiAgICA8L2c+Cjwvc3ZnPgo=");
+              background-repeat: no-repeat;
+              background-position: left 12px top 12px;
+              opacity: 0.4;
+              text-indent: 35px;
               option {
-                color: #343a40;
+                color: $blk;
               }
             }
-
-            // .offer_main_price_select {
-            //   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjNTFBQkYzIiBzdHJva2Utd2lkdGg9IjEuMjUiPgogICAgICAgIDxwYXRoIGQ9Ik05LjYyOCA0LjYyNWwuMDI1IDQuNzVoOC4zNGEyLjM3NSAyLjM3NSAwIDEgMCAwLTQuNzVIOS42Mjd6Ii8+CiAgICAgICAgPGNpcmNsZSBjeD0iNyIgY3k9IjciIHI9IjMuMzc1Ii8+CiAgICAgICAgPHBhdGggZD0iTTE0LjM3MiAxOS4zNzVsLS4wMjUtNC43NWgtOC4zNGEyLjM3NSAyLjM3NSAwIDEgMCAwIDQuNzVoOC4zNjV6Ii8+CiAgICAgICAgPGNpcmNsZSBjeD0iMTciIGN5PSIxNyIgcj0iMy4zNzUiIHRyYW5zZm9ybT0icm90YXRlKC0xODAgMTcgMTcpIi8+CiAgICA8L2c+Cjwvc3ZnPgo=");
-            // }
           }
 
           .offer_main_price_check-price {
@@ -178,7 +141,7 @@ $boldS: 1px solid #dee2e6;
             .offer_main_intro_subtitle {
               font-size: 24px;
               font-weight: 700;
-              color: #343a40;
+              color: $blk;
             }
 
             .offer_main_intro_detail {
@@ -209,7 +172,7 @@ $boldS: 1px solid #dee2e6;
                 .moreBtn {
                   font-size: 16px;
                   font-weight: 700;
-                  color: #495056;
+                  color: $fontgrey;
                   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
                   border: 1px solid #ced4da;
                   border-radius: 2px;
@@ -304,7 +267,7 @@ $boldS: 1px solid #dee2e6;
                 width: 95px;
                 font-size: 14px;
                 font-weight: 700;
-                color: #2b96ed;
+                color: $Acolor;
                 display: flex;
                 cursor: pointer;
 
@@ -323,12 +286,6 @@ $boldS: 1px solid #dee2e6;
           h5 {
             font-size: 24px;
             font-weight: 700;
-          }
-          div {
-            width: 100%;
-            height: 310px;
-            border: 1px solid black;
-            margin-top: 20px;
           }
         }
 
@@ -385,6 +342,7 @@ $boldS: 1px solid #dee2e6;
 
             .map-icon {
               width: 70px;
+              height: 70px;
             }
 
             .offer_main_meeting-point-detail {
@@ -401,8 +359,9 @@ $boldS: 1px solid #dee2e6;
               span {
                 font-size: 14px;
                 font-weight: 700;
-                color: #2b96ed;
+                color: $Acolor;
                 display: flex;
+                cursor: pointer;
               }
             }
           }
@@ -449,7 +408,7 @@ $boldS: 1px solid #dee2e6;
               .guide_message {
                 font-size: 14px;
                 font-weight: 700;
-                color: #495056;
+                color: $fontgrey;
                 padding: 0 16px;
 
                 img {
@@ -477,7 +436,7 @@ $boldS: 1px solid #dee2e6;
             margin: 32px 0;
 
             .reviews_num {
-              color: #2b96ed;
+              color: $Acolor;
               margin-left: 8px;
             }
           }
@@ -501,7 +460,7 @@ $boldS: 1px solid #dee2e6;
               .detail_rating-average {
                 font-size: 48px;
                 font-weight: 700;
-                color: #343a40;
+                color: $blk;
                 margin-bottom: 25px;
               }
 
@@ -509,7 +468,7 @@ $boldS: 1px solid #dee2e6;
                 .star {
                   width: 32px;
                   height: 32px;
-                  color: #343a40;
+                  color: $blk;
                   margin: -2px;
                 }
               }
@@ -526,7 +485,7 @@ $boldS: 1px solid #dee2e6;
               .detail_stats-title {
                 font-size: 14px;
                 font-weight: 500;
-                color: #2b96ed;
+                color: $Acolor;
               }
 
               .detail_stats-star-wrapper {
@@ -551,7 +510,7 @@ $boldS: 1px solid #dee2e6;
                   width: 288px;
                   height: 4px;
                   border-radius: 4px;
-                  background-color: #dee2e6;
+                  background-color: $bordercolor;
                   position: relative;
                   margin-left: 8px;
 
@@ -560,7 +519,7 @@ $boldS: 1px solid #dee2e6;
                     height: 4px;
                     left: -8px;
                     border-radius: 4px;
-                    background-color: #51abf3;
+                    background-color: $themecolor;
                     position: absolute;
                     margin-left: 8px;
                   }
@@ -582,208 +541,6 @@ $boldS: 1px solid #dee2e6;
           }
         }
       }
-
-      .offer_side {
-        width: 320px;
-        margin-left: 2.5em;
-        top: 50px;
-        right: 0;
-        position: sticky;
-        // position: fixed;
-        div {
-          // display: flex;
-
-          //첫번째 사이드 박스
-          .offer_side_main-box {
-            border-radius: 2px;
-            box-shadow: 0 0 0 1px rgba(52, 58, 64, 0.15),
-              0 2px 4px 0 rgba(52, 58, 64, 0.15);
-            width: 100%;
-
-            .offer_side_main-box_body {
-              padding: 24px 24px 16px;
-
-              div {
-                display: flex;
-                justify-content: space-between;
-                .main-box_body-price {
-                  font-weight: 700;
-                  .price-main {
-                    font-size: 24px;
-                    line-height: 0.9;
-                  }
-                  .price-won {
-                    font-size: 18px;
-                  }
-                  .price-perperson {
-                    font-size: 13px;
-                    font-weight: 400;
-                    color: #848c94;
-                    margin-left: 4px;
-                  }
-                }
-
-                .main-box_body-share {
-                  cursor: pointer;
-                }
-              }
-
-              .main-box_body_table {
-                width: 272px;
-                margin-top: 14px;
-                margin-bottom: 14px;
-
-                tbody {
-                  vertical-align: middle;
-
-                  td {
-                    border-top: 1px solid #dee2e6;
-                    border-bottom: 1px solid #dee2e6;
-                  }
-
-                  .main-box_traveler {
-                    text-align: center;
-                    background-color: #f8f9fa;
-                    font-size: 14px;
-                    line-height: 2.71;
-                  }
-
-                  .main-box_travel-price {
-                    font-size: 14px;
-                    font-weight: 700;
-                    line-height: 2.71;
-                    color: #343a40;
-                    padding-left: 16px;
-                  }
-                }
-              }
-
-              .main-box_body-booking {
-                width: 100%;
-                height: 48px;
-                font-size: 16px;
-                font-weight: 700;
-                color: #fff;
-                border-radius: 2px;
-                border: 1px solid #51abf3;
-                background-color: #51abf3;
-                padding: 0 32px;
-                margin-bottom: 8px;
-                cursor: pointer;
-
-                &:hover {
-                  background-color: #3b9dee;
-                }
-              }
-
-              .main-box_body-wish {
-                width: 100%;
-                height: 40px;
-                font-size: 14px;
-                font-weight: 700;
-                color: #495056;
-                border-radius: 2px;
-                border: 1px solid #ced4da;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                cursor: pointer;
-
-                &:hover {
-                  box-shadow: 0.1px 0.1px 0.1px 0.1px #bcc0c5;
-                  transition: box-shadow 0.2s ease;
-                }
-                img {
-                  margin-right: 4px;
-                  margin-top: 1px;
-                }
-              }
-
-              .main-box_body-wish-num {
-                font-size: 13px;
-                color: #848c94;
-                margin-top: 5px;
-                margin-bottom: 16px;
-                text-align: center;
-              }
-            }
-
-            .offer_side_main-box_question {
-              height: 64px;
-              border-top: 1px solid #dee2e6;
-              align-items: center;
-              text-align: center;
-              display: flex;
-              justify-content: space-between;
-              padding: 16px 24px;
-
-              .main-box_question-guide {
-                display: flex;
-                align-items: center;
-                cursor: pointer;
-
-                img {
-                  width: 32px;
-                  height: 32px;
-                  border-radius: 50%;
-                  margin-right: 8px;
-                }
-
-                span {
-                  max-width: 124px;
-                  font-size: 14px;
-                  font-weight: 700;
-
-                  &:hover {
-                    color: #0275d8;
-                  }
-                }
-              }
-
-              .main-box_question-message {
-                font-size: 14px;
-                font-weight: 700;
-                color: #2b96ed;
-                display: flex;
-                cursor: pointer;
-
-                img {
-                  margin-right: 5px;
-                }
-              }
-            }
-          }
-          //두번째 사이드 박스
-          .offer_side_second-box {
-            border-radius: 2px;
-            background-color: #f5f6f7;
-            margin-top: 16px;
-            font-size: 14px;
-            font-weight: 500;
-            color: #666d75;
-            padding: 8px 0;
-            div {
-              margin-left: 20px;
-              margin-top: 8px;
-              margin-bottom: 8px;
-              display: flex;
-
-              img {
-                margin-right: 10px;
-              }
-            }
-          }
-        }
-        //세번째 사이드 박스
-        .offer_side_third-box {
-          width: 320px;
-          height: 74px;
-          background-image: url("../../img/urailpass.jpg");
-          background-size: cover;
-          margin-top: 16px;
-        }
-      }
     }
   }
 }
@@ -798,14 +555,16 @@ $boldS: 1px solid #dee2e6;
   padding: 40px;
 
   .offer_num-number {
-    color: #2b96ed;
+    color: $Acolor;
   }
 }
 
+//[임시] 바르셀로나 소개 부분 상세 더보기 비활성화 -> 반응형 설정시 활성화 예정
 .none {
   display: none;
 }
 
+//접기 더보기
 .more_visible {
   max-height: none;
   overflow: hidden;
