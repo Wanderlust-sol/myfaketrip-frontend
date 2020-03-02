@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import Cities from "../../components/Cities/Cities"
 import Product from "../../components/Product/Product"
+import TourSlider from "./TourComponent/TourSlider";
+import ProductSlider from "./TourComponent/ProductSlider";
 import Layout from "../Layout/Layout"
-import { Slide } from 'react-slideshow-image';
 import "./Tour.scss";
 
 class Tour extends Component {

@@ -1,24 +1,29 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 
-export default class LoginForm extends Component{
+
+class LoginForm extends Component{
     constructor(props){
         super(props);
         this.state={
-          emailValue:"",
-          pwValue:"",
+          username:"",
+          email:"",
+          password:"",
+          profile:"",
+          phone:"",
           mode:"default"
         }
       }
     
-      emailChangeHandler=(event)=>{
+      emailChangeHandler=(e)=>{
         this.setState({
-          emailValue:event.target.value
+          email:e.target.value
         })
 
       }
       pwChangeHandler=(e)=>{
         this.setState({
-          pwValue:e.target.value
+          password:e.target.value
         })
       }
 
@@ -34,35 +39,58 @@ export default class LoginForm extends Component{
           }
       }
 
+      login=()=>{
+        fetch('http://10.58.0.108:8000/account/signin', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            'email': this.state.email,
+            'password': this.state.password
+        })
+        })
+        .then(res => res.json())
+        .then(res => {
+        if (res.access_token) {
+            localStorage.setItem('wtw-token', res.access_token);
+            this.props.history.push("/Tour");
+          }else{
+            alert("로그인 정보를 확인해주세요!")
+          }
+        })
+      }
+
     render(){
-        let wrongTxt = null;
-    if(this.state.emailValue.length !== 0){
-      wrongTxt = this.state.emailValue.includes('@')
-    && this.state.emailValue.length > 0 ? 
+    let wrongTxt = null;
+    if(this.state.email.length !== 0){
+      wrongTxt = this.state.email.includes('@')
+    && this.state.email.length > 0 ? 
       null
       :<div className="wrongTxt">
         <p>이메일 주소가 맞나요?</p>
       </div>
     };
 
-        let wrongPw = null;
-    if(this.state.pwValue.length !== 0){
-        wrongPw = this.state.pwValue.length > 5 ? 
+    let wrongPw = null;
+    if(this.state.password.length !== 0){
+        wrongPw = this.state.password.length > 5 ? 
         null
         :<div className="wrongTxt">
           <p>비밀번호가 너무 짧습니다. (6자 이상)</p>
         </div>
       };
-      let txtCorrect =null;
-    if(this.state.emailValue.length !== 0){
-        txtCorrect = this.state.emailValue.length > 1 
-        && this.state.emailValue.includes('@')
+
+    let txtCorrect =null;
+    if(this.state.email.length !== 0){
+        txtCorrect = this.state.email.length > 1 
+        && this.state.email.includes('@')
         ? "txtCorrect" 
         : "txtWrong"
     }
     let pwCorrect = null;
-    if(this.state.pwValue.length !== 0){
-        pwCorrect = this.state.pwValue.length > 5
+    if(this.state.password.length !== 0){
+        pwCorrect = this.state.password.length > 5
         ? "txtCorrect" 
         : "txtWrong"
       };
@@ -80,7 +108,7 @@ export default class LoginForm extends Component{
                 type="email"
                 id="email"
                 placeholder="ID@example.com"
-                value={this.state.emailValue}
+                value={this.state.email}
                 onChange={this.emailChangeHandler}
                 className={txtCorrect}
                 />
@@ -93,7 +121,7 @@ export default class LoginForm extends Component{
               type="password"
               id="password"
               placeholder="비밀번호를 입력해주세요."
-              value={this.state.pwValue}
+              value={this.state.password}
               onChange={this.pwChangeHandler}
               className={pwCorrect}
               />
@@ -111,14 +139,16 @@ export default class LoginForm extends Component{
               </label>
               <p>비밀번호 찾기</p>
             </div>
-            <button className={
-             this.state.emailValue.includes('@')
-             &&this.state.emailValue.length > 2 
-             && this.state.pwValue.length > 6 
-             ? "loginSubmit": "loginCom"
+            {
+              this.state.email.includes('@')
+              &&this.state.email.length > 2 
+              && this.state.password.length > 5 
+              ? <button className="loginSubmit" onClick={this.login}>이메일로 로그인</button>
+              : <button className="loginCom">이메일로 로그인</button>
             }
-            >이메일로 로그인</button>
           </div>
         );
     }
 }
+
+export default withRouter(LoginForm);
