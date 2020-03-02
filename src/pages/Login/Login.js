@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Header from "../../components/Header/Header"
+import Footer from "../../components/Footer/Footer"
 import LoginForm from "./LoginForm";
 import { snsLogin } from "./FormData";
 import "../../styles/Common.scss";
@@ -8,6 +10,8 @@ import "./Login.scss";
 export default class Login extends Component {
   render() {
     return (
+      <>
+      <Header />
       <div className="login">
         <div className="loginWrap">
           <div className="snsLogin">
@@ -28,7 +32,9 @@ export default class Login extends Component {
             <span>회원가입</span>
           </div>
         </div>
-      </div>  
+      </div> 
+      <Footer /> 
+      </>
     );
   }
 }

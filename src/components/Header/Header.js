@@ -17,6 +17,7 @@ navList=(num)=>{
 }
  
   render(){
+    console.log(this.props.location)
     return (
       <header>
         {/* header */}
@@ -33,7 +34,7 @@ navList=(num)=>{
             <div className="logIn">
               <a href="1.html">로그인</a>
             </div>
-            <div className="signUp">
+            <div className="signUpBtn">
               <a href="1.html">회원가입</a>
             </div>
           </div>

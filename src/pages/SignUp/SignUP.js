@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 import SignUpForm from "./SignUpForm";
 import Personal from "./Personal";
 import { snsSignUp } from "./FormData";
@@ -9,6 +11,8 @@ import "./SignUp.scss";
 export default class SignUp extends Component {
   render() {
     return (
+    <>
+    <Header />
       <div className="signUp">
         <div className="signUpWrap">
           <div className="snsSignUp">
@@ -31,7 +35,9 @@ export default class SignUp extends Component {
           </div>
           <button className="signUpCom">회원가입</button>
         </div>
-      </div>  
+      </div>
+      <Footer /> 
+    </> 
     );
   }
 }
