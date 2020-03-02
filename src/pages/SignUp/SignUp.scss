@@ -1,22 +1,44 @@
 $loginfont: #495056;
 $txtfont: #666d75;
 $backcolor: #51abf3;
+$border: 1px solid #dee2e6;
 
-.login {
-  padding-top: 123px;
-  margin: -123px 0 64px 0;
+@mixin border {
+  border: $border;
+  border-radius: 2px;
+}
+@mixin selectInput {
+  width: 12px;
+  height: 12px;
+  vertical-align: bottom;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@mixin selectSpan {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 2px;
+  transition: 0.5s;
+}
+
+.signUp {
+  padding: 123px;
+  margin-top: -123px;
   color: $loginfont;
-  .loginWrap {
+  .signUpWrap {
     width: 430px;
     margin: 64px auto 0;
     padding: 48px;
-    border: 1px solid #dee2e6;
-    border-radius: 2px;
+    @include border;
     div {
       width: 332px;
       margin-bottom: 16px;
     }
-    .snsLogin {
+    .snsSignUp {
       height: 160px;
       display: flex;
       flex-direction: column;
@@ -46,6 +68,7 @@ $backcolor: #51abf3;
         width: 40%;
         height: 1px;
         border-top: 1px solid #dee2e6;
+        border-left: 1px solid #dee2e6;
         background-color: #dee2e6;
       }
       span {
@@ -53,7 +76,7 @@ $backcolor: #51abf3;
         color: #adb5bd;
       }
     }
-    .loginForm {
+    .signUpForm {
       label {
         width: 100%;
         &:hover {
@@ -98,7 +121,20 @@ $backcolor: #51abf3;
           }
         }
       }
-      .checkLogin {
+
+      .signupSubmit {
+        width: 100%;
+        height: 48px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        background-color: $backcolor;
+        opacity: 1;
+        border-radius: 3px;
+      }
+    }
+    .personal {
+      .checkAll {
         width: 100%;
         margin: 15px 0;
         display: flex;
@@ -106,25 +142,16 @@ $backcolor: #51abf3;
         label {
           width: 40%;
           font-size: 14px;
+          font-weight: 700;
+          line-height: 20px;
           color: #343a40;
           display: flex;
           position: relative;
           input {
-            width: 12px;
-            height: 12px;
-            vertical-align: bottom;
-            visibility: hidden;
-            position: absolute;
-            top: 0;
-            left: 0;
+            @include selectInput;
           }
           span {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-            border: 1px solid #ced4da;
-            border-radius: 2px;
-            transition: 0.5s;
+            @include selectSpan;
             &:hover {
               border: 2px solid #adb5bd;
             }
@@ -138,50 +165,71 @@ $backcolor: #51abf3;
             background-color: $backcolor;
           }
         }
-        p {
-          font-size: 13px;
-          color: $txtfont;
-          cursor: pointer;
-          &:hover {
-            color: rgb(55, 58, 60);
+      }
+      .checkWrap {
+        width: 100%;
+        padding: 16px 8px 16px 16px;
+        @include border;
+        ul {
+          li {
+            width: 100%;
+            margin-bottom: 24px;
+            position: relative;
+            display: flex;
+            &:last-child {
+              margin-bottom: 0;
+            }
+            input {
+              @include selectInput;
+            }
+            span {
+              @include selectSpan;
+              &:hover {
+                border: 2px solid #adb5bd;
+              }
+            }
+            .checkImg {
+              width: 20px;
+              height: 20px;
+              margin-right: 10px;
+              border: 1px solid $backcolor;
+              border-radius: 2px;
+              background-color: $backcolor;
+            }
+            .txtArea {
+              width: 80%;
+              margin-bottom: 0;
+              p {
+                font-size: 14px;
+                line-height: 20px;
+                &:nth-child(2) {
+                  margin-top: 4px;
+                  font-size: 12px;
+                  line-height: 18px;
+                  color: #848c94;
+                }
+              }
+            }
           }
         }
       }
-      .loginCom {
-        width: 100%;
-        height: 48px;
-        color: #fff;
-        font-size: 16px;
-        font-weight: 600;
-        background-color: $backcolor;
-        opacity: 0.3;
-        border-radius: 3px;
-        pointer-events: none;
-      }
-      .loginSubmit {
-        width: 100%;
-        height: 48px;
-        color: #fff;
-        font-size: 16px;
-        font-weight: 600;
-        background-color: $backcolor;
-        opacity: 1;
-        border-radius: 3px;
+    }
+    .agree {
+      p {
+        font-size: 12px;
+        color: #848c94;
       }
     }
-    .needSignUp {
+    .signUpCom {
       width: 100%;
-      height: 18px;
-      text-align: center;
-      span {
-        margin-right: 5px;
-        font-size: 12px;
-        color: $txtfont;
-        &:nth-of-type(2) {
-          text-decoration: underline;
-          cursor: pointer;
-        }
-      }
+      height: 48px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      background-color: $backcolor;
+      opacity: 0.3;
+      border-radius: 3px;
+      pointer-events: none;
     }
   }
 }

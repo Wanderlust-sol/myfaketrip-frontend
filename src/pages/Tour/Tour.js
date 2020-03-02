@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import Header from "../../components/Header/Header";
 import Search from "./TourComponent/Search";
 import Cities from "../../components/Cities/Cities";
+import Product from "../../components/Product/Product";
 import TourSlider from "./TourComponent/TourSlider";
 import TourPoint from "./TourComponent/TourPoint";
 import ProductSlider from "./TourComponent/ProductSlider";
-import Product from "../../components/Product/Product";
 import TourInfo from "./TourComponent/TourInfo";
 import Footer from "../../components/Footer/Footer";
+import Layout from "../Layout/Layout";
 import "./Tour.scss";
 
 class Tour extends Component {
@@ -55,40 +56,40 @@ class Tour extends Component {
     });
 
     return (
-      <div className="Tour">
-        <Header />
-        <div className="topMargin">
-          <div className="article">
-            <Search></Search>
-            <Cities></Cities>
-          </div>
-
-          <div className="section">
-            <TourSlider></TourSlider>
-            <TourPoint></TourPoint>
-
-            <div className="product_lately">
-              <h2>최근 본 상품</h2>
-              <div className="product_lately_wrapper">{products}</div>
+      <Layout>
+        <div className="Tour">
+          <div className="topMargin">
+            <div className="article">
+              <Search></Search>
+              <Cities></Cities>
             </div>
 
-            <ProductSlider></ProductSlider>
+            <div className="section">
+              <TourSlider></TourSlider>
+              <TourPoint></TourPoint>
 
-            <div className="product_tour">
-              <h2>바르셀로나에서 만난 인생 투어🌞</h2>
-              <div className="product_lately_wrapper">{products_tour}</div>
+              <div className="product_lately">
+                <h2>최근 본 상품</h2>
+                <div className="product_lately_wrapper">{products}</div>
+              </div>
+
+              <ProductSlider></ProductSlider>
+
+              <div className="product_tour">
+                <h2>바르셀로나에서 만난 인생 투어🌞</h2>
+                <div className="product_lately_wrapper">{products_tour}</div>
+              </div>
+
+              <div className="product_package">
+                <h2>마리트 단독! 가이드라이브 패키지</h2>
+                <div className="product_lately_wrapper">{products_guide}</div>
+              </div>
+
+              <TourInfo></TourInfo>
             </div>
-
-            <div className="product_package">
-              <h2>마리트 단독! 가이드라이브 패키지</h2>
-              <div className="product_lately_wrapper">{products_guide}</div>
-            </div>
-
-            <TourInfo></TourInfo>
           </div>
         </div>
-        <Footer />
-      </div>
+      </Layout>
     );
   }
 }
