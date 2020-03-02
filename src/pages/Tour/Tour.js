@@ -15,7 +15,9 @@ class Tour extends Component {
     super(props);
     this.state = {
       index: "",
-      product: []
+      product: [],
+      product_tour: [],
+      product_guide: []
     };
   }
 
@@ -24,17 +26,31 @@ class Tour extends Component {
       .then(res => res.json())
       .then(res => {
         console.log("firstly: ", res.product);
-        this.setState(
-          {
-            product: res.product
-          },
-          () => console.log(this.state.product)
-        );
+        this.setState({
+          product: res.product
+        });
+      });
+    fetch("http://localhost:3000/data/product_package.json")
+      .then(res => res.json())
+      .then(res => {
+        console.log("firstly: ", res.product);
+        this.setState({
+          product_tour: res.product_guide,
+          product_guide: res.product_package
+        });
       });
   };
 
   render() {
     const products = this.state.product.map((product, i) => {
+      return <Product data={product} key={i}></Product>;
+    });
+
+    const products_tour = this.state.product_tour.map((product, i) => {
+      return <Product data={product} key={i}></Product>;
+    });
+
+    const products_guide = this.state.product_guide.map((product, i) => {
       return <Product data={product} key={i}></Product>;
     });
 
@@ -56,19 +72,16 @@ class Tour extends Component {
               <div className="product_lately_wrapper">{products}</div>
             </div>
 
-            <div className="product_winter">
-              <h2>겨울에도 꿀잼 보장🍯</h2>
-              <ProductSlider></ProductSlider>
-            </div>
+            <ProductSlider></ProductSlider>
 
             <div className="product_tour">
               <h2>바르셀로나에서 만난 인생 투어🌞</h2>
-              <div className="product_lately_wrapper">{products}</div>
+              <div className="product_lately_wrapper">{products_tour}</div>
             </div>
 
             <div className="product_package">
               <h2>마리트 단독! 가이드라이브 패키지</h2>
-              <div className="product_lately_wrapper">{products}</div>
+              <div className="product_lately_wrapper">{products_guide}</div>
             </div>
 
             <TourInfo></TourInfo>

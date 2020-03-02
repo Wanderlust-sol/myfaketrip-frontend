@@ -15,17 +15,17 @@ class Search extends Component {
       .then(res => res.json())
       .then(res => {
         console.log("f: ", res.search_data);
-        this.setState(
-          {
-            search_data: res.search_data
-          },
-          () => console.log("dd", this.state.search_data)
-        );
+        this.setState({
+          search_data: res.search_data
+        });
+        console.log("res.search_data", res.search_data);
       });
   };
 
-  handleKeyword = (data, key) => {
-    let result = data.filter(keywords => keywords.includes(key));
+  searchKeyword = () => {
+    let result = this.state.search_data.filter(keywords =>
+      keywords.includes(this.state.keyword)
+    );
     return result.map((keyword, i) => {
       return (
         <>
@@ -42,14 +42,9 @@ class Search extends Component {
   };
 
   handleChange = e => {
-    this.setState(
-      {
-        keyword: e.target.value
-      },
-      () => {
-        console.log("아름", this.state.keyword);
-      }
-    );
+    this.setState({
+      keyword: e.target.value
+    });
   };
 
   render() {
@@ -73,9 +68,7 @@ class Search extends Component {
           className="keywords_wrapper"
           style={{ display: this.state.keyword ? "block" : "none" }}
         >
-          <ul>
-            {this.handleKeyword(this.state.search_data, this.state.keyword)}
-          </ul>
+          <ul>{this.searchKeyword()}</ul>
         </div>
       </div>
     );

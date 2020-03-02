@@ -15,12 +15,12 @@ class ProductSlider extends Component {
     };
   }
   componentDidMount = () => {
-    fetch("http://localhost:3000/data/product_winter.json")
+    fetch("http://10.58.4.212:8001/product")
       .then(res => res.json())
       .then(res => {
-        console.log("fir: ", res.product_winter);
+        console.log("fir: ", res.data[0].offers);
         this.setState({
-          product_winter: res.product_winter
+          product_winter: res.data[0].offers
         });
       });
   };
@@ -37,19 +37,16 @@ class ProductSlider extends Component {
     };
 
     const products_winter = this.state.product_winter.map((product_w, i) => {
-      return (
-        <Product
-          data={product_w}
-          key={i}
-          // key={`${product_w.product_name}+${index}`}
-        ></Product>
-      );
+      return <Product data={product_w} key={i}></Product>;
     });
 
     return (
-      <Slider {...settings} className="product_lately_wrapper">
-        {products_winter}
-      </Slider>
+      <div className="product_winter">
+        <h2>겨울에도 꿀잼 보장🍯</h2>
+        <Slider {...settings} className="product_lately_wrapper">
+          {products_winter}
+        </Slider>
+      </div>
     );
   }
 }

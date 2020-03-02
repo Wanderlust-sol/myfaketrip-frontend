@@ -3,10 +3,6 @@ import { MdStar, MdStarBorder, MdStarHalf } from "react-icons/md";
 import "./Product.scss";
 
 class Product extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const stars = [];
     const getStars = rating => {
