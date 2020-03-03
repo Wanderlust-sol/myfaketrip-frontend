@@ -1,9 +1,7 @@
 $footNav: 33.3333%;
 $footFontColor: #666d75;
 $footAColor: #2b96ed;
-
 /*공통*/
-
 .footerTxt {
   font-size: 12px;
   color: $footFontColor;
@@ -11,17 +9,14 @@ $footAColor: #2b96ed;
     color: #495056;
   }
 }
-
 footer {
   width: 100%;
   padding-top: 40px;
   border-top: 1px solid #dee2e6;
-
   a {
     color: $footFontColor;
     font-size: 14px;
   }
-
   .footerTop {
     display: flex;
     .cs {

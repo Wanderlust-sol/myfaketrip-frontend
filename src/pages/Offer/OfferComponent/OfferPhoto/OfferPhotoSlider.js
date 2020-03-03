@@ -25,16 +25,13 @@ export default class OfferPhotoSlider extends Component {
   };
 
   render() {
-    const image = this.state.offer_photo;
+    console.log(this.props.data);
+    const image = this.props.data && this.props.data;
     const settings = {
       customPaging: function(i) {
         return (
           <a>
-            <img
-              className="thumb_photo"
-              src={image[i].cover}
-              alt="thumb_photo"
-            />
+            <img className="thumb_photo" src={image[i]} alt="thumb_photo" />
           </a>
         );
       },
@@ -48,16 +45,18 @@ export default class OfferPhotoSlider extends Component {
       prevArrow: <img src={leftArrow} />
     };
 
-    const offer_photos = this.state.offer_photo.map((photo, i) => {
-      return (
-        <div className="photo_slider" key={i}>
-          <img src={photo.cover} alt="coverphotos" />
-          <p className="photo_num">
-            {photo.id}/{this.state.offer_photo.length}
-          </p>
-        </div>
-      );
-    });
+    const offer_photos =
+      this.props.data &&
+      this.props.data.map((photo, i) => {
+        return (
+          <div className="photo_slider" key={i}>
+            <img src={photo} alt="coverphotos" />
+            <p className="photo_num">
+              {i + 1}/{this.props.data.length}
+            </p>
+          </div>
+        );
+      });
 
     return (
       <div className="slider_form">

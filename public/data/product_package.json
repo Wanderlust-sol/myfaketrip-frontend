@@ -1,0 +1,86 @@
+{
+  "product_guide": [
+    {
+      "thumnail": "https://d2ur7st6jjikze.cloudfront.net/offer_photos/77360/473689_medium_1582609989.jpg?1582609989",
+      "product_type": "티켓/교통패스",
+      "city_name": "강원도",
+      "product_name": "[펭수 그립톡 한정판] 비발디파크 스노위랜드 종일권/AFTER2 이용권",
+      "grade": 4.5,
+      "origin_price": 4000,
+      "price": 26000,
+      "id": 1
+    },
+    {
+      "thumnail": "https://d2ur7st6jjikze.cloudfront.net/offer_photos/68004/418546_medium_1571295730.jpg?1571295730",
+      "product_type": "티켓/교통패스",
+      "city_name": "강원도",
+      "product_name": "[펭수 그립톡 한정판] 비발디파크 스키 리프트권 + 장비렌탈 PKG 이용권",
+      "grade": 3,
+      "origin_price": 92000,
+      "price": 38500,
+      "id": 2
+    },
+    {
+      "thumnail": "https://d2ur7st6jjikze.cloudfront.net/offer_photos/64296/395328_medium_1567754886.jpg?1567754886",
+      "product_type": "가이드 투어",
+      "city_name": "로마",
+      "product_name": "[마리트 ONLY] 심우리+강덕원 가이드의 이탈리아 집중팩 7박9일",
+      "grade": 4.1,
+      "origin_price": 4190000,
+      "price": 3590000,
+      "id": 3
+    },
+    {
+      "thumnail": "https://d2ur7st6jjikze.cloudfront.net/offer_photos/73657/452485_medium_1579245407.jpg?1579245407",
+      "product_type": "패키지",
+      "city_name": "코타키나발루",
+      "product_name": "[코타키나발루] 바다 위에서 만나는 코타키나발루 5일 세미팩",
+      "grade": 4.5,
+      "origin_price": false,
+      "price": 900000,
+      "id": 4
+    }
+  ],
+  "product_package": [
+    {
+      "thumnail": "https://d2ur7st6jjikze.cloudfront.net/offer_photos/73532/459836_medium_1580189193.jpg?1580189193",
+      "product_type": "티켓/교통패스",
+      "city_name": "강원도",
+      "product_name": "[펭수 그립톡 한정판] 비발디파크 스노위랜드 종일권/AFTER2 이용권",
+      "grade": 4.5,
+      "origin_price": 4000,
+      "price": 26000,
+      "id": 1
+    },
+    {
+      "thumnail": "https://d2ur7st6jjikze.cloudfront.net/offer_photos/72498/447976_medium_1577930291.jpg?1577930291",
+      "product_type": "티켓/교통패스",
+      "city_name": "강원도",
+      "product_name": "[펭수 그립톡 한정판] 비발디파크 스키 리프트권 + 장비렌탈 PKG 이용권",
+      "grade": 3,
+      "origin_price": 92000,
+      "price": 38500,
+      "id": 2
+    },
+    {
+      "thumnail": "https://d2ur7st6jjikze.cloudfront.net/offer_photos/75044/470353_medium_1581990288.jpg?1581990288",
+      "product_type": "가이드 투어",
+      "city_name": "로마",
+      "product_name": "[마리트 ONLY] 심우리+강덕원 가이드의 이탈리아 집중팩 7박9일",
+      "grade": 4.1,
+      "origin_price": 4190000,
+      "price": 3590000,
+      "id": 3
+    },
+    {
+      "thumnail": "https://d2ur7st6jjikze.cloudfront.net/offer_photos/68016/418872_medium_1571359560.jpg?1571359560",
+      "product_type": "패키지",
+      "city_name": "코타키나발루",
+      "product_name": "[코타키나발루] 바다 위에서 만나는 코타키나발루 5일 세미팩",
+      "grade": 4.5,
+      "origin_price": false,
+      "price": 900000,
+      "id": 4
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+.info_tour {
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .info_box {
+    display: flex;
+    border: 1px solid #dee2e6;
+    background: #f8f9fa;
+    padding: 42px 20px;
+    justify-content: space-around;
+    font-size: 14px;
+
+    li {
+      padding: 0 40px;
+      .info_title {
+        display: flex;
+        align-items: center;
+
+        a {
+          margin-left: 10px;
+          color: #2b96ed;
+          font-weight: 700;
+
+          img {
+            margin-left: 4px;
+            margin-top: 4px;
+          }
+        }
+      }
+
+      .info_cnt {
+        margin-top: 10px;
+        color: #666d75;
+        line-height: 1.71;
+      }
+    }
+  }
+}

@@ -3,7 +3,7 @@ import "./OfferNav.scss";
 
 class OfferNav extends Component {
   constructor(props) {
-    super(props);
+    super();
   }
   render() {
     return (

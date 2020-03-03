@@ -11,7 +11,7 @@ class Modal extends Component {
     return (
       <div className={this.props.show ? "modal-block" : "modal-none"}>
         <div className="modal-main">
-          <OfferPhotoSlider></OfferPhotoSlider>
+          <OfferPhotoSlider data={this.props.data} />
         </div>
         <div>
           <div className="closebtn" onClick={this.props.onClose}>

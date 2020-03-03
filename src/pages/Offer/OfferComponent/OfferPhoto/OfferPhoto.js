@@ -17,9 +17,11 @@ class OfferPhoto extends Component {
   render() {
     return (
       <>
-        <Modal show={this.state.show} onClose={this.showModal}>
-          Message in Modal
-        </Modal>
+        <Modal
+          show={this.state.show}
+          onClose={this.showModal}
+          data={this.props.data}
+        ></Modal>
         <div className="offer_main_photos">
           <div
             className="offer_main_photos_view"
@@ -31,7 +33,7 @@ class OfferPhoto extends Component {
                 <div
                   className="photo_big"
                   style={{
-                    backgroundImage: `url(${this.props.data.image_info})`
+                    backgroundImage: `url(${this.props.data[0]})`
                   }}
                 >
                   <div className="photo_zoom">
@@ -47,23 +49,27 @@ class OfferPhoto extends Component {
                 <div
                   className="photo_small"
                   style={{
-                    backgroundImage: `url(${this.props.data.image_info})`
+                    backgroundImage: `url(${this.props.data[1]})`
                   }}
                 ></div>
                 <div
                   className="photo_small"
                   style={{
-                    backgroundImage: `url(${this.props.data.image_info})`
+                    backgroundImage: `url(${this.props.data[2]})`
                   }}
                 ></div>
                 <div
                   className="photo_small"
                   style={{
-                    backgroundImage: `url(${this.props.data.image_info})`
+                    backgroundImage: `url(${this.props.data[3]})`
                   }}
                 >
-                  <div className="photo_cover"></div>
-                  <p>+1</p>
+                  <div
+                    className={this.props.data.length > 4 ? "photo_cover" : ""}
+                  ></div>
+                  <p>
+                    +{this.props.data.length > 4 && this.props.data.length - 4}
+                  </p>
                 </div>
               </li>
             </ul>

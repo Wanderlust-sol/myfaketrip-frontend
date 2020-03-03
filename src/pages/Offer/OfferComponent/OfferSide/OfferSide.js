@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Lucia from "../../../../img/Lucia.png";
 import "./OfferSide.scss";
 
 class OfferSide extends Component {
@@ -7,6 +6,8 @@ class OfferSide extends Component {
     super(props);
   }
   render() {
+    this.props.price_info &&
+      console.log(this.props.price_info[0].price.toLocaleString());
     return (
       <div
         className={this.props.fixed ? "offer_side" : "offer_side_fixed"}
@@ -22,7 +23,10 @@ class OfferSide extends Component {
             <div className="offer_side_main-box_body">
               <div>
                 <div className="main-box_body-price">
-                  <span className="price-main">38,500</span>
+                  <span className="price-main">
+                    {this.props.price_info &&
+                      this.props.price_info[0].price.toLocaleString()}
+                  </span>
                   <span className="price-won">원</span>
                   <span className="price-perperson">/1인</span>
                 </div>
@@ -37,7 +41,11 @@ class OfferSide extends Component {
                 <tbody>
                   <tr>
                     <td className="main-box_traveler">1~7인</td>
-                    <td className="main-box_travel-price">38,500원</td>
+                    <td className="main-box_travel-price">
+                      {this.props.price_info &&
+                        this.props.price_info[0].price.toLocaleString()}
+                      원
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -59,8 +67,8 @@ class OfferSide extends Component {
             </div>
             <div className="offer_side_main-box_question">
               <div className="main-box_question-guide guide_profile">
-                <img src={Lucia} alt="guide" />
-                <span>Lucia 가이드</span>
+                <img src={this.props.data.guide_image} alt="guide" />
+                <span>{this.props.data.guide_name}</span>
               </div>
               <div className="main-box_question-message">
                 <img
@@ -77,21 +85,21 @@ class OfferSide extends Component {
                 src="https://www.myrealtrip.com/webpack/4fde7b029a47d9c9085b1109115b61a6.svg"
                 alt="group-tour-icon"
               />
-              <p>그룹 투어</p>
+              <p>{this.props.data.group}</p>
             </div>
             <div>
               <img
                 src="https://www.myrealtrip.com/webpack/b34853506a08c2451b12ce43faa97855.svg"
                 alt="timer-icon"
               />
-              <p>5시간 소요</p>
+              <p>{this.props.data.duration}</p>
             </div>
             <div>
               <img
                 src="https://www.myrealtrip.com/webpack/2c8393277372adca59f84d8143dd0637.svg"
                 alt="globe-icon"
               />
-              <p>한국어</p>
+              <p>{this.props.data.language}</p>
             </div>
           </div>
         </div>
