@@ -8,9 +8,9 @@ class Comment extends Component {
       <div>
         <div className="reviews_list_wrapper">
           <div>
-            <div className="reviews_list-photo">
+            {/* <div className="reviews_list-photo">
               <img src="https://d2ur7st6jjikze.cloudfront.net/reviews/30162/862788_large_1582237991.jpg?1582237991" />
-            </div>
+            </div> */}
             <div>
               <div className="reviews_list-star">
                 <MdStar className="star_blue" />
@@ -22,7 +22,8 @@ class Comment extends Component {
               <p className="reviews_list-writer">이**</p>
             </div>
             <div className="reviews_list-purpose">
-              40대 ∙ 혼자 가는 여행 ∙ 2020-02-21
+              {/* 40대 ∙ 혼자 가는 여행 ∙  */}
+              2020-02-21
             </div>
           </div>
           <div className="reviews_list-content">

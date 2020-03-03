@@ -1,0 +1,21 @@
+.show {
+  font-size: 15px;
+  font-weight: 700;
+  color: #2b96ed;
+  span {
+    color: #2b96ed;
+    cursor: pointer;
+    display: flex;
+  }
+}
+
+.hide {
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 12px;
+  span {
+    color: #2b96ed;
+    cursor: pointer;
+    display: flex;
+  }
+}

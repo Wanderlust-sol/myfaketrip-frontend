@@ -1,23 +1,22 @@
 import React, { Component } from "react";
-import { headerData } from './HeaderData';
-import './Header.scss';
+import { headerData } from "./HeaderData";
+import "./Header.scss";
 
 export default class Header extends Component {
-  constructor(){
+  constructor() {
     super();
-    this.state={
-      index: 0,
-    } 
+    this.state = {
+      index: 0
+    };
   }
 
-navList=(num)=>{
-  this.setState({
-    index: num
-  })
-}
- 
-  render(){
-    console.log(this.props.location)
+  navList = num => {
+    this.setState({
+      index: num
+    });
+  };
+
+  render() {
     return (
       <header>
         {/* header */}
@@ -43,16 +42,16 @@ navList=(num)=>{
         <nav className="menu container">
           <div>
             <ul>
-              {headerData.map(el=>
-              <li key={el.id}>
-                <div
-                className={this.state.index === el.id ? "color" : null}
-                onClick={() => this.navList(el.id)}
-                >
-                {el.title}
-                </div>
-              </li>
-              )}
+              {headerData.map(el => (
+                <li key={el.id}>
+                  <div
+                    className={this.state.index === el.id ? "color" : null}
+                    onClick={() => this.navList(el.id)}
+                  >
+                    {el.title}
+                  </div>
+                </li>
+              ))}
             </ul>
           </div>
         </nav>

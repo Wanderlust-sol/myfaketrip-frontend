@@ -1,0 +1,73 @@
+@import "../../../../styles/Common.scss";
+
+.offer_main_price {
+  margin-top: 30px;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 13px;
+
+    .offer_main_price_title {
+      font-size: 18px;
+      font-weight: 700;
+      color: black;
+    }
+    .offer_main_price_question_desc {
+      font-weight: 700;
+      color: $themecolor;
+      margin-right: 4px;
+      cursor: pointer;
+    }
+  }
+
+  .offer_main_price_date {
+    width: 250px;
+    height: 48px;
+    font-size: 16px;
+    color: $blk;
+    text-align: left;
+    border: $boldS;
+    border-radius: 2px;
+    padding: 12px 0;
+    display: inline-block;
+    cursor: pointer;
+
+    img {
+      margin-left: 13px;
+      margin-right: 8px;
+      margin-top: -2px;
+    }
+  }
+
+  .offer_main_price_option {
+    select {
+      width: 250px;
+      height: 48px;
+      font-size: 16px;
+      border: $boldS;
+      background-color: white;
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjNTFBQkYzIiBzdHJva2Utd2lkdGg9IjEuMjUiPgogICAgICAgIDxwYXRoIGQ9Ik05LjYyOCA0LjYyNWwuMDI1IDQuNzVoOC4zNGEyLjM3NSAyLjM3NSAwIDEgMCAwLTQuNzVIOS42Mjd6Ii8+CiAgICAgICAgPGNpcmNsZSBjeD0iNyIgY3k9IjciIHI9IjMuMzc1Ii8+CiAgICAgICAgPHBhdGggZD0iTTE0LjM3MiAxOS4zNzVsLS4wMjUtNC43NWgtOC4zNGEyLjM3NSAyLjM3NSAwIDEgMCAwIDQuNzVoOC4zNjV6Ii8+CiAgICAgICAgPGNpcmNsZSBjeD0iMTciIGN5PSIxNyIgcj0iMy4zNzUiIHRyYW5zZm9ybT0icm90YXRlKC0xODAgMTcgMTcpIi8+CiAgICA8L2c+Cjwvc3ZnPgo=");
+      background-repeat: no-repeat;
+      background-position: left 12px top 12px;
+      opacity: 0.4;
+      text-indent: 35px;
+      option {
+        color: $blk;
+      }
+    }
+  }
+
+  .offer_main_price_check-price {
+    button {
+      width: 160px;
+      height: 48px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #ced4da;
+      background-color: #f5f6f7;
+      border: 0;
+      border-radius: 2px;
+    }
+  }
+}

@@ -11,6 +11,13 @@
   margin: -1.5px;
 }
 
+.star_black {
+  width: 14px;
+  height: 14px;
+  color: #343a40;
+  margin: -1.5px;
+}
+
 // 라이브러리 기본설정
 .slick-slider {
   &.cities_slider {
@@ -20,9 +27,10 @@
   }
 }
 
-.star_black {
-  width: 14px;
-  height: 14px;
-  color: #343a40;
-  margin: -1.5px;
-}
+$themecolor: #51abf3;
+$footerfontcolor: #666d75;
+$Acolor: #2b96ed;
+$bordercolor: #dee2e6;
+$fontgrey: #495056;
+$blk: #343a40;
+$boldS: 1px solid #dee2e6;

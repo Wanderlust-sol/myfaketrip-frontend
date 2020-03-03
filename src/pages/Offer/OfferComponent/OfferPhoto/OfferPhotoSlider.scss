@@ -1,0 +1,82 @@
+.slider_form {
+  position: relative;
+  .image_header {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    .image_title {
+      font-size: 16px;
+      font-weight: 500;
+      color: white;
+    }
+    .image_guide {
+      font-size: 16px;
+      font-weight: 500;
+      color: white;
+      opacity: 0.7;
+    }
+  }
+  .offer_photo_slider_wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(20%);
+
+    .slick-list {
+      width: 100%;
+      img {
+        margin: 0 auto;
+      }
+      .photo_num {
+        font-size: 16px;
+        font-weight: 400;
+        color: #fff;
+        margin: 8px auto 0 !important;
+        -o-object-fit: contain;
+        object-fit: contain;
+        max-width: 980px;
+        max-height: 795px;
+        text-align: center;
+        width: 100%;
+        max-width: 705px;
+      }
+    }
+    .slick-dots {
+      margin-left: -3rem;
+      li {
+        margin: 0 60px;
+      }
+    }
+
+    .slick-next,
+    .slick-prev {
+      width: 48px;
+      height: 80px;
+      z-index: 200;
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 1;
+        background: hsla(0, 0%, 100%, 0.1);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+      }
+    }
+    .slick-next {
+      right: 150px;
+    }
+
+    .slick-prev {
+      left: 150px;
+    }
+  }
+}
+
+.thumb_photo {
+  width: 132px;
+  height: 92px;
+  margin-top: 10px;
+}
