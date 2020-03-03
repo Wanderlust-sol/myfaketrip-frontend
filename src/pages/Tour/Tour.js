@@ -1,13 +1,11 @@
 import React, { Component } from "react";
-import Header from "../../components/Header/Header";
-import Search from "./TourComponent/Search";
+import TourSearch from "./TourComponent/TourSearch";
 import Cities from "../../components/Cities/Cities";
 import Product from "../../components/Product/Product";
 import TourSlider from "./TourComponent/TourSlider";
 import TourPoint from "./TourComponent/TourPoint";
 import ProductSlider from "./TourComponent/ProductSlider";
 import TourInfo from "./TourComponent/TourInfo";
-import Footer from "../../components/Footer/Footer";
 import Layout from "../Layout/Layout";
 import "./Tour.scss";
 
@@ -60,7 +58,7 @@ class Tour extends Component {
         <div className="Tour">
           <div className="topMargin">
             <div className="article">
-              <Search></Search>
+              <TourSearch />
               <Cities></Cities>
             </div>
 
