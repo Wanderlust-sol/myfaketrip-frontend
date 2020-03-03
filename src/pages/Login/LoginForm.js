@@ -15,15 +15,9 @@ class LoginForm extends Component{
         }
       }
     
-      emailChangeHandler=(e)=>{
+      onChangeHandler=(e)=>{
         this.setState({
-          email:e.target.value
-        })
-
-      }
-      pwChangeHandler=(e)=>{
-        this.setState({
-          password:e.target.value
+          [e.target.name]:e.target.value
         })
       }
 
@@ -40,7 +34,7 @@ class LoginForm extends Component{
       }
 
       login=()=>{
-        fetch('http://10.58.0.108:8000/account/signin', {
+        fetch('http://10.58.7.201:8005/account/signin', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -54,7 +48,7 @@ class LoginForm extends Component{
         .then(res => {
         if (res.access_token) {
             localStorage.setItem('wtw-token', res.access_token);
-            this.props.history.push("/Tour");
+            this.props.history.push("/");
           }else{
             alert("로그인 정보를 확인해주세요!")
           }
@@ -107,9 +101,10 @@ class LoginForm extends Component{
               <input 
                 type="email"
                 id="email"
+                name="email"
                 placeholder="ID@example.com"
                 value={this.state.email}
-                onChange={this.emailChangeHandler}
+                onChange={this.onChangeHandler}
                 className={txtCorrect}
                 />
                 
@@ -120,9 +115,10 @@ class LoginForm extends Component{
               <input 
               type="password"
               id="password"
+              name="password"
               placeholder="비밀번호를 입력해주세요."
               value={this.state.password}
-              onChange={this.pwChangeHandler}
+              onChange={this.onChangeHandler}
               className={pwCorrect}
               />
               {wrongPw}

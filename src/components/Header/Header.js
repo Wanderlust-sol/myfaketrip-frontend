@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import { headerData } from './HeaderData';
 import './Header.scss';
 
-export default class Header extends Component {
+class Header extends Component {
   constructor(){
     super();
     this.state={
@@ -15,6 +16,16 @@ navList=(num)=>{
     index: num
   })
 }
+
+loginClick=()=>{
+  this.props.history.push("/login")
+}
+signupClick=()=>{
+  this.props.history.push("/signup")
+}
+logoClick=()=>{
+  this.props.history.push("/")
+}
  
   render(){
     console.log(this.props.location)
@@ -24,18 +35,18 @@ navList=(num)=>{
         <div className="headerTop container">
           <div className="logo">
             <h1>
-              <a href="1.html">MyFakeTrip</a>
+              <button>MyFakeTrip</button>
             </h1>
           </div>
           <div className="myPage">
             <div className="partners">
-              <a href="1.html">파트너 등록하기</a>
+              <button onClick={this.logoClick}>파트너 등록하기</button>
             </div>
             <div className="logIn">
-              <a href="1.html">로그인</a>
+              <button onClick={this.loginClick}>로그인</button>
             </div>
             <div className="signUpBtn">
-              <a href="1.html">회원가입</a>
+              <button onClick={this.signupClick}>회원가입</button>
             </div>
           </div>
         </div>
@@ -60,3 +71,4 @@ navList=(num)=>{
     );
   }
 }
+export default withRouter(Header);

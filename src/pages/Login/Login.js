@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import Header from "../../components/Header/Header"
 import Footer from "../../components/Footer/Footer"
 import LoginForm from "./LoginForm";
@@ -7,7 +8,7 @@ import "../../styles/Common.scss";
 import "./Login.scss";
 
 
-export default class Login extends Component {
+class Login extends Component {
   render() {
     return (
       <>
@@ -16,7 +17,7 @@ export default class Login extends Component {
         <div className="loginWrap">
           <div className="snsLogin">
             {snsLogin.map(el=>
-            <button className={el.class}>
+            <button className={el.class} key={el.id}>
               <img src={el.img} alt={el.title}/>
               {el.title}
               </button>)}
@@ -38,3 +39,5 @@ export default class Login extends Component {
     );
   }
 }
+
+export default withRouter(Login);
