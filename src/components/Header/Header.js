@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import Search from "./Headersearchbox";
 import { headerData } from './HeaderData';
 import './Header.scss';
 
@@ -18,10 +19,10 @@ navList=(num)=>{
 }
 
 loginClick=()=>{
-  this.props.history.push("/login")
+  this.props.history.push("/login/:3")
 }
 signupClick=()=>{
-  this.props.history.push("/signup")
+  this.props.history.push("/signup/:3")
 }
 logoClick=()=>{
   this.props.history.push("/")
@@ -29,15 +30,23 @@ logoClick=()=>{
  
   render(){
     console.log(this.props.location)
+    const pathnameSplit=this.props.location.pathname.split(":")[1];
+    const pathname= pathnameSplit==="3" ? 
+    "loginHeader"
+    :"noone";
+    const searchBox = pathnameSplit==="3"?
+    <Search />
+    :null;
     return (
-      <header>
+      <header className={pathname}>
         {/* header */}
         <div className="headerTop container">
           <div className="logo">
             <h1>
-              <button>MyFakeTrip</button>
+              <button onClick={this.logoClick}>MyFakeTrip</button>
             </h1>
           </div>
+          {searchBox}
           <div className="myPage">
             <div className="partners">
               <button onClick={this.logoClick}>파트너 등록하기</button>
