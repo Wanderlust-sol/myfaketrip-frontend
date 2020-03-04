@@ -24,7 +24,7 @@ class OfferReviews extends Component {
   };
 
   handleSend = () => {
-    fetch("http://10.58.7.201:8008/review/30162", {
+    fetch("http://10.58.2.187:8000/review/30162", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -35,7 +35,7 @@ class OfferReviews extends Component {
       // .then(res => res.json())
       .then(res => {
         console.log(res);
-        fetch("http://10.58.7.201:8008/review/30162")
+        fetch("http://10.58.2.187:8000/review/30162")
           .then(res => res.json())
           .then(res => {
             console.log("first", res);
