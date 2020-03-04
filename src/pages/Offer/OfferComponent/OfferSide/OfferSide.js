@@ -6,8 +6,6 @@ class OfferSide extends Component {
     super(props);
   }
   render() {
-    this.props.price_info &&
-      console.log(this.props.price_info[0].price.toLocaleString());
     return (
       <div
         className={this.props.fixed ? "offer_side" : "offer_side_fixed"}

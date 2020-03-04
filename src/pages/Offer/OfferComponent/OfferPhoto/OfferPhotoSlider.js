@@ -25,7 +25,6 @@ export default class OfferPhotoSlider extends Component {
   };
 
   render() {
-    console.log(this.props.data);
     const image = this.props.data && this.props.data;
     const settings = {
       customPaging: function(i) {

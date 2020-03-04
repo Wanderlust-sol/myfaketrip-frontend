@@ -62,7 +62,7 @@ export default class Offer extends Component {
   };
 
   componentDidMount() {
-    fetch("http://10.58.7.201:8003/product/30162")
+    fetch("http://10.58.7.201:8008/product/30162")
       .then(res => res.json())
       .then(res => {
         this.setState(
@@ -99,7 +99,7 @@ export default class Offer extends Component {
   render() {
     return (
       <>
-        <Header />
+        <Header>검색창</Header>
         <div className="offer">
           <OfferNav
             visible={this.state.visible}
