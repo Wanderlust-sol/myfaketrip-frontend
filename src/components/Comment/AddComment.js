@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import StarRatingForm from "../StarRatingForm/StarRatingForm";
 import { MdStar } from "react-icons/md";
 import "./AddComment.scss";
 
@@ -12,11 +13,7 @@ class AddComment extends Component {
               <div>
                 <div className="rating_title">여행이 만족스러우셨나요?</div>
                 <div className="rating_stars">
-                  <MdStar className="empty_star" />
-                  <MdStar className="empty_star" />
-                  <MdStar className="empty_star" />
-                  <MdStar className="empty_star" />
-                  <MdStar className="empty_star" />
+                  <StarRatingForm />
                 </div>
               </div>
               <button className="comment_submit" type="submit">
@@ -31,7 +28,7 @@ class AddComment extends Component {
                   placeholder="이 상품을 구매하려는 여행자에게 도움이 될만한 팁이나 조언을 담아 작성해주세요."
                 ></textarea>
               </div>
-              <div className="input_photo">
+              {/* <div className="input_photo">
                 <div>사진 등록</div>
                 <div>
                   <img
@@ -40,7 +37,7 @@ class AddComment extends Component {
                   />
                   <input name="photo" type="file"></input>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

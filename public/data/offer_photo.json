@@ -1,0 +1,24 @@
+{
+  "offer_photo": [
+    {
+      "cover": "https://d2ur7st6jjikze.cloudfront.net/offer_photos/30162/193686_large_1525762845.jpg?1525762845",
+      "id": 1
+    },
+    {
+      "cover": "https://d2ur7st6jjikze.cloudfront.net/offer_photos/30162/193689_large_1525762779.jpg?1525762779",
+      "id": 2
+    },
+    {
+      "cover": "https://d2ur7st6jjikze.cloudfront.net/offer_photos/30162/193690_large_1525762847.jpg?1525762847",
+      "id": 3
+    },
+    {
+      "cover": "https://d2ur7st6jjikze.cloudfront.net/offer_photos/30162/193688_large_1525762776.jpg?1525762776",
+      "id": 4
+    },
+    {
+      "cover": "https://d2ur7st6jjikze.cloudfront.net/offer_photos/30162/193691_large_1525762892.jpg?1525762892",
+      "id": 5
+    }
+  ]
+}
