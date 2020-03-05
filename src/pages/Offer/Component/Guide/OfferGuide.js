@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactHtmlParser from "react-html-parser";
-import Show from "../../../../components/WithMore/Show";
-import Hide from "../../../../components/WithMore/Hide";
+import Show from "components/WithMore/Show";
+import Hide from "components/WithMore/Hide";
 import "./OfferGuide.scss";
 
 class OfferGuide extends Component {

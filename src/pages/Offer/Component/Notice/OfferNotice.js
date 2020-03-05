@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import ReactHtmlParser from "react-html-parser";
-import Show from "../../../../components/WithMore/Show";
-import Hide from "../../../../components/WithMore/Hide";
-import Map from "../../../../components/Map/Map";
+import Show from "components/WithMore/Show";
+import Hide from "components/WithMore/Hide";
+import Map from "components/Map/Map";
 import "./OfferNotice.scss";
 
 class OfferNotice extends Component {

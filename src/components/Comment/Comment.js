@@ -63,7 +63,7 @@ class Comment extends Component {
 
             <div>
               <div className="reviews_list-star">
-                {getStars(this.props.data.grade)}
+                {getStars(this.props.data.rating)}
               </div>
               <p className="reviews_list-writer">
                 {this.props.data.name.slice(0, 1)}**

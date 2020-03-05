@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import OfferPhotoSlider from "../../pages/Offer/OfferComponent/OfferPhoto/OfferPhotoSlider";
+import OfferPhotoSlider from "pages/Offer/Component/Photo/OfferPhotoSlider";
 import "./Modal.scss";
 
 class Modal extends Component {
@@ -11,7 +11,7 @@ class Modal extends Component {
     return (
       <div className={this.props.show ? "modal-block" : "modal-none"}>
         <div className="modal-main">
-          <OfferPhotoSlider data={this.props.data} />
+          <OfferPhotoSlider data={this.props.data} data2={this.props.data2} />
         </div>
         <div>
           <div className="closebtn" onClick={this.props.onClose}>

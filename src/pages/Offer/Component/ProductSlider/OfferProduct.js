@@ -52,13 +52,11 @@ class OfferProduct extends Component {
             <span> ・ </span>
             <span>{this.props.data.city_name}</span>
           </div>
-          <h3 className="other_product_title">
-            {this.props.data.product_name}
-          </h3>
+          <h3 className="other_product_title">{this.props.data.name}</h3>
           <div className="other_product_info">
             <div className="other_review">
-              {getStars(this.props.data.grade)}
-              <span>41</span>
+              {getStars(this.props.data.review_grade)}
+              <span>{this.props.data.review_count}</span>
             </div>
             <div className="other_price">
               <span
