@@ -29,7 +29,7 @@
       height: 100%;
       text-indent: 130px;
       line-height: 56px;
-      border: 1px solid hsla(0, 0%, 100%, 0.4);
+      border: 1px solid hsla(0, 81%, 94%, 0.4);
       background-color: hsla(0, 0%, 100%, 0.1);
       font-size: 16px;
       border-radius: 4px;
@@ -42,7 +42,7 @@
     input:focus {
       padding: 10px;
       text-align: left;
-      text-indent: 35px;
+      text-indent: 40px;
       background: #fff
         url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjODQ4Qzk0IiBzdHJva2Utd2lkdGg9IjEuNSI+CiAgICAgICAgPHBhdGggZD0iTTcgMTEuMjVBNC4yNDkgNC4yNDkgMCAwIDAgMTEuMjUgNyA0LjI0OSA0LjI0OSAwIDAgMCA3IDIuNzUgNC4yNDkgNC4yNDkgMCAwIDAgMi43NSA3IDQuMjQ5IDQuMjQ5IDAgMCAwIDcgMTEuMjV6Ii8+CiAgICAgICAgPHBhdGggc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBkPSJNMTAuMzMzIDEwLjMzM2wzLjMzNCAzLjMzNCIvPgogICAgPC9nPgo8L3N2Zz4K")
         no-repeat 15px center;
@@ -77,6 +77,15 @@
         transform: translateY(-50%);
         position: absolute;
       }
+
+      &:first-child {
+        margin-top: 5px;
+      }
+    }
+
+    .place_font {
+      color: #343a40;
+      font-weight: 700;
     }
   }
 }
