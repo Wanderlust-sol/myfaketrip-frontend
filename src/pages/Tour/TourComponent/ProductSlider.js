@@ -7,6 +7,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./ProductSlider.scss";
 
+const settings = {
+  dots: false,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  nextArrow: <ArrowNext />,
+  prevArrow: <ArrowPrev />
+};
+
 class ProductSlider extends Component {
   constructor(props) {
     super(props);
@@ -26,25 +36,13 @@ class ProductSlider extends Component {
   };
 
   render() {
-    const settings = {
-      dots: false,
-      infinite: false,
-      speed: 500,
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      nextArrow: <ArrowNext />,
-      prevArrow: <ArrowPrev />
-    };
-
-    const products_winter = this.state.product_winter.map((product_w, i) => {
-      return <Product data={product_w} key={i}></Product>;
-    });
-
     return (
       <div className="product_winter">
         <h2>겨울에도 꿀잼 보장🍯</h2>
         <Slider {...settings} className="product_lately_wrapper">
-          {products_winter}
+          {this.state.product_winter.map((product_w, i) => {
+            return <Product data={product_w} key={i}></Product>;
+          })}
         </Slider>
       </div>
     );

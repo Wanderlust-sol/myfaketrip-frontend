@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import OfferPhotoSlider from "../../pages/Offer/OfferComponent/OfferPhoto/OfferPhotoSlider";
+import OfferPhotoSlider from "../../pages/Offer/Component/Photo/OfferPhotoSlider";
 import "./Modal.scss";
 
 class Modal extends Component {
   onClick = e => {
-    this.props.onClose && this.props.onClose(e);
+    typeof this.props.onClose === "function" && this.props.onClose(e);
   };
 
   render() {

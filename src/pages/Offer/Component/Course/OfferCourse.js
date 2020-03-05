@@ -3,8 +3,16 @@ import ReactHtmlParser from "react-html-parser";
 import "./OfferCourse.scss";
 
 class OfferCourse extends Component {
+  constructor() {
+    super();
+    this.state = {
+      moreCourse: false
+    };
+  }
+  buttonClick = () => {
+    this.setState({ moreCourse: !this.state.moreCourse });
+  };
   render() {
-    // console.log("data", this.props.data);
     const course_data =
       this.props.data &&
       this.props.data.map(item => {
@@ -31,10 +39,10 @@ class OfferCourse extends Component {
     return (
       <div className="offer_main_course">
         <p className="offer_main_course_title">코스 소개</p>
-        {course_data}
-        <div className="content_last">
+        <div className="cousre_with_more">{course_data}</div>
+        <div className={!this.state.moreCourse ? "content_last" : "none"}>
           <div className="button_wrapper">
-            <button>
+            <button onClick={this.buttonClick}>
               <div>
                 코스 더 보기
                 <img

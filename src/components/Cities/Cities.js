@@ -19,17 +19,18 @@ const cities = CitiesData.map(city => {
   );
 });
 
+const settings = {
+  dots: false,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 6,
+  slidesToScroll: 6,
+  nextArrow: <ArrowNext />,
+  prevArrow: <ArrowPrev />
+};
+
 class Cities extends Component {
   render() {
-    const settings = {
-      dots: false,
-      infinite: false,
-      speed: 500,
-      slidesToShow: 6,
-      slidesToScroll: 6,
-      nextArrow: <ArrowNext />,
-      prevArrow: <ArrowPrev />
-    };
     return (
       <Slider {...settings} className="cities_slider">
         {cities}

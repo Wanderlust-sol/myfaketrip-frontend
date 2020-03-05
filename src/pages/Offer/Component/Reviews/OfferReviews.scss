@@ -109,5 +109,48 @@
 
   .offer_main_reviews_list {
     margin: 20px 0;
+    position: relative;
+    .reives_list_with_more {
+      // max-height: 400px;
+      overflow: hidden;
+      position: relative;
+    }
+    .offer_main_reviews_list_hidden {
+      width: 100%;
+      height: 184px;
+      text-align: center;
+      background: linear-gradient(
+        180deg,
+        hsla(0, 0%, 100%, 0) 0,
+        #fff 50%,
+        #fff
+      );
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      .review_more_btn {
+        font-size: 16px;
+        font-weight: 700;
+        color: $fontgrey;
+        border: 1px solid #ced4da;
+        border-radius: 2px;
+        padding: 16px 40px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        &:hover {
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
   }
+}
+
+.hidden_none {
+  display: none;
 }

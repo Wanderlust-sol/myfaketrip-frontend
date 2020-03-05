@@ -79,4 +79,13 @@
   width: 132px;
   height: 92px;
   margin-top: 10px;
+  position: relative;
+}
+
+.thumb_photo_cover {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.75);
 }

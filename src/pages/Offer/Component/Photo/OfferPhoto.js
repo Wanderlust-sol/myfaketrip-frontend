@@ -10,7 +10,8 @@ class OfferPhoto extends Component {
     };
   }
 
-  showModal = () => {
+  showModal = e => {
+    console.log(e.target);
     this.setState({ show: !this.state.show });
   };
 
@@ -31,7 +32,7 @@ class OfferPhoto extends Component {
             <ul>
               <li>
                 <div
-                  className="photo_big"
+                  className="photo_1"
                   style={{
                     backgroundImage: `url(${this.props.data[0]})`
                   }}
@@ -47,19 +48,19 @@ class OfferPhoto extends Component {
               </li>
               <li className="photo_grid">
                 <div
-                  className="photo_small"
+                  className="photo_2"
                   style={{
                     backgroundImage: `url(${this.props.data[1]})`
                   }}
                 ></div>
                 <div
-                  className="photo_small"
+                  className="photo_3"
                   style={{
                     backgroundImage: `url(${this.props.data[2]})`
                   }}
                 ></div>
                 <div
-                  className="photo_small"
+                  className="photo_4"
                   style={{
                     backgroundImage: `url(${this.props.data[3]})`
                   }}

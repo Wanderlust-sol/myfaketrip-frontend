@@ -22,6 +22,10 @@ class PackageGuideProduct extends Component {
   };
 
   render() {
+    const products_guide_package = this.state.product_guide.map((p, i) => {
+      return <Product data={p} key={i}></Product>;
+    });
+
     return (
       <>
         <div className="package_product_title">
@@ -35,9 +39,7 @@ class PackageGuideProduct extends Component {
           </span>
         </div>
         <div className="package_product_guide_container">
-          {this.state.product_guide.map((p, i) => {
-            return <Product data={p} key={i}></Product>;
-          })}
+          {products_guide_package}
         </div>
       </>
     );

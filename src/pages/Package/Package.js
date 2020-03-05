@@ -9,8 +9,7 @@ import "./Package.scss";
 class Package extends Component {
   render() {
     return (
-      <>
-        <Layout />
+      <Layout>
         <div className="package_container">
           <PackageSelect />
           <div className="package_section">
