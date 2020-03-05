@@ -7,6 +7,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./SearchProduct.scss";
 
+const settings = {
+  dots: false,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  nextArrow: <ArrowNext />,
+  prevArrow: <ArrowPrev />
+};
+
 class SearchProduct extends Component {
   constructor(props) {
     super(props);
@@ -24,31 +34,22 @@ class SearchProduct extends Component {
       });
   };
   render() {
-    const settings = {
-      dots: false,
-      infinite: false,
-      speed: 500,
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      nextArrow: <ArrowNext />,
-      prevArrow: <ArrowPrev />
-    };
-
-    const products_winter = this.state.product_winter.map((product_w, i) => {
-      return <Product data={product_w} key={i}></Product>;
-    });
     return (
       <>
         <div className="search_product_container">
           <h3>추천 상품</h3>
           <Slider {...settings} className="product_lately_wrapper">
-            {products_winter}
+            {this.state.product_winter.map((product_w, i) => {
+              return <Product data={product_w} key={i}></Product>;
+            })}
           </Slider>
         </div>
         <div className="search_product_container">
           <h3>마이리얼트립 ONLY</h3>
           <Slider {...settings} className="product_lately_wrapper">
-            {products_winter}
+            {this.state.product_winter.map((product_w, i) => {
+              return <Product data={product_w} key={i}></Product>;
+            })}
           </Slider>
         </div>
       </>

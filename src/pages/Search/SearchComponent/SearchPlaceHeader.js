@@ -6,7 +6,7 @@ class SearchPlaceHeader extends Component {
     super(props);
     this.state = {
       select_place: [],
-      button: true
+      buttonShow: true
     };
   }
 
@@ -22,7 +22,7 @@ class SearchPlaceHeader extends Component {
 
   handleClick = () => {
     this.setState({
-      button: !this.state.button
+      buttonShow: !this.state.buttonShow
     });
   };
   render() {
@@ -45,7 +45,9 @@ class SearchPlaceHeader extends Component {
                     alt=""
                   />
                 </button>
-                <div style={{ display: !this.state.button ? "block" : "none" }}>
+                <div
+                  style={{ display: !this.state.buttonShow ? "block" : "none" }}
+                >
                   <ul>
                     {this.state.select_place.map((city, i) => {
                       return <li key={i}>{city}</li>;
