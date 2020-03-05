@@ -101,7 +101,6 @@ export default class Offer extends Component {
     this.handleGet();
     window.addEventListener("scroll", this.handleScroll);
   }
-
   componentWillMount() {
     window.removeEventListener("scroll", this.handleScroll);
   }
@@ -196,7 +195,11 @@ export default class Offer extends Component {
                     </a>
                   </p>
                   <div className="offer_main_inner-bar-star">
-                    {getStars(this.state.offer_data.average_rating)}
+                    <MdStar className="star_blue" />
+                    <MdStar className="star_blue" />
+                    <MdStar className="star_blue" />
+                    <MdStar className="star_blue" />
+                    <MdStar className="star_blue" />
                   </div>
                   <p>후기 {this.state.review.length}개</p>
                 </div>
