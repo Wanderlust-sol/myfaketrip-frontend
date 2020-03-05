@@ -3,7 +3,7 @@ import "./OfferSide.scss";
 
 class OfferSide extends Component {
   constructor(props) {
-    super(props);
+    super();
   }
   render() {
     return (
@@ -12,8 +12,8 @@ class OfferSide extends Component {
         style={{
           right: !this.props.fixed && (this.props.innerWidth - 1061) / 2 - 7,
           top:
-            this.props.prevScrollpos > this.props.bottom &&
-            80 - (this.props.prevScrollpos - this.props.bottom)
+            this.props.prevScrollpos > this.props.bottom - 800 &&
+            80 - (this.props.prevScrollpos - (this.props.bottom - 800))
         }}
       >
         <div className="side_container">

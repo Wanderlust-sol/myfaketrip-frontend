@@ -4,7 +4,7 @@ import "./Modal.scss";
 
 class Modal extends Component {
   onClick = e => {
-    this.props.onClose && this.props.onClose(e);
+    typeof this.props.onClose === "function" && this.props.onClose(e);
   };
 
   render() {

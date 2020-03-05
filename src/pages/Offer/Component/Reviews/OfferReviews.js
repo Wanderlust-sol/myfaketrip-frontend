@@ -11,9 +11,34 @@ class OfferReviews extends Component {
       grade: 0,
       comments: "",
       data: [],
+      review_id: 0,
       review_list: []
     };
   }
+
+  editReview = (id, grade, content) => {
+    console.log(id, grade, content);
+    this.setState({ review_id: id, grade: grade, comments: content }, () => {
+      console.log(this.state.review_id, this.state.grade, this.state.comments);
+    });
+  };
+
+  deleteReview = id => {
+    fetch(`http://10.58.2.187:8001/review/30162/${id}`, {
+      method: "delete",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: localStorage.getItem("access_token")
+      }
+    })
+      .then(res => {
+        console.log(res);
+        res.status === 401 ? alert("해당 유저가 아닙니다.") : this.handleGet();
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
 
   gradeChange = grade => {
     this.setState({ grade: grade });
@@ -23,56 +48,93 @@ class OfferReviews extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleSend = () => {
-    fetch("http://10.58.2.187:8000/review/30162", {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        content: this.state.comments,
-        grade: this.state.grade.toFixed(1)
-      })
-    })
-      // .then(res => res.json())
+  handleGet = () => {
+    fetch("http://10.58.2.187:8001/review/30162")
+      .then(res => res.json())
       .then(res => {
-        console.log(res);
-        fetch("http://10.58.2.187:8000/review/30162")
-          .then(res => res.json())
-          .then(res => {
-            console.log("first", res);
-            this.setState({ review_list: res.Review_list }, () => {
-              console.log("third", this.state.review_list);
-            });
-          })
-          .catch(error => {
-            console.error(error);
-          });
+        this.setState({ review_list: res.Review_list }, () => {
+          console.log("third", this.state.review_list);
+        });
       })
       .catch(error => {
         console.error(error);
       });
   };
 
+  handleSend = () => {
+    if (this.state.review_id === 0) {
+      fetch("http://10.58.2.187:8001/review/30162", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: localStorage.getItem("access_token")
+        },
+        body: JSON.stringify({
+          content: this.state.comments,
+          grade: this.state.grade.toFixed(1)
+        })
+      })
+        // .then(res => res.json())
+        .then(res => {
+          console.log(res);
+          this.handleGet();
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    } else {
+      fetch(`http://10.58.2.187:8001/review/30162/${this.state.review_id}`, {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: localStorage.getItem("access_token")
+        },
+        body: JSON.stringify({
+          content: this.state.comments
+          // grade: this.state.grade.toFixed(1)
+        })
+      })
+        // .then(res => res.json())
+        .then(res => {
+          res.status === 401
+            ? alert("해당 유저가 아닙니다.")
+            : this.handleGet();
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  };
+
   onSubmit = e => {
     e.preventDefault();
-    // this.setState(
-    //   {
-    //     data: [...this.state.data, this.state.comments],
-    //     comments: ""
-    //   },
-    //   );
     this.handleSend();
     this.setState({ grade: 0, comments: "" });
   };
 
+  componentDidMount() {
+    this.handleGet();
+  }
+
   render() {
     const postReview = this.state.review_list.map(item => {
-      return <Comment data={item} key={item.id} />;
+      return (
+        <Comment
+          data={item}
+          key={item.id}
+          editReview={(id, grade, content) =>
+            this.editReview(id, grade, content)
+          }
+          deleteReview={id => this.deleteReview(id)}
+        />
+      );
     });
+
     return (
       <div className="offer_main_reviews">
         <div className="offer_main_reviews_header">
           <span>후기</span>
-          <span className="reviews_num">112</span>
+          <span className="reviews_num">{this.state.review_list.length}</span>
         </div>
         <div className="offer_main_reviews_detail">
           <div className="detail_rating">

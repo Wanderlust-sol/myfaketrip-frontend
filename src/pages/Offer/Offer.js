@@ -2,16 +2,16 @@ import React, { Component } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Show from "../../components/WithMore/Show";
-import OfferSlider from "./OfferComponent/OfferProductSlider/OfferSlider";
-import OfferPhoto from "./OfferComponent/OfferPhoto/OfferPhoto";
-import OfferSide from "./OfferComponent/OfferSide/OfferSide";
-import OfferNav from "./OfferComponent/OfferNav/OfferNav";
-import OfferPrice from "./OfferComponent/OfferPrice/OfferPrice";
-import OfferIntro from "./OfferComponent/OfferIntro/OfferIntro";
-import OfferNotice from "./OfferComponent/OfferNotice/OfferNotice";
-import OfferCourse from "./OfferComponent/OfferCourse/OfferCourse";
-import OfferGuide from "./OfferComponent/OfferGuide/OfferGuide";
-import OfferReviews from "./OfferComponent/OfferReviews/OfferReviews";
+import OfferSlider from "./Component/ProductSlider/OfferSlider";
+import OfferPhoto from "./Component/Photo/OfferPhoto";
+import OfferSide from "./Component/Side/OfferSide";
+import OfferNav from "./Component/Nav/OfferNav";
+import OfferPrice from "./Component/Price/OfferPrice";
+import OfferIntro from "./Component/Intro/OfferIntro";
+import OfferNotice from "./Component/Notice/OfferNotice";
+import OfferCourse from "./Component/Course/OfferCourse";
+import OfferGuide from "./Component/Guide/OfferGuide";
+import OfferReviews from "./Component/Reviews/OfferReviews";
 import { MdStar } from "react-icons/md";
 import "./Offer.scss";
 
@@ -33,14 +33,14 @@ export default class Offer extends Component {
     this.scrollDiv = React.createRef();
   }
 
-  navClick = e => {
-    this.setState({ navmode: e.target.id });
+  navClick = value => {
+    this.setState({ navmode: value });
     let location_id = "";
-    if (e.target.id === "product") {
+    if (value === "product") {
       location_id = ".offer_main";
-    } else if (e.target.id === "course") {
+    } else if (value === "course") {
       location_id = ".offer_main_course";
-    } else if (e.target.id === "require") {
+    } else if (value === "require") {
       location_id = ".offer_main_require";
     } else {
       location_id = ".offer_main_reviews";
@@ -62,7 +62,8 @@ export default class Offer extends Component {
   };
 
   componentDidMount() {
-    fetch("http://10.58.2.187:8000/product/30162")
+    console.log(this.props.location.search);
+    fetch("http://10.58.2.187:8001/product/30162")
       .then(res => res.json())
       .then(res => {
         this.setState(
@@ -86,7 +87,7 @@ export default class Offer extends Component {
     const currentScrollpos = window.pageYOffset;
     const visible = 220 > currentScrollpos;
     const fixed = 95 > currentScrollpos;
-    const bottom = document.querySelector(".offer_reviews_bar").offsetTop;
+    const bottom = document.querySelector(".offer_num").offsetTop;
 
     this.setState({
       prevScrollpos: currentScrollpos,
@@ -99,12 +100,12 @@ export default class Offer extends Component {
   render() {
     return (
       <>
-        <Header>검색창</Header>
+        <Header></Header>
         <div className="offer">
           <OfferNav
             visible={this.state.visible}
             navmode={this.state.navmode}
-            onClick={this.navClick}
+            onClick={value => this.navClick(value)}
           />
           <div className="offer_container">
             <div className="offer_container_box">

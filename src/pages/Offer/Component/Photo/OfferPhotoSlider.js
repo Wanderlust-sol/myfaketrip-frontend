@@ -30,7 +30,9 @@ export default class OfferPhotoSlider extends Component {
       customPaging: function(i) {
         return (
           <a>
-            <img className="thumb_photo" src={image[i]} alt="thumb_photo" />
+            <div className="thumb_photo_cover">
+              <img className="thumb_photo" src={image[i]} alt="thumb_photo" />
+            </div>
           </a>
         );
       },

@@ -1,16 +1,33 @@
+@import "../../styles/Common.scss";
+
 .reviews_list_wrapper {
   margin-top: 15px;
   margin-bottom: 15px;
+
   div {
     .reviews_list-photo {
-      width: 64px;
-      height: 64px;
+      width: 70px;
+      height: 48px;
       background-size: cover;
+      color: $Acolor;
       float: right;
       margin-left: 16px;
       margin-bottom: 16px;
       position: relative;
 
+      .edit {
+        width: 14px;
+        cursor: pointer;
+        transition: opacity 0.2s;
+      }
+
+      .delete {
+        width: 20px;
+        height: 20px;
+        margin-left: 5px;
+        transition: opacity 0.2s;
+        cursor: pointer;
+      }
       img {
         width: 64px;
         height: 64px;
@@ -25,7 +42,7 @@
         margin-left: 4px;
         font-size: 14px;
         font-weight: 500;
-        color: #343a40;
+        color: $blk;
       }
     }
     .reviews_list-purpose {
