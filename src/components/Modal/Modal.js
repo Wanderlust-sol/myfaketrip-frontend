@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import OfferPhotoSlider from "../../pages/Offer/OfferComponent/OfferPhoto/OfferPhotoSlider";
+import OfferPhotoSlider from "../../pages/Offer/Component/Photo/OfferPhotoSlider";
 import "./Modal.scss";
 
 class Modal extends Component {
