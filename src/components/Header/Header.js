@@ -1,40 +1,61 @@
 import React, { Component } from "react";
-import { headerData } from "./HeaderData";
-import "./Header.scss";
+import { withRouter } from "react-router-dom";
+import Search from "./Headersearchbox";
+import { headerData } from './HeaderData';
+import './Header.scss';
 
-export default class Header extends Component {
-  constructor() {
+class Header extends Component {
+  constructor(){
     super();
     this.state = {
       index: 0
     };
   }
 
-  navList = num => {
-    this.setState({
-      index: num
-    });
-  };
+navList=(num)=>{
+  this.setState({
+    index: num
+  })
+}
 
-  render() {
+loginClick=()=>{
+  this.props.history.push("/login/:3")
+}
+signupClick=()=>{
+  this.props.history.push("/signup/:3")
+}
+logoClick=()=>{
+  this.props.history.push("/")
+}
+ 
+  render(){
+    console.log(this.props.location)
+    const pathnameSplit=this.props.location.pathname.split(":")[1];
+    const pathname= pathnameSplit==="3" ? 
+    "loginHeader"
+    :"noone";
+    const searchBox = pathnameSplit==="3"?
+    <Search />
+    :null;
     return (
-      <header>
+      <header className={pathname}>
         {/* header */}
         <div className="headerTop container">
           <div className="logo">
             <h1>
-              <a href="1.html">MyFakeTrip</a>
+              <button onClick={this.logoClick}>MyFakeTrip</button>
             </h1>
           </div>
+          {searchBox}
           <div className="myPage">
             <div className="partners">
-              <a href="1.html">파트너 등록하기</a>
+              <button onClick={this.logoClick}>파트너 등록하기</button>
             </div>
             <div className="logIn">
-              <a href="1.html">로그인</a>
+              <button onClick={this.loginClick}>로그인</button>
             </div>
             <div className="signUpBtn">
-              <a href="1.html">회원가입</a>
+              <button onClick={this.signupClick}>회원가입</button>
             </div>
           </div>
         </div>
@@ -59,3 +80,4 @@ export default class Header extends Component {
     );
   }
 }
+export default withRouter(Header);
