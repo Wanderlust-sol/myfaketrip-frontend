@@ -9,6 +9,7 @@
   overflow: hidden;
   cursor: pointer;
   transition: all 0.15s ease-out;
+  display: block;
 
   &:hover {
     box-shadow: 0 2px 8px rgba(102, 109, 117, 0.32);

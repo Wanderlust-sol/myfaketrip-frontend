@@ -1,0 +1,42 @@
+.place_container {
+  width: 160px;
+  height: 72px;
+  position: relative;
+  background-size: cover;
+  border-radius: 4px;
+  text-align: center;
+  margin: 10px;
+  cursor: pointer;
+
+  .place_bg {
+    background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.8)
+    );
+
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.16);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    border-radius: 4px;
+  }
+  .landmark_tag {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+    padding-top: 20px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    max-width: 100%;
+  }
+
+  .landmark_count {
+    color: #fff;
+    font-size: 12px;
+    position: relative;
+    opacity: 0.75;
+  }
+}

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import ArrowNext from "../ArrowButton/ArrowNext";
-import ArrowPrev from "../ArrowButton/ArrowPrev";
+import ArrowNext from "../../../../components/ArrowButton/ArrowNext";
+import ArrowPrev from "../../../../components/ArrowButton/ArrowPrev";
 import { CitiesData } from "./CitiesData";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

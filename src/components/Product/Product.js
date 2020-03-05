@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { MdStar, MdStarBorder, MdStarHalf } from "react-icons/md";
+import { Link } from "react-router-dom";
 import "./Product.scss";
 
 class Product extends Component {
@@ -28,7 +29,10 @@ class Product extends Component {
     };
 
     return (
-      <div className="product_container">
+      <Link
+        to={`/product/${this.props.data.product_id}`}
+        className="product_container"
+      >
         <div className="product_img">
           <img src={this.props.data.thumnail} alt="productimg" />
           <div className="wishlist">
@@ -70,7 +74,7 @@ class Product extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </Link>
     );
   }
 }

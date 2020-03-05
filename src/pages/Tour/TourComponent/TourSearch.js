@@ -7,7 +7,8 @@ class Search extends Component {
     this.state = {
       keyword: "",
       search_place: [],
-      search_product: []
+      search_product: [],
+      search_id: []
     };
   }
 
@@ -32,11 +33,13 @@ class Search extends Component {
       return (
         <>
           <li key={i.place} className="place_font">
+            {/* <Link to={}> */}
             <img
               src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxwYXRoIGZpbGw9IiMyQjk2RUQiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTYuMjE0IDdhMS43ODYgMS43ODYgMCAxIDEgMy41NzMuMDAxQTEuNzg2IDEuNzg2IDAgMCAxIDYuMjE0IDd6TTMgN2MwIDMuNzUgNSA3LjUgNSA3LjVzNS0zLjc1IDUtNy41YzAtMi43NjQtMi4yMzYtNS01LTVTMyA0LjIzNiAzIDd6Ii8+Cjwvc3ZnPgo="
               alt="location"
             />
-            {keyword}
+            {keyword.name}
+            {/* </Link> */}
           </li>
         </>
       );
@@ -54,11 +57,13 @@ class Search extends Component {
       return (
         <>
           <li key={i.product}>
+            {/* <Link to={`/search/${keyword.search_id}`}> */}
             <img
               src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjODQ4Qzk0IiBzdHJva2Utd2lkdGg9IjEuNSI+CiAgICAgICAgPHBhdGggZD0iTTcgMTEuMjVBNC4yNDkgNC4yNDkgMCAwIDAgMTEuMjUgNyA0LjI0OSA0LjI0OSAwIDAgMCA3IDIuNzUgNC4yNDkgNC4yNDkgMCAwIDAgMi43NSA3IDQuMjQ5IDQuMjQ5IDAgMCAwIDcgMTEuMjV6Ii8+CiAgICAgICAgPHBhdGggc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBkPSJNMTAuMzMzIDEwLjMzM2wzLjMzNCAzLjMzNCIvPgogICAgPC9nPgo8L3N2Zz4K"
               alt="검색이미지"
             />
             {keyword}
+            {/* </Link> */}
           </li>
         </>
       );

@@ -9,6 +9,7 @@ class Search extends Component {
   render() {
     return (
       <Layout>
+        {console.log(this.props.location.search)}
         <div className="search_container">
           <SearchPlaceHeader></SearchPlaceHeader>
           <ProductCategories></ProductCategories>

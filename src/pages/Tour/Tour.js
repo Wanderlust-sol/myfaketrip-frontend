@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import TourSearch from "./TourComponent/TourSearch";
-import Cities from "../../components/Cities/Cities";
+import Cities from "./TourComponent/Cities/Cities";
 import Product from "../../components/Product/Product";
 import TourSlider from "./TourComponent/TourSlider";
 import TourPoint from "./TourComponent/TourPoint";

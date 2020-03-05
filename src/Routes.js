@@ -7,6 +7,7 @@ import Partner from "./pages/Partner/Partner";
 import Offer from "./pages/Offer/Offer";
 import Package from "./pages/Package/Package";
 import Search from "./pages/Search/Search";
+import Categories from "./pages/Categories/Categories";
 
 class Routes extends React.Component {
   render() {
@@ -17,9 +18,10 @@ class Routes extends React.Component {
           <Route exact path="/login" component={Login} />
           <Route exact path="/SignUp" component={SignUp} />
           <Route exact path="/partner" component={Partner} />
-          <Route exact path="/offer" component={Offer} />
+          <Route exact path="/product/:id" component={Offer} />
           <Route exact path="/package" component={Package} />
           <Route exact path="/search" component={Search} />
+          <Route exact path="/categories" component={Categories} />
         </Switch>
       </Router>
     );

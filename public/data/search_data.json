@@ -2,27 +2,96 @@
   "search_data": [
     {
       "place": [
-        "바르셀로나, 스페인",
-        "대한민국",
-        "대만",
-        "파리",
-        "캐나다",
-        "바람"
+        {
+          "id": 1,
+          "name": "스페인",
+          "url": "barcelona"
+        },
+        {
+          "id": 1,
+          "name": "대한민국",
+          "url": "barcelona"
+        },
+        {
+          "id": 1,
+          "name": "대만",
+          "url": "barcelona"
+        },
+        {
+          "id": 1,
+          "name": "파리",
+          "url": "barcelona"
+        },
+        {
+          "id": 1,
+          "name": "캐나다",
+          "url": "barcelona"
+        },
+        {
+          "id": 1,
+          "name": "스페인",
+          "url": "barcelona"
+        },
+        {
+          "id": 1,
+          "name": "스페인",
+          "url": "barcelona"
+        },
+        {
+          "id": 1,
+          "name": "스페인",
+          "url": "barcelona"
+        }
       ],
       "product": [
-        "바르셀로나 야경",
-        "파리 스냅",
-        "파리 야경",
-        "파리 뮤지엄 패스",
-        "하와이",
-        "하와이 오아후",
-        "하노이 하롱베이",
-        "하우스 오브 댄싱",
-        "하코네",
-        "바르셀로나 가우디 투어",
-        "대만 유심",
-        "대만 택시 투어",
-        "대만 패키지"
+        {
+          "id": 1,
+          "name": "바르셀로나",
+          "option": "야경",
+          "url": "barcelona"
+        },
+        {
+          "id": 1,
+          "name": "바르셀로나",
+          "option": "야경",
+          "url": "barcelona"
+        },
+        {
+          "id": 1,
+          "name": "바르셀로나",
+          "option": "야경",
+          "url": "barcelona"
+        },
+        {
+          "id": 1,
+          "name": "바르셀로나",
+          "option": "야경",
+          "url": "barcelona"
+        },
+        {
+          "id": 1,
+          "name": "바르셀로나",
+          "option": "야경",
+          "url": "barcelona"
+        },
+        {
+          "id": 1,
+          "name": "바르셀로나",
+          "option": "야경",
+          "url": "barcelona"
+        },
+        {
+          "id": 1,
+          "name": "바르셀로나",
+          "option": "야경",
+          "url": "barcelona"
+        },
+        {
+          "id": 1,
+          "name": "바르셀로나",
+          "option": "야경",
+          "url": "barcelona"
+        }
       ]
     }
   ]
