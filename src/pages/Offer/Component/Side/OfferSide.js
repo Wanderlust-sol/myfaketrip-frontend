@@ -3,19 +3,17 @@ import "./OfferSide.scss";
 
 class OfferSide extends Component {
   constructor(props) {
-    super(props);
+    super();
   }
   render() {
-    this.props.price_info &&
-      console.log(this.props.price_info[0].price.toLocaleString());
     return (
       <div
         className={this.props.fixed ? "offer_side" : "offer_side_fixed"}
         style={{
           right: !this.props.fixed && (this.props.innerWidth - 1061) / 2 - 7,
           top:
-            this.props.prevScrollpos > this.props.bottom &&
-            80 - (this.props.prevScrollpos - this.props.bottom)
+            this.props.prevScrollpos > this.props.bottom - 800 &&
+            80 - (this.props.prevScrollpos - (this.props.bottom - 800))
         }}
       >
         <div className="side_container">
