@@ -1,0 +1,214 @@
+@charset "UTF-8";
+/*공통*/
+.footerTxt {
+  font-size: 12px;
+  color: #666d75;
+}
+
+.footerTxt span {
+  color: #495056;
+}
+
+footer {
+  width: 100%;
+  padding-top: 40px;
+  border-top: 1px solid #dee2e6;
+}
+
+footer a {
+  color: #666d75;
+  font-size: 14px;
+}
+
+footer .footerTop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer .footerTop .cs {
+  width: 50%;
+}
+
+footer .footerTop .cs h3 {
+  margin-bottom: 5px;
+  line-height: 24px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #666d75;
+}
+
+footer .footerTop .cs h5 {
+  line-height: 32px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #666d75;
+}
+
+footer .footerTop .cs p span {
+  margin: 0 5px;
+}
+
+footer .footerTop .cs button {
+  width: 110px;
+  height: 40px;
+  padding: 9px 8px;
+  margin-top: 16px;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #ced4da;
+  font-size: 14px;
+  font-weight: 700;
+  color: #495056;
+}
+
+footer .footerTop .cs button:hover {
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+footer .footerTop .footNav {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer .footerTop .footNav div {
+  width: 33.3333%;
+}
+
+footer .footerTop .footNav div h3 {
+  font-size: 15px;
+  color: #666d75;
+}
+
+footer .footerTop .footNav div ul li {
+  line-height: 32px;
+}
+
+footer .footerTop .footNav div ul li a:hover {
+  color: #2b96ed;
+}
+
+footer .footerBottom {
+  margin-top: 32px;
+  border-top: 1px solid #e9ecef;
+}
+
+footer .footerBottom .footWrap {
+  margin: 16px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer .footerBottom .footWrap .bottomList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer .footerBottom .footWrap .bottomList ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 40px;
+}
+
+footer .footerBottom .footWrap .bottomList ul li {
+  height: 40px;
+  line-height: 40px;
+  margin-right: 20px;
+}
+
+footer .footerBottom .footWrap .bottomList ul li.listBorder {
+  height: 17px;
+  border-left: 1px solid #ced4da;
+}
+
+footer .footerBottom .footWrap .bottomList ul li a img {
+  vertical-align: middle;
+}
+
+footer .footerBottom .footWrap .footLeft ul li:nth-child(2) a {
+  font-weight: 700;
+}
+
+footer .footerBottom .footWrap .footLeft ul li a:hover {
+  color: #2b96ed;
+}
+
+footer .footLeft ul li:nth-child(2) a {
+  font-weight: 700;
+}
+
+footer .footLeft ul li a:hover {
+  color: #2b96ed;
+}
+
+footer .footRight ul li a {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+footer .footRight ul li a:hover {
+  opacity: 0.5;
+}
+
+footer .footRight .lngBtn {
+  width: 118px;
+  height: 40px;
+}
+
+footer .footRight .lngBtn button {
+  width: 100%;
+  height: inherit;
+  padding: 0 10px;
+  border-radius: 5px;
+  line-height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer .footRight .lngBtn button .btnImg {
+  width: 24px;
+  height: 24px;
+}
+
+footer .footRight .lngBtn button span {
+  color: #848c94;
+  font-size: 14px;
+}
+
+footer .footRight .lngBtn button .btnArrow {
+  width: 16px;
+  height: 16px;
+}
+
+footer p {
+  margin-bottom: 20px;
+}
+
+footer p span {
+  margin: 0 3px;
+}
+
+footer p span a {
+  font-size: 12px;
+  font-weight: 600;
+}
+/*# sourceMappingURL=Footer.css.map */

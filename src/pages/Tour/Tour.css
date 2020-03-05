@@ -1,0 +1,75 @@
+.Tour {
+  margin: 0 auto;
+}
+
+.Tour .article {
+  position: relative;
+  height: 425px;
+  background: #2b96ed;
+  text-align: center;
+  padding-top: 123px;
+  margin-top: -123px;
+}
+
+.Tour .section {
+  width: 1060px;
+  margin: 80px auto 200px;
+}
+
+.Tour .section .product_lately {
+  margin: 50px 0;
+}
+
+.Tour .section .product_lately h2 {
+  margin-bottom: 10px;
+}
+
+.Tour .section .product_lately .product_lately_wrapper {
+  width: 1080px;
+  margin-left: -10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Tour .section .product_tour {
+  margin: 50px 0;
+}
+
+.Tour .section .product_tour h2 {
+  margin-bottom: 10px;
+}
+
+.Tour .section .product_tour .product_lately_wrapper {
+  width: 1080px;
+  margin-left: -10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Tour .section .product_package {
+  margin: 50px 0;
+}
+
+.Tour .section .product_package h2 {
+  margin-bottom: 10px;
+}
+
+.Tour .section .product_package .product_lately_wrapper {
+  width: 1080px;
+  margin-left: -10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/*# sourceMappingURL=Tour.css.map */

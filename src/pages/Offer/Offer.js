@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
+import Layout from "../../components/Layout/Layout";
 import Show from "../../components/WithMore/Show";
 import OfferSlider from "./OfferComponent/OfferProductSlider/OfferSlider";
 import OfferPhoto from "./OfferComponent/OfferPhoto/OfferPhoto";
@@ -99,7 +98,7 @@ export default class Offer extends Component {
   render() {
     return (
       <>
-        <Header />
+        <Layout>
         <div className="offer">
           <OfferNav
             visible={this.state.visible}
@@ -254,7 +253,7 @@ export default class Offer extends Component {
             <sapn className="offer_num-number">30162</sapn>
           </div>
         </div>
-        <Footer />
+        </Layout>
       </>
     );
   }

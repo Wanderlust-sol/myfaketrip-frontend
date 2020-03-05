@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import "./OfferSide.scss";
 
 class OfferSide extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     this.props.price_info &&
       console.log(this.props.price_info[0].price.toLocaleString());

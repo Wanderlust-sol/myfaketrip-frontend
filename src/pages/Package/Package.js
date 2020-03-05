@@ -1,17 +1,16 @@
 import React, { Component } from "react";
-import Header from "../../components/Header/Header";
+import Layout from "../../components/Layout/Layout"
 import PackageSelect from "./PackageComponent/PackageSelect";
 import PackageSlider from "./PackageComponent/PackageSlider";
 import PackageGuideProduct from "./PackageComponent/PackageGuideProduct";
 import PackageProductSlider from "./PackageComponent/PackageProductSlider";
-import Footer from "../../components/Footer/Footer";
 import "./Package.scss";
 
 class Package extends Component {
   render() {
     return (
       <>
-        <Header />
+        <Layout />
         <div className="package_container">
           <PackageSelect />
           <div className="package_section">
@@ -20,7 +19,7 @@ class Package extends Component {
             <PackageProductSlider />
           </div>
         </div>
-        <Footer />
+        <Layout />
       </>
     );
   }
