@@ -222,7 +222,7 @@ export default class Offer extends Component {
                 <div className="offer_main_mini-reviews">
                   <div className="offer_main_mini-reviews-left">
                     <p className="mini-reviews-rate">
-                      {this.state.offer_data.average_rating}
+                      {Number(this.state.offer_data.average_rating).toFixed(1)}
                     </p>
                     <div className="offer_main_mini-reviews-sub">
                       <div className="mini-reviews-star-rating">

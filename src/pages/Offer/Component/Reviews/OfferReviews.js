@@ -156,7 +156,7 @@ class OfferReviews extends Component {
           <div className="offer_main_reviews_detail">
             <div className="detail_rating">
               <p className="detail_rating-average">
-                {this.props.data.average_rating}
+                {Number(this.props.data.average_rating).toFixed(1)}
               </p>
               <div className="detail_rating-star">
                 <MdStar className="star" />
