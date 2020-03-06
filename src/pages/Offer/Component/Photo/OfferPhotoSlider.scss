@@ -1,5 +1,7 @@
 .slider_form {
   position: relative;
+  width: 100%;
+  height: 100vh;
   .image_header {
     position: absolute;
     top: 16px;
@@ -23,11 +25,13 @@
     align-items: center;
     position: absolute;
     top: 50%;
-    transform: translateY(20%);
+    transform: translateY(-50%);
 
     .slick-list {
       width: 100%;
       img {
+        width: 800px;
+        height: 600px;
         margin: 0 auto;
       }
       .photo_num {
@@ -41,13 +45,34 @@
         max-height: 795px;
         text-align: center;
         width: 100%;
-        max-width: 705px;
       }
     }
-    .slick-dots {
+    .slick-dots.slick-thumb {
       margin-left: -3rem;
+      height: 100px;
+
       li {
-        margin: 0 60px;
+        width: 132px;
+        height: 100%;
+        margin: 100px 10px;
+        position: relative;
+        top: 0;
+        opacity: 0.5;
+
+        .thumb_photo {
+          width: 132px;
+          height: 92px;
+          top: 0;
+          left: 0;
+          position: absolute;
+        }
+      }
+      .slick-active {
+        opacity: 1;
+      }
+
+      li:nth-child(1) {
+        margin-left: 110px;
       }
     }
 
@@ -73,19 +98,4 @@
       left: 150px;
     }
   }
-}
-
-.thumb_photo {
-  width: 132px;
-  height: 92px;
-  margin-top: 10px;
-  position: relative;
-}
-
-.thumb_photo_cover {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: inherit;
-  background-color: rgba(0, 0, 0, 0.75);
 }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Modal from "../../../../components/Modal/Modal";
+import Modal from "components/Modal/Modal";
 import "./OfferPhoto.scss";
 
 class OfferPhoto extends Component {
@@ -22,6 +22,7 @@ class OfferPhoto extends Component {
           show={this.state.show}
           onClose={this.showModal}
           data={this.props.data}
+          data2={this.props.data2}
         ></Modal>
         <div className="offer_main_photos">
           <div
