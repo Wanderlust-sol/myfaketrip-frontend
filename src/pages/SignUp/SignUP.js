@@ -57,7 +57,7 @@ export default class SignUp extends Component {
   };
   //fetch
   signup = () => {
-    fetch(`${address}account/signin`, {
+    fetch(`${address}account/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
