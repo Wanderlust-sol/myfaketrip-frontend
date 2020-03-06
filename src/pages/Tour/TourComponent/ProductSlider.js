@@ -27,7 +27,7 @@ class ProductSlider extends Component {
     };
   }
   componentDidMount = () => {
-    fetch("http://10.58.6.221:8001/product")
+    fetch("http://10.58.6.221:8080/product/tour")
       .then(res => res.json())
       .then(res => {
         console.log("fir: ", res.data);

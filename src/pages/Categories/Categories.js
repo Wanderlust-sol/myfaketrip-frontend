@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Layout from "../Layout/Layout";
+import Layout from "../../components/Layout/Layout";
 import LandmarkSlider from "./CategoriesComponent/LandmarkSlider";
 import CategoryList from "./CategoriesComponent/CategoryList";
 import CategoryForm from "./CategoriesComponent/CategoryForm";
