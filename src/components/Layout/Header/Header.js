@@ -56,6 +56,7 @@ class Header extends Component {
   };
   logoutClick = () => {
     window.localStorage.clear();
+    this.props.history.push("/");
     window.location.reload();
   };
 
