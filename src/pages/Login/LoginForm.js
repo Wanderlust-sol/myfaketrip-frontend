@@ -15,7 +15,7 @@ class LoginForm extends Component {
   }
 
   login = () => {
-    fetch("http://10.58.5.139:8000/account/signin", {
+    fetch("http://10.58.1.141:8000/account/signin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

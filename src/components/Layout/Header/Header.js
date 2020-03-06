@@ -14,18 +14,20 @@ class Header extends Component {
     };
   }
   componentDidMount = () => {
-    fetch("http://10.58.5.139:8000/account/profileupdate", {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: localStorage.getItem("wtw-token")
-      }
-    })
-      .then(res => res.json())
-      .then(res => {
-        this.setState({
-          username: res.agent_profile.username
+    if (localStorage.getItem("wtw-token")) {
+      fetch("http://10.58.1.141:8000/account/profileupdate", {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: localStorage.getItem("wtw-token")
+        }
+      })
+        .then(res => res.json())
+        .then(res => {
+          this.setState({
+            username: res.agent_profile.username
+          });
         });
-      });
+    }
   };
 
   navList = num => {
@@ -60,7 +62,7 @@ class Header extends Component {
     console.log(this.props.location);
     const pathnameSplit = this.props.location.pathname.split(":")[1];
     const pathname = pathnameSplit === "3" ? "loginHeader" : "noone";
-    const searchBox = pathnameSplit === "3" ? <Search /> : null;
+    const searchBox = pathnameSplit === "3" && <Search />;
     return (
       <header className={pathname}>
         {/* header */}
@@ -159,7 +161,7 @@ class Header extends Component {
               {headerData.map(el => (
                 <li key={el.id}>
                   <div
-                    className={this.state.index === el.id ? "color" : null}
+                    className={this.state.index === el.id && "color"}
                     onClick={() => this.navList(el.id)}
                   >
                     {el.title}
