@@ -32,9 +32,16 @@ class Header extends Component {
   };
 
   navList = num => {
-    this.setState({
-      index: num
-    });
+    this.setState(
+      {
+        index: num
+      },
+      () => {
+        if (this.state.index === 5) {
+          this.props.history.push("/package");
+        }
+      }
+    );
   };
   profileClick = () => {
     this.setState({
