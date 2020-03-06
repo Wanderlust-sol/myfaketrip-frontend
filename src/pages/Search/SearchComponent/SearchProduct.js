@@ -21,35 +21,30 @@ class SearchProduct extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      product_winter: []
+      product_place: []
     };
   }
-  componentDidMount = () => {
-    fetch("http://localhost:3000/data/product_winter.json")
-      .then(res => res.json())
-      .then(res => {
-        this.setState({
-          product_winter: res.product_winter
-        });
-      });
-  };
+
   render() {
+    console.log("data", this.props.data);
     return (
       <>
         <div className="search_product_container">
           <h3>추천 상품</h3>
           <Slider {...settings} className="product_lately_wrapper">
-            {this.state.product_winter.map((product_w, i) => {
-              return <Product data={product_w} key={i}></Product>;
-            })}
+            {this.props.data &&
+              this.props.data.offers.map((product_p, i) => {
+                return <Product data={product_p} key={i}></Product>;
+              })}
           </Slider>
         </div>
         <div className="search_product_container">
-          <h3>마이리얼트립 ONLY</h3>
+          <h3>{this.props.data.sub_theme}</h3>
           <Slider {...settings} className="product_lately_wrapper">
-            {this.state.product_winter.map((product_w, i) => {
-              return <Product data={product_w} key={i}></Product>;
-            })}
+            {this.props.data &&
+              this.props.data.offers.map((product_p, i) => {
+                return <Product data={product_p} key={i}></Product>;
+              })}
           </Slider>
         </div>
       </>

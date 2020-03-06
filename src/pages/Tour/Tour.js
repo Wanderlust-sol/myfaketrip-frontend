@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import TourSearch from "./TourComponent/TourSearch";
-import Cities from "../../components/Cities/Cities";
+import Cities from "./TourComponent/Cities/Cities";
 import Product from "../../components/Product/Product";
 import TourSlider from "./TourComponent/TourSlider";
 import TourPoint from "./TourComponent/TourPoint";
@@ -14,28 +14,17 @@ class Tour extends Component {
     super(props);
     this.state = {
       index: "",
-      product: [],
-      product_tour: [],
-      product_guide: []
+      product: []
     };
   }
 
   componentDidMount = () => {
-    fetch("http://localhost:3000/data/product.json")
+    fetch("http://10.58.6.221:8001/product")
       .then(res => res.json())
       .then(res => {
         console.log("firstly: ", res.product);
         this.setState({
-          product: res.product
-        });
-      });
-    fetch("http://localhost:3000/data/product_package.json")
-      .then(res => res.json())
-      .then(res => {
-        console.log("firstly: ", res.product);
-        this.setState({
-          product_tour: res.product_guide,
-          product_guide: res.product_package
+          product: res.data[1].offers
         });
       });
   };
@@ -64,24 +53,6 @@ class Tour extends Component {
               </div>
 
               <ProductSlider></ProductSlider>
-
-              <div className="product_tour">
-                <h2>바르셀로나에서 만난 인생 투어🌞</h2>
-                <div className="product_lately_wrapper">
-                  {this.state.product_tour.map((product, i) => {
-                    return <Product data={product} key={i}></Product>;
-                  })}
-                </div>
-              </div>
-
-              <div className="product_package">
-                <h2>마리트 단독! 가이드라이브 패키지</h2>
-                <div className="product_lately_wrapper">
-                  {this.state.product_guide.map((product, i) => {
-                    return <Product data={product} key={i}></Product>;
-                  })}
-                </div>
-              </div>
 
               <TourInfo></TourInfo>
             </div>

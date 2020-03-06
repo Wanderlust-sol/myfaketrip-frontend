@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import "./TourSearch.scss";
 
 class Search extends Component {
@@ -7,19 +8,26 @@ class Search extends Component {
     this.state = {
       keyword: "",
       search_place: [],
-      search_product: []
+      search_product: [],
+      search_keyword: []
     };
   }
-
+  keywordClick = value => {
+    this.setState({ search_keyword: value }, () => {
+      console.log("검색", this.state.search_keyword);
+      this.props.history.push("/search?query=Barcelona");
+    });
+  };
   componentDidMount = () => {
-    fetch("http://localhost:3000/data/search_data.json")
+    fetch("http://10.58.6.221:8001/product/search?query=Barcelona")
       .then(res => res.json())
       .then(res => {
+        console.log(res);
         this.setState({
-          search_place: res.search_data[0].place,
-          search_product: res.search_data[0].product
+          search_place: res.recommendation_data[0].local_list,
+          search_product: res.recommendation_data[0].place_list
         });
-        console.log("place", res.search_data[0].place);
+        console.log("place", res.recommendation_data[0].place_list);
       });
   };
 
@@ -27,11 +35,15 @@ class Search extends Component {
     let resultPlace = this.state.search_place.filter(keywords =>
       keywords.includes(this.state.keyword)
     );
-
+    console.log(resultPlace);
     let resultPlaceMap = resultPlace.map((keyword, i) => {
       return (
         <>
-          <li key={i.place} className="place_font">
+          <li
+            key={i}
+            className="place_font"
+            onClick={() => this.keywordClick(keyword)}
+          >
             <img
               src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxwYXRoIGZpbGw9IiMyQjk2RUQiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTYuMjE0IDdhMS43ODYgMS43ODYgMCAxIDEgMy41NzMuMDAxQTEuNzg2IDEuNzg2IDAgMCAxIDYuMjE0IDd6TTMgN2MwIDMuNzUgNSA3LjUgNSA3LjVzNS0zLjc1IDUtNy41YzAtMi43NjQtMi4yMzYtNS01LTVTMyA0LjIzNiAzIDd6Ii8+Cjwvc3ZnPgo="
               alt="location"
@@ -41,7 +53,6 @@ class Search extends Component {
         </>
       );
     });
-
     return resultPlaceMap;
   };
 
@@ -49,11 +60,11 @@ class Search extends Component {
     let resultProduct = this.state.search_product.filter(keywords =>
       keywords.includes(this.state.keyword)
     );
-
+    console.log(resultProduct);
     let resultProductMap = resultProduct.map((keyword, i) => {
       return (
         <>
-          <li key={i.product}>
+          <li key={i.product} onClick={() => this.keywordClick(keyword)}>
             <img
               src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjODQ4Qzk0IiBzdHJva2Utd2lkdGg9IjEuNSI+CiAgICAgICAgPHBhdGggZD0iTTcgMTEuMjVBNC4yNDkgNC4yNDkgMCAwIDAgMTEuMjUgNyA0LjI0OSA0LjI0OSAwIDAgMCA3IDIuNzUgNC4yNDkgNC4yNDkgMCAwIDAgMi43NSA3IDQuMjQ5IDQuMjQ5IDAgMCAwIDcgMTEuMjV6Ii8+CiAgICAgICAgPHBhdGggc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBkPSJNMTAuMzMzIDEwLjMzM2wzLjMzNCAzLjMzNCIvPgogICAgPC9nPgo8L3N2Zz4K"
               alt="검색이미지"
@@ -104,4 +115,4 @@ class Search extends Component {
   }
 }
 
-export default Search;
+export default withRouter(Search);

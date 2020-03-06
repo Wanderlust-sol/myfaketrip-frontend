@@ -14,11 +14,6 @@
     width: 1060px;
     margin: 80px auto 200px;
 
-    @mixin product_wrapper {
-      display: flex;
-      justify-content: space-between;
-    }
-
     .product_lately {
       margin: 50px 0;
       h2 {
@@ -28,33 +23,8 @@
       .product_lately_wrapper {
         width: 1080px;
         margin-left: -10px;
-        @include product_wrapper;
-      }
-    }
-
-    .product_tour {
-      margin: 50px 0;
-      h2 {
-        margin-bottom: 10px;
-      }
-
-      .product_lately_wrapper {
-        width: 1080px;
-        margin-left: -10px;
-        @include product_wrapper;
-      }
-    }
-
-    .product_package {
-      margin: 50px 0;
-      h2 {
-        margin-bottom: 10px;
-      }
-
-      .product_lately_wrapper {
-        width: 1080px;
-        margin-left: -10px;
-        @include product_wrapper;
+        display: flex;
+        justify-content: space-between;
       }
     }
   }

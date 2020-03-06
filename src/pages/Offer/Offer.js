@@ -65,7 +65,7 @@ export default class Offer extends Component {
       });
   };
   componentDidMount() {
-    fetch("http://10.58.6.221:8001/product/30162")
+    fetch(`http://10.58.7.201:8003/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(res => {
         console.log(res);
