@@ -1,4 +1,4 @@
-@import "../../styles/Common.scss";
+@import "styles/Common.scss";
 
 .reviews_list_wrapper {
   margin-top: 15px;
@@ -7,7 +7,7 @@
   div {
     .reviews_list-photo {
       width: 70px;
-      height: 48px;
+      height: 20px;
       background-size: cover;
       color: $Acolor;
       float: right;

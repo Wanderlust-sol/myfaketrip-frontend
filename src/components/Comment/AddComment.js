@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Alert from "components/Alert/Alert";
 import StarRatingForm from "../StarRatingForm/StarRatingForm";
 import "./AddComment.scss";
 
@@ -42,6 +43,7 @@ class AddComment extends Component {
               <button className="comment_submit" type="submit">
                 등록
               </button>
+              {/* {this.props.review_toggle && <Alert>해당유저가 아닙니다.</Alert>} */}
             </div>
             <div>
               <div className="input_comment">
