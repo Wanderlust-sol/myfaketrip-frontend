@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Layout from "components/Layout/Layout";
+import { address } from "Config/config";
 import { snsSignUp } from "pages/SignUp/FormData";
 import "styles/Common.scss";
 import "pages/SignUp/SignUp.scss";
@@ -56,7 +57,7 @@ export default class SignUp extends Component {
   };
   //fetch
   signup = () => {
-    fetch("http://10.58.1.141:8000/account/signup", {
+    fetch(`${address}account/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import { address } from "Config/config";
 import Search from "components/Layout/Header/Headersearchbox";
 import { headerData } from "components/Layout/Header/HeaderData";
 import "components/Layout/Header/Header.scss";
@@ -15,7 +16,7 @@ class Header extends Component {
   }
   componentDidMount = () => {
     if (localStorage.getItem("wtw-token")) {
-      fetch("http://10.58.1.141:8000/account/profileupdate", {
+      fetch(`${address}account/profileupdate`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: localStorage.getItem("wtw-token")

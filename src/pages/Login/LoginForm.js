@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import { address } from "Config/config";
 
 class LoginForm extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class LoginForm extends Component {
   }
 
   login = () => {
-    fetch("http://10.58.1.141:8000/account/signin", {
+    fetch(`${address}account/signin`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

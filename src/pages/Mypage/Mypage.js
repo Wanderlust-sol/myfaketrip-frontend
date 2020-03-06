@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Layout from "components/Layout/Layout";
+import { address } from "Config/config";
 import LeftSide from "pages/Mypage/components/LeftSide";
-import MainSide from "./components/MainSide";
+import MainSide from "pages/Mypage/components/MainSide";
 import "pages/Mypage/Mypage.scss";
 
 export default class Mypage extends Component {
@@ -15,7 +16,7 @@ export default class Mypage extends Component {
   }
   componentDidMount = () => {
     if (localStorage.getItem("wtw-token")) {
-      fetch("http://10.58.5.139:8000/account/profileupdate", {
+      fetch(`${address}account/profileupdate`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: localStorage.getItem("wtw-token")
@@ -32,6 +33,7 @@ export default class Mypage extends Component {
     }
   };
   render() {
+    console.log(address, "aa");
     return (
       <>
         <Layout>
