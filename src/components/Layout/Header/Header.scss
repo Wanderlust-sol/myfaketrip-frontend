@@ -1,0 +1,269 @@
+/*공통*/
+.container {
+  width: 1076px;
+  margin: auto;
+}
+/*header*/
+header {
+  width: 100%;
+  height: 123px;
+  z-index: 100;
+  position: relative;
+
+  &.noone {
+    border-bottom: 1px solid #1583db;
+  }
+  .headerTop {
+    height: 73px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+      h1 {
+        button {
+          display: block;
+          width: 128px;
+          height: 28px;
+          text-indent: -9999px;
+          border: none;
+          cursor: pointer;
+          background: url(../../../img/myfaketrip_logo.png) no-repeat;
+          background-size: contain;
+        }
+      }
+    }
+    .needLogin,
+    .myPage {
+      display: flex;
+      div {
+        margin-left: 10px;
+        // &:nth-child(2) {
+        //   margin-left: 10px;
+        // }
+        button {
+          display: block;
+          height: 36px;
+          padding: 6px 12px;
+          font-size: 15px;
+          color: #fff;
+          font-weight: 600;
+          line-height: 22px;
+          border: none;
+          cursor: pointer;
+          transition: 0.5s;
+          background-color: rgba(0, 0, 0, 0);
+          &:hover {
+            border-radius: 2px;
+            background-color: rgba(255, 255, 255, 0.2);
+          }
+        }
+        &:last-child {
+          margin-left: 12px;
+          position: relative;
+          button {
+            width: inherit;
+            height: inherit;
+            padding: 0;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            &.accountBtn {
+              border-radius: 50%;
+            }
+            &:hover {
+              background-color: rgba(255, 255, 255, 0.5);
+            }
+            img {
+              width: 32px;
+              height: 32px;
+            }
+          }
+          .prCard {
+            width: 230px;
+            font-size: 15px;
+            border: 1px solid #e9ecef;
+            background-color: #fff;
+            position: absolute;
+            top: 50px;
+            left: -210px;
+            div {
+              border-bottom: 1px solid #e9ecef;
+              margin: 0;
+              &.profile {
+                padding: 20px 16px;
+                button {
+                  width: 48px;
+                  height: 36px;
+                  margin-top: 5px;
+                  float: left;
+                  img {
+                    width: 36px;
+                    height: 36px;
+                    border: 2px solid #fff;
+                    border-radius: 50%;
+                    margin-left: 12px;
+                    transition: border-color 0.2s ease;
+                    &:hover {
+                      border-color: #e9ecef;
+                    }
+                  }
+                }
+                .name {
+                  border: none;
+                  margin-left: 66px;
+                  box-sizing: border-box;
+                  p {
+                    line-height: 24px;
+                    font-size: 17px;
+                    font-weight: 600;
+                    color: #495056;
+                  }
+                  span {
+                    cursor: pointer;
+                    color: #2b96ed;
+                  }
+                }
+              }
+              &.logout {
+                line-height: 48px;
+              }
+              ul {
+                padding: 8px 0;
+                li {
+                  height: 48px;
+                  line-height: 48px;
+                  padding: 0 16px;
+                  cursor: pointer;
+                  span {
+                    &.prIcon {
+                      width: 20px;
+                      height: 20px;
+                      margin-top: 14px;
+                      margin-right: 16px;
+                      text-indent: -9999px;
+                      display: inline-block;
+                    }
+                    &.pointImg {
+                      background: url(https://d2yoing0loi5gh.cloudfront.net/webpack/d44ac632ec5b4f671650934c88ebec8a.svg)
+                        no-repeat;
+                      background-position: -4px -32px;
+                    }
+                    &.couponImg {
+                      background: url(https://d2yoing0loi5gh.cloudfront.net/webpack/d44ac632ec5b4f671650934c88ebec8a.svg)
+                        no-repeat;
+                      background-position: -100px -29px;
+                    }
+                    &.friendsImg {
+                      background: url(https://d2yoing0loi5gh.cloudfront.net/webpack/d44ac632ec5b4f671650934c88ebec8a.svg)
+                        no-repeat;
+                      background-position: -28px -31px;
+                    }
+                    &.rightBlue {
+                      float: right;
+                      color: #2b96ed;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .needLogin {
+      div:last-child {
+        margin-left: 20px;
+        margin-right: 20px;
+        button {
+          padding: 6px 32px;
+          font-size: 14px;
+          border: 1px solid #fff;
+        }
+      }
+    }
+  }
+  .menu {
+    height: 50px;
+    div {
+      ul {
+        display: flex;
+        li {
+          div {
+            line-height: 50px;
+            height: 50px;
+            margin-right: 25px;
+            padding: 0 4px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.7);
+
+            &.color {
+              color: rgba(255, 255, 255, 1);
+              border-bottom: 3px solid rgba(255, 255, 255, 1);
+            }
+            &:hover {
+              box-sizing: border-box;
+              border-bottom: 3px solid rgba(255, 255, 255, 0.7);
+            }
+          }
+        }
+      }
+    }
+  }
+  &.loginHeader {
+    border-bottom: 1px solid #dee2e6;
+    .headerTop {
+      .logo {
+        h1 {
+          button {
+            background: url(../../../img/myfaketrip_logo_color.png) no-repeat;
+            background-size: contain;
+          }
+        }
+      }
+      .needLogin,
+      .myPage {
+        div {
+          button {
+            color: #666d75;
+            &:hover {
+              background-color: #f5f6f7;
+            }
+          }
+          &:last-child {
+            button {
+              color: #2b96ed;
+              border: 1px solid #a7d4f9;
+              &:hover {
+                background-color: #f5fbff;
+              }
+              &.accountBtn {
+                border: 2px solid rgba(255, 255, 255, 0.2);
+              }
+              &.profileBtn {
+                border: none;
+                color: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    .menu {
+      div {
+        ul {
+          li {
+            div {
+              color: rgba(73, 80, 86, 0.7);
+              &:hover {
+                border-bottom-color: rgba(43, 150, 237, 0.7);
+              }
+              &.color {
+                border-bottom: 3px solid rgba(43, 150, 237, 0.7);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

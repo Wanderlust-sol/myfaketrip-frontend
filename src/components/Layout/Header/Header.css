@@ -1,0 +1,154 @@
+@charset "UTF-8";
+/*공통*/
+.container {
+  width: 1076px;
+  margin: auto;
+}
+
+/*header*/
+header {
+  width: 100%;
+  height: 123px;
+  z-index: 100;
+  position: relative;
+}
+
+header.noone {
+  border-bottom: 1px solid #1583db;
+}
+
+header .headerTop {
+  height: 73px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .headerTop .logo h1 button {
+  display: block;
+  width: 128px;
+  height: 28px;
+  text-indent: -9999px;
+  border: none;
+  cursor: pointer;
+  background: url(../../../img/myfaketrip_logo.png) no-repeat;
+  background-size: contain;
+}
+
+header .headerTop .myPage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .headerTop .myPage div:nth-child(2) {
+  margin-left: 10px;
+}
+
+header .headerTop .myPage div button {
+  display: block;
+  height: 36px;
+  padding: 6px 12px;
+  font-size: 15px;
+  color: #fff;
+  font-weight: 600;
+  line-height: 22px;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+header .headerTop .myPage div button:hover {
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+header .headerTop .myPage div:last-child {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+header .headerTop .myPage div:last-child button {
+  padding: 6px 32px;
+  font-size: 14px;
+  border: 1px solid #fff;
+}
+
+header .menu {
+  height: 50px;
+}
+
+header .menu div ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .menu div ul li div {
+  line-height: 50px;
+  height: 50px;
+  margin-right: 25px;
+  padding: 0 4px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+header .menu div ul li div.color {
+  color: white;
+  border-bottom: 3px solid white;
+}
+
+header .menu div ul li div:hover {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+header.loginHeader {
+  border-bottom: 1px solid #dee2e6;
+}
+
+header.loginHeader .headerTop .logo h1 button {
+  background: url(../../../img/myfaketrip_logo_color.png) no-repeat;
+  background-size: contain;
+}
+
+header.loginHeader .headerTop .myPage div button {
+  color: #666d75;
+}
+
+header.loginHeader .headerTop .myPage div button:hover {
+  background-color: #f5f6f7;
+}
+
+header.loginHeader .headerTop .myPage div:last-child button {
+  color: #2b96ed;
+  border: 1px solid #a7d4f9;
+}
+
+header.loginHeader .headerTop .myPage div:last-child button:hover {
+  background-color: #f5fbff;
+}
+
+header.loginHeader .menu div ul li div {
+  color: rgba(73, 80, 86, 0.7);
+}
+
+header.loginHeader .menu div ul li div:hover {
+  border-bottom-color: rgba(43, 150, 237, 0.7);
+}
+
+header.loginHeader .menu div ul li div.color {
+  border-bottom: 3px solid rgba(43, 150, 237, 0.7);
+}
+/*# sourceMappingURL=Header.css.map */

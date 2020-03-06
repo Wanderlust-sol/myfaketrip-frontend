@@ -6,7 +6,7 @@ import TourSlider from "./TourComponent/TourSlider";
 import TourPoint from "./TourComponent/TourPoint";
 import ProductSlider from "./TourComponent/ProductSlider";
 import TourInfo from "./TourComponent/TourInfo";
-import Layout from "../Layout/Layout";
+import Layout from "../../components/Layout/Layout";
 import "./Tour.scss";
 
 class Tour extends Component {

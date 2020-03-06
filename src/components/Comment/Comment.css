@@ -1,0 +1,43 @@
+.reviews_list_wrapper div .reviews_list-photo {
+  width: 64px;
+  height: 64px;
+  background-size: cover;
+  float: right;
+  margin-left: 16px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.reviews_list_wrapper div .reviews_list-photo img {
+  width: 64px;
+  height: 64px;
+}
+
+.reviews_list_wrapper div div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.reviews_list_wrapper div div .reviews_list-writer {
+  margin-top: -5px;
+  margin-left: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #343a40;
+}
+
+.reviews_list_wrapper div .reviews_list-purpose {
+  margin-bottom: 12px;
+  font-size: 12px;
+  color: #848c94;
+}
+
+.reviews_list_wrapper .reviews_list-content {
+  font-size: 15px;
+  line-height: 25px;
+}
+/*# sourceMappingURL=Comment.css.map */
