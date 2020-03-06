@@ -1,0 +1,247 @@
+.login {
+  padding-top: 123px;
+  margin: -123px 0 64px 0;
+  color: #495056;
+}
+
+.login .loginWrap {
+  width: 430px;
+  margin: 64px auto 0;
+  padding: 48px;
+  border: 1px solid #dee2e6;
+  border-radius: 2px;
+}
+
+.login .loginWrap div {
+  width: 332px;
+  margin-bottom: 16px;
+}
+
+.login .loginWrap .snsLogin {
+  height: 160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.login .loginWrap .snsLogin button {
+  width: 100%;
+  height: 48px;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #495056;
+  outline: none;
+}
+
+.login .loginWrap .snsLogin button img {
+  margin-right: 8px;
+}
+
+.login .loginWrap .snsLogin button:hover {
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.login .loginWrap .or {
+  height: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login .loginWrap .or hr {
+  width: 40%;
+  height: 1px;
+  border-top: 1px solid #dee2e6;
+  background-color: #dee2e6;
+}
+
+.login .loginWrap .or span {
+  font-size: 12px;
+  color: #adb5bd;
+}
+
+.login .loginWrap .loginForm label {
+  width: 100%;
+}
+
+.login .loginWrap .loginForm label:hover input {
+  border: 1px solid #222;
+}
+
+.login .loginWrap .loginForm label div.wrongTxt p {
+  color: #ff8000;
+}
+
+.login .loginWrap .loginForm label p {
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.login .loginWrap .loginForm label input {
+  width: 100%;
+  height: 40px;
+  text-indent: 10px;
+  font-size: 14px;
+  border: 1px solid #dee2e6;
+  border-radius: 2px;
+}
+
+.login .loginWrap .loginForm label input::-webkit-input-placeholder {
+  font-size: 14px;
+}
+
+.login .loginWrap .loginForm label input:-ms-input-placeholder {
+  font-size: 14px;
+}
+
+.login .loginWrap .loginForm label input::-ms-input-placeholder {
+  font-size: 14px;
+}
+
+.login .loginWrap .loginForm label input::placeholder {
+  font-size: 14px;
+}
+
+.login .loginWrap .loginForm label input:focus {
+  -webkit-box-shadow: inset 0 0 0 2px #2b96ed;
+          box-shadow: inset 0 0 0 2px #2b96ed;
+  outline: none;
+  border: none;
+}
+
+.login .loginWrap .loginForm label input.txtCorrect {
+  -webkit-box-shadow: inset 0 0 0 2px #33b893;
+          box-shadow: inset 0 0 0 2px #33b893;
+  border: none;
+}
+
+.login .loginWrap .loginForm label input.txtCorrect:focus {
+  -webkit-box-shadow: inset 0 0 0 2px #33b893;
+          box-shadow: inset 0 0 0 2px #33b893;
+}
+
+.login .loginWrap .loginForm label input.txtWrong {
+  -webkit-box-shadow: inset 0 0 0 2px #ff8000;
+          box-shadow: inset 0 0 0 2px #ff8000;
+  border: none;
+}
+
+.login .loginWrap .loginForm .checkLogin {
+  width: 100%;
+  margin: 15px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.login .loginWrap .loginForm .checkLogin label {
+  width: 40%;
+  font-size: 14px;
+  color: #343a40;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.login .loginWrap .loginForm .checkLogin label input {
+  width: 12px;
+  height: 12px;
+  vertical-align: bottom;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.login .loginWrap .loginForm .checkLogin label span {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 2px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.login .loginWrap .loginForm .checkLogin label span:hover {
+  border: 2px solid #adb5bd;
+}
+
+.login .loginWrap .loginForm .checkLogin label img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 1px solid #51abf3;
+  border-radius: 2px;
+  background-color: #51abf3;
+}
+
+.login .loginWrap .loginForm .checkLogin p {
+  font-size: 13px;
+  color: #666d75;
+  cursor: pointer;
+}
+
+.login .loginWrap .loginForm .checkLogin p:hover {
+  color: #373a3c;
+}
+
+.login .loginWrap .loginForm .loginCom {
+  width: 100%;
+  height: 48px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #51abf3;
+  opacity: 0.3;
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+.login .loginWrap .loginForm .loginSubmit {
+  width: 100%;
+  height: 48px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #51abf3;
+  opacity: 1;
+  border-radius: 3px;
+}
+
+.login .loginWrap .needSignUp {
+  width: 100%;
+  height: 18px;
+  text-align: center;
+}
+
+.login .loginWrap .needSignUp span {
+  margin-right: 5px;
+  font-size: 12px;
+  color: #666d75;
+}
+
+.login .loginWrap .needSignUp span:nth-of-type(2) {
+  text-decoration: underline;
+  cursor: pointer;
+}
+/*# sourceMappingURL=Login.css.map */

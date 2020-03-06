@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Headersearchbox.scss";
+import "components/Layout/Header/Headersearchbox.scss";
 class Search extends Component {
   constructor(props) {
     super(props);

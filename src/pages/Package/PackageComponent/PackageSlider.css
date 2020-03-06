@@ -1,0 +1,38 @@
+.package_banner_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.package_banner_container .package_slider {
+  width: 700px;
+  height: 280px;
+}
+
+.package_banner_container .package_slider .package_banner {
+  width: 700px;
+  height: 280px;
+  background-size: cover;
+  border-radius: 4px;
+}
+
+.package_banner_container .package_slider .indicators {
+  position: relative;
+  margin-top: -20px;
+  z-index: 100;
+}
+
+.package_banner_container .package_slider .indicators div {
+  background: #fff;
+}
+
+.package_banner_container .package_event img {
+  height: 280px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+/*# sourceMappingURL=PackageSlider.css.map */

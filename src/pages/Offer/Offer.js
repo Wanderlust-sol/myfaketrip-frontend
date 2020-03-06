@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Header from "components/Header/Header";
-import Footer from "components/Footer/Footer";
+import Header from "components/Layout/Header/Header";
+import Footer from "components/Layout/Footer/Footer";
 import Show from "components/WithMore/Show";
 import OfferSlider from "./Component/ProductSlider/OfferSlider";
 import OfferPhoto from "./Component/Photo/OfferPhoto";
@@ -14,7 +14,6 @@ import OfferGuide from "./Component/Guide/OfferGuide";
 import OfferReviews from "./Component/Reviews/OfferReviews";
 import { MdStar, MdStarBorder } from "react-icons/md";
 import "./Offer.scss";
-
 export default class Offer extends Component {
   constructor() {
     super();
@@ -34,7 +33,6 @@ export default class Offer extends Component {
     };
     this.scrollDiv = React.createRef();
   }
-
   navClick = value => {
     this.setState({ navmode: value });
     let location_id = "";
@@ -50,27 +48,22 @@ export default class Offer extends Component {
     const location = document.querySelector(location_id).offsetTop;
     window.scrollTo({ top: location, behavior: "smooth" });
   };
-
   withMoreClick1 = () => {
     this.setState({ withmore1: !this.state.withmore1 });
   };
-
   withMoreClick2 = () => {
     this.setState({ withmore2: !this.state.withmore2 });
   };
-
   mapMoreClick = () => {
     this.setState({ mapmore: !this.state.mapmore });
   };
-
   handleGet = () => {
-    fetch("http://10.58.6.221:8002/review/30162")
+    fetch("http://10.58.6.221:8001/review/30162")
       .then(res => res.json())
       .then(res => {
         this.setState({ review: res.Review_list });
       });
   };
-
   componentDidMount() {
     fetch(`http://10.58.7.201:8003/${this.props.match.params.id}`)
       .then(res => res.json())
@@ -85,8 +78,7 @@ export default class Offer extends Component {
           }
         );
       });
-
-    fetch("http://10.58.6.221:8002/product/search")
+    fetch("http://10.58.6.221:8001/product/search")
       .then(res => res.json())
       .then(res => {
         this.setState(
@@ -104,7 +96,6 @@ export default class Offer extends Component {
   componentWillMount() {
     window.removeEventListener("scroll", this.handleScroll);
   }
-
   handleScroll = () => {
     let navmode = "";
     const currentScrollpos = window.pageYOffset;
@@ -113,7 +104,6 @@ export default class Offer extends Component {
     const bottom =
       document.querySelector(".offer_num") !== null &&
       document.querySelector(".offer_num").offsetTop;
-
     if (
       currentScrollpos >
       document.querySelector(".offer_main").offsetTop - 800
@@ -138,7 +128,6 @@ export default class Offer extends Component {
     ) {
       navmode = "review";
     }
-
     this.setState({
       prevScrollpos: currentScrollpos,
       visible,
@@ -147,7 +136,6 @@ export default class Offer extends Component {
       navmode: navmode
     });
   };
-
   render() {
     const stars = [];
     const getStars = rating => {
@@ -159,7 +147,6 @@ export default class Offer extends Component {
       }
       return stars;
     };
-
     return (
       <>
         <Header></Header>
@@ -285,7 +272,6 @@ export default class Offer extends Component {
                     this.state.offer_data !== undefined && this.state.offer_data
                   }
                 />
-
                 <hr />
                 <OfferCourse data={this.state.offer_data.course_info} />
                 <div className="offer_main_require"></div>

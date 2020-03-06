@@ -1,0 +1,297 @@
+.signUp {
+  padding: 123px;
+  margin-top: -123px;
+  color: #495056;
+}
+
+.signUp .signUpWrap {
+  width: 430px;
+  margin: 64px auto 0;
+  padding: 48px;
+  border: 1px solid #dee2e6;
+  border-radius: 2px;
+}
+
+.signUp .signUpWrap div {
+  width: 332px;
+  margin-bottom: 16px;
+}
+
+.signUp .signUpWrap .snsSignUp {
+  height: 160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.signUp .signUpWrap .snsSignUp button {
+  width: 100%;
+  height: 48px;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #495056;
+  outline: none;
+}
+
+.signUp .signUpWrap .snsSignUp button img {
+  margin-right: 8px;
+}
+
+.signUp .signUpWrap .snsSignUp button:hover {
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.signUp .signUpWrap .or {
+  height: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.signUp .signUpWrap .or hr {
+  width: 40%;
+  height: 1px;
+  border-top: 1px solid #dee2e6;
+  border-left: 1px solid #dee2e6;
+  background-color: #dee2e6;
+}
+
+.signUp .signUpWrap .or span {
+  font-size: 12px;
+  color: #adb5bd;
+}
+
+.signUp .signUpWrap .signUpForm label {
+  width: 100%;
+}
+
+.signUp .signUpWrap .signUpForm label:hover input {
+  border: 1px solid #222;
+}
+
+.signUp .signUpWrap .signUpForm label div.wrongTxt p {
+  color: #ff8000;
+}
+
+.signUp .signUpWrap .signUpForm label p {
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.signUp .signUpWrap .signUpForm label input {
+  width: 100%;
+  height: 40px;
+  text-indent: 10px;
+  font-size: 14px;
+  border: 1px solid #dee2e6;
+  border-radius: 2px;
+}
+
+.signUp .signUpWrap .signUpForm label input::-webkit-input-placeholder {
+  font-size: 14px;
+}
+
+.signUp .signUpWrap .signUpForm label input:-ms-input-placeholder {
+  font-size: 14px;
+}
+
+.signUp .signUpWrap .signUpForm label input::-ms-input-placeholder {
+  font-size: 14px;
+}
+
+.signUp .signUpWrap .signUpForm label input::placeholder {
+  font-size: 14px;
+}
+
+.signUp .signUpWrap .signUpForm label input:focus {
+  -webkit-box-shadow: inset 0 0 0 2px #2b96ed;
+          box-shadow: inset 0 0 0 2px #2b96ed;
+  outline: none;
+  border: none;
+}
+
+.signUp .signUpWrap .signUpForm label input.txtCorrect {
+  -webkit-box-shadow: inset 0 0 0 2px #33b893;
+          box-shadow: inset 0 0 0 2px #33b893;
+  border: none;
+}
+
+.signUp .signUpWrap .signUpForm label input.txtCorrect:focus {
+  -webkit-box-shadow: inset 0 0 0 2px #33b893;
+          box-shadow: inset 0 0 0 2px #33b893;
+}
+
+.signUp .signUpWrap .signUpForm label input.txtWrong {
+  -webkit-box-shadow: inset 0 0 0 2px #ff8000;
+          box-shadow: inset 0 0 0 2px #ff8000;
+  border: none;
+}
+
+.signUp .signUpWrap .signUpForm .signupSubmit {
+  width: 100%;
+  height: 48px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #51abf3;
+  opacity: 1;
+  border-radius: 3px;
+}
+
+.signUp .signUpWrap .personal .checkAll {
+  width: 100%;
+  margin: 15px 0;
+  position: relative;
+}
+
+.signUp .signUpWrap .personal .checkAll input {
+  width: 25px;
+  height: 25px;
+  vertical-align: bottom;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.signUp .signUpWrap .personal .checkAll input[type="checkbox"] {
+  opacity: 0;
+}
+
+.signUp .signUpWrap .personal .checkAll span {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 2px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.signUp .signUpWrap .personal .checkAll span:hover {
+  border: 2px solid #adb5bd;
+}
+
+.signUp .signUpWrap .personal .checkAll img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 1px solid #51abf3;
+  border-radius: 2px;
+  background-color: #51abf3;
+}
+
+.signUp .signUpWrap .personal .checkWrap {
+  width: 100%;
+  padding: 16px 8px 16px 16px;
+  border: 1px solid #dee2e6;
+  border-radius: 2px;
+}
+
+.signUp .signUpWrap .personal .checkWrap ul li {
+  width: 100%;
+  margin-bottom: 24px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.signUp .signUpWrap .personal .checkWrap ul li:last-child {
+  margin-bottom: 0;
+}
+
+.signUp .signUpWrap .personal .checkWrap ul li input {
+  width: 25px;
+  height: 25px;
+  vertical-align: bottom;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.signUp .signUpWrap .personal .checkWrap ul li input[type="checkbox"] {
+  opacity: 0;
+}
+
+.signUp .signUpWrap .personal .checkWrap ul li span {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.signUp .signUpWrap .personal .checkWrap ul li span:hover {
+  border: 2px solid #adb5bd;
+}
+
+.signUp .signUpWrap .personal .checkWrap ul li .checkImg {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 1px solid #51abf3;
+  border-radius: 2px;
+  background-color: #51abf3;
+}
+
+.signUp .signUpWrap .personal .checkWrap ul li .txtArea {
+  width: 80%;
+  margin-bottom: 0;
+}
+
+.signUp .signUpWrap .personal .checkWrap ul li .txtArea p {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.signUp .signUpWrap .personal .checkWrap ul li .txtArea p:nth-child(2) {
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #848c94;
+}
+
+.signUp .signUpWrap .agree p {
+  font-size: 12px;
+  color: #848c94;
+}
+
+.signUp .signUpWrap .signUpCom {
+  width: 100%;
+  height: 48px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #51abf3;
+  border-radius: 3px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.signUp .signUpWrap .signUpSubmit {
+  width: 100%;
+  height: 48px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #51abf3;
+  border-radius: 3px;
+  opacity: 1;
+}
+/*# sourceMappingURL=SignUp.css.map */

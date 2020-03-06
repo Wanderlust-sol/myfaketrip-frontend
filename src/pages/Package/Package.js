@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Layout from "../Layout/Layout";
+import Layout from "../../components/Layout/Layout";
 import PackageSelect from "./PackageComponent/PackageSelect";
 import PackageSlider from "./PackageComponent/PackageSlider";
 import PackageGuideProduct from "./PackageComponent/PackageGuideProduct";
