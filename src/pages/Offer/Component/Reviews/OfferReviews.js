@@ -3,6 +3,8 @@ import Comment from "components/Comment/Comment";
 import AddComment from "components/Comment/AddComment";
 import Alert from "components/Alert/Alert";
 import { MdStar } from "react-icons/md";
+import { address } from "Config/config";
+
 import "./OfferReviews.scss";
 
 class OfferReviews extends Component {
@@ -37,11 +39,11 @@ class OfferReviews extends Component {
   };
 
   deleteReview = id => {
-    fetch(`http://10.58.6.221:8002/review/30162/${id}`, {
+    fetch(`${address}review/30162/${id}`, {
       method: "delete",
       headers: {
         "Content-Type": "application/json",
-        Authorization: localStorage.getItem("access_token")
+        Authorization: localStorage.getItem("wtw-token")
       }
     })
       .then(res => {
@@ -64,7 +66,7 @@ class OfferReviews extends Component {
   };
 
   handleGet = () => {
-    fetch("http://10.58.6.221:8002/review/30162")
+    fetch(`${address}review/30162`)
       .then(res => res.json())
       .then(res => {
         this.setState({ review_list: res.Review_list }, () => {
@@ -78,11 +80,11 @@ class OfferReviews extends Component {
 
   handleSend = () => {
     if (this.state.review_id === 0) {
-      fetch("http://10.58.6.221:8002/review/30162", {
+      fetch(`${address}review/30162`, {
         method: "post",
         headers: {
           "Content-Type": "application/json",
-          Authorization: localStorage.getItem("access_token")
+          Authorization: localStorage.getItem("wtw-token")
         },
         body: JSON.stringify({
           content: this.state.comments,
@@ -98,11 +100,11 @@ class OfferReviews extends Component {
           console.error(error);
         });
     } else {
-      fetch(`http://10.58.6.221:8002/review/30162/${this.state.review_id}`, {
+      fetch(`${address}review/30162/${this.state.review_id}`, {
         method: "post",
         headers: {
           "Content-Type": "application/json",
-          Authorization: localStorage.getItem("access_token")
+          Authorization: localStorage.getItem("wtw-token")
         },
         body: JSON.stringify({
           content: this.state.comments,

@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Header from "components/Layout/Header/Header";
-import Footer from "components/Layout/Footer/Footer";
 import Show from "components/WithMore/Show";
 import OfferSlider from "./Component/ProductSlider/OfferSlider";
 import OfferPhoto from "./Component/Photo/OfferPhoto";
@@ -13,6 +11,8 @@ import OfferCourse from "./Component/Course/OfferCourse";
 import OfferGuide from "./Component/Guide/OfferGuide";
 import OfferReviews from "./Component/Reviews/OfferReviews";
 import { MdStar, MdStarBorder } from "react-icons/md";
+import Layout from "components/Layout/Layout";
+import { address } from "Config/config";
 import "./Offer.scss";
 export default class Offer extends Component {
   constructor() {
@@ -58,14 +58,14 @@ export default class Offer extends Component {
     this.setState({ mapmore: !this.state.mapmore });
   };
   handleGet = () => {
-    fetch("http://10.58.6.221:8001/review/30162")
+    fetch(`${address}review/30162`)
       .then(res => res.json())
       .then(res => {
         this.setState({ review: res.Review_list });
       });
   };
   componentDidMount() {
-    fetch(`http://10.58.7.201:8003/${this.props.match.params.id}`)
+    fetch(`${address}product/tour/${this.props.match.params.id.slice(1, 6)}`)
       .then(res => res.json())
       .then(res => {
         console.log(res);
@@ -78,12 +78,12 @@ export default class Offer extends Component {
           }
         );
       });
-    fetch("http://10.58.6.221:8001/product/search")
+    fetch(`${address}product/tour`)
       .then(res => res.json())
       .then(res => {
         this.setState(
           {
-            product_data: res.product_data[0].offers
+            product_data: res.data[1].offers
           },
           () => {
             console.log("2", this.state.product_data);
@@ -104,27 +104,31 @@ export default class Offer extends Component {
     const bottom =
       document.querySelector(".offer_num") !== null &&
       document.querySelector(".offer_num").offsetTop;
+
     if (
-      currentScrollpos >
-      document.querySelector(".offer_main").offsetTop - 800
+      document.querySelector(".offer_main") !== null &&
+      currentScrollpos > document.querySelector(".offer_main").offsetTop - 800
     ) {
       navmode = "product";
     }
     if (
+      document.querySelector(".offer_main_course") !== null &&
       currentScrollpos >
-      document.querySelector(".offer_main_course").offsetTop - 700
+        document.querySelector(".offer_main_course").offsetTop - 700
     ) {
       navmode = "course";
     }
     if (
+      document.querySelector(".offer_main_require") !== null &&
       currentScrollpos >
-      document.querySelector(".offer_main_require").offsetTop - 200
+        document.querySelector(".offer_main_require").offsetTop - 200
     ) {
       navmode = "require";
     }
     if (
+      document.querySelector(".offer_main_reviews") !== null &&
       currentScrollpos >
-      document.querySelector(".offer_main_reviews").offsetTop - 200
+        document.querySelector(".offer_main_reviews").offsetTop - 200
     ) {
       navmode = "review";
     }
@@ -148,8 +152,7 @@ export default class Offer extends Component {
       return stars;
     };
     return (
-      <>
-        <Header></Header>
+      <Layout>
         <div className="offer">
           <OfferNav
             visible={this.state.visible}
@@ -307,8 +310,7 @@ export default class Offer extends Component {
             <sapn className="offer_num-number">30162</sapn>
           </div>
         </div>
-        <Footer />
-      </>
+      </Layout>
     );
   }
 }

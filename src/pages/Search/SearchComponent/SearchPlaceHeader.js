@@ -23,6 +23,7 @@ class SearchPlaceHeader extends Component {
             backgroundImage: `url(${this.props.data.background_image})`
           }}
         >
+          <span className="totalborder"></span>
           <div className="search_place_bg_cover"></div>
           <div className="search_place_container">
             <div className="place_select_container">

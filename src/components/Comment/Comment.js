@@ -47,7 +47,7 @@ class Comment extends Component {
                   onClick={() =>
                     this.props.editReview(
                       this.props.data.id,
-                      this.props.data.grade,
+                      this.props.data.rating,
                       this.props.data.content
                     )
                   }

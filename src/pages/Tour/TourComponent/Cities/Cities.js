@@ -10,7 +10,7 @@ import "./Cities.scss";
 
 const cities = CitiesData.map(city => {
   return (
-    <Link to={`/search`} key={city.id}>
+    <Link to={"/search?query=Barcelona"} key={city.id}>
       <div className="cities" style={{ backgroundImage: `url(${city.img})` }}>
         <div className="slider_bg">
           <span>{city.name}</span>

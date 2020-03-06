@@ -16,7 +16,7 @@ class LoginForm extends Component {
   }
 
   login = () => {
-    fetch(`${address}account/signin`, {
+    fetch(`${address}account/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

@@ -7,6 +7,7 @@ import TourPoint from "./TourComponent/TourPoint";
 import ProductSlider from "./TourComponent/ProductSlider";
 import TourInfo from "./TourComponent/TourInfo";
 import Layout from "components/Layout/Layout";
+import { address } from "Config/config";
 import "./Tour.scss";
 
 class Tour extends Component {
@@ -19,7 +20,7 @@ class Tour extends Component {
   }
 
   componentDidMount = () => {
-    fetch("http://10.58.6.221:8080/product/tour")
+    fetch(`${address}product/tour`)
       .then(res => res.json())
       .then(res => {
         console.log("firstly: ", res.product);

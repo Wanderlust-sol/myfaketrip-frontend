@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import { address } from "Config/config";
 import "./TourSearch.scss";
 
 class Search extends Component {
@@ -19,7 +20,7 @@ class Search extends Component {
     });
   };
   componentDidMount = () => {
-    fetch("http://10.58.6.221:8080/product/cities/search?query=Barcelona")
+    fetch(`${address}product/cities/search?query=Barcelona`)
       .then(res => res.json())
       .then(res => {
         console.log(res);
