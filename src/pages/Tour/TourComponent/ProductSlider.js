@@ -7,46 +7,67 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./ProductSlider.scss";
 
+const settings = {
+  dots: false,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  nextArrow: <ArrowNext />,
+  prevArrow: <ArrowPrev />
+};
+
 class ProductSlider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      product_winter: []
+      product_winter: [],
+      product_barcelona: [],
+      product_guide: []
     };
   }
   componentDidMount = () => {
-    fetch("http://10.58.2.187:8000/product")
+    fetch("http://10.58.6.221:8001/product")
       .then(res => res.json())
       .then(res => {
-        console.log("fir: ", res.data[0].offers);
+        console.log("fir: ", res.data);
         this.setState({
-          product_winter: res.data[0].offers
+          product_winter: res.data[0].offers,
+          product_barcelona: res.data[1].offers,
+          product_guide: res.data[2].offers
         });
       });
   };
 
   render() {
-    const settings = {
-      dots: false,
-      infinite: false,
-      speed: 500,
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      nextArrow: <ArrowNext />,
-      prevArrow: <ArrowPrev />
-    };
-
-    const products_winter = this.state.product_winter.map((product_w, i) => {
-      return <Product data={product_w} key={i}></Product>;
-    });
-
     return (
-      <div className="product_winter">
-        <h2>겨울에도 꿀잼 보장🍯</h2>
-        <Slider {...settings} className="product_lately_wrapper">
-          {products_winter}
-        </Slider>
-      </div>
+      <>
+        <div className="product_slider_container">
+          <h2>겨울에도 꿀잼 보장🍯</h2>
+          <Slider {...settings} className="product_slider">
+            {this.state.product_winter.map((product_w, i) => {
+              return <Product data={product_w} key={i}></Product>;
+            })}
+          </Slider>
+        </div>
+        <div className="product_tour">
+          <h2>바르셀로나에서 만난 인생 투어🌞</h2>
+          <div className="product_tour_container">
+            {this.state.product_barcelona.map((product_b, i) => {
+              return <Product data={product_b} key={i}></Product>;
+            })}
+          </div>
+        </div>
+
+        <div className="product_slider_container">
+          <h2>마리트 단독! 가이드라이브 패키지</h2>
+          <Slider {...settings} className="product_slider">
+            {this.state.product_guide.map((product_g, i) => {
+              return <Product data={product_g} key={i}></Product>;
+            })}
+          </Slider>
+        </div>
+      </>
     );
   }
 }

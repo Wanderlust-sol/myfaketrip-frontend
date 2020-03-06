@@ -1,4 +1,5 @@
 .product_container {
+  width: 248px;
   height: 311px;
   margin: 10px;
   font-size: 15px;
@@ -23,13 +24,6 @@
       width: 100%;
       margin-top: -11px;
       position: relative;
-    }
-    .wishlist {
-      width: 24px;
-      height: 24px;
-      position: absolute;
-      top: 15px;
-      right: 10px;
     }
   }
   .product_cnt {
@@ -56,7 +50,11 @@
 
       .review {
         display: flex;
+        height: 16px;
 
+        div {
+          margin-top: 1px;
+        }
         span {
           color: #848c94;
           font-size: 12px;
@@ -89,5 +87,13 @@
         }
       }
     }
+  }
+  .wishlist {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
   }
 }

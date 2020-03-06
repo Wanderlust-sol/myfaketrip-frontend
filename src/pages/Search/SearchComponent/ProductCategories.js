@@ -6,7 +6,7 @@ class ProductCategories extends Component {
     return (
       <>
         <div className="product_categories_container">
-          <h2>바르셀로나에서 어떤 상품을 찾으세요?</h2>
+          <h2>{this.props.data.city_name}에서 어떤 상품을 찾으세요?</h2>
           <div className="product_categories">
             <div>
               <img

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import ArrowNext from "../../../../components/ArrowButton/ArrowNext";
 import ArrowPrev from "../../../../components/ArrowButton/ArrowPrev";
@@ -9,13 +10,13 @@ import "./Cities.scss";
 
 const cities = CitiesData.map(city => {
   return (
-    <div key={city.id}>
+    <Link to={`/search`} key={city.id}>
       <div className="cities" style={{ backgroundImage: `url(${city.img})` }}>
         <div className="slider_bg">
           <span>{city.name}</span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 });
 
