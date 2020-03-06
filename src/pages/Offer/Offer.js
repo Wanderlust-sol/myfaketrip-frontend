@@ -1,18 +1,18 @@
 import React, { Component } from "react";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
-import Show from "../../components/WithMore/Show";
-import OfferSlider from "./OfferComponent/OfferProductSlider/OfferSlider";
-import OfferPhoto from "./OfferComponent/OfferPhoto/OfferPhoto";
-import OfferSide from "./OfferComponent/OfferSide/OfferSide";
-import OfferNav from "./OfferComponent/OfferNav/OfferNav";
-import OfferPrice from "./OfferComponent/OfferPrice/OfferPrice";
-import OfferIntro from "./OfferComponent/OfferIntro/OfferIntro";
-import OfferNotice from "./OfferComponent/OfferNotice/OfferNotice";
-import OfferCourse from "./OfferComponent/OfferCourse/OfferCourse";
-import OfferGuide from "./OfferComponent/OfferGuide/OfferGuide";
-import OfferReviews from "./OfferComponent/OfferReviews/OfferReviews";
-import { MdStar } from "react-icons/md";
+import Header from "components/Header/Header";
+import Footer from "components/Footer/Footer";
+import Show from "components/WithMore/Show";
+import OfferSlider from "./Component/ProductSlider/OfferSlider";
+import OfferPhoto from "./Component/Photo/OfferPhoto";
+import OfferSide from "./Component/Side/OfferSide";
+import OfferNav from "./Component/Nav/OfferNav";
+import OfferPrice from "./Component/Price/OfferPrice";
+import OfferIntro from "./Component/Intro/OfferIntro";
+import OfferNotice from "./Component/Notice/OfferNotice";
+import OfferCourse from "./Component/Course/OfferCourse";
+import OfferGuide from "./Component/Guide/OfferGuide";
+import OfferReviews from "./Component/Reviews/OfferReviews";
+import { MdStar, MdStarBorder } from "react-icons/md";
 import "./Offer.scss";
 
 export default class Offer extends Component {
@@ -28,19 +28,21 @@ export default class Offer extends Component {
       withmore2: false,
       mapmore: false,
       navmode: "product",
-      offer_data: {}
+      offer_data: [],
+      product_data: [],
+      review: []
     };
     this.scrollDiv = React.createRef();
   }
 
-  navClick = e => {
-    this.setState({ navmode: e.target.id });
+  navClick = value => {
+    this.setState({ navmode: value });
     let location_id = "";
-    if (e.target.id === "product") {
+    if (value === "product") {
       location_id = ".offer_main";
-    } else if (e.target.id === "course") {
+    } else if (value === "course") {
       location_id = ".offer_main_course";
-    } else if (e.target.id === "require") {
+    } else if (value === "require") {
       location_id = ".offer_main_require";
     } else {
       location_id = ".offer_main_reviews";
@@ -61,10 +63,19 @@ export default class Offer extends Component {
     this.setState({ mapmore: !this.state.mapmore });
   };
 
+  handleGet = () => {
+    fetch("http://10.58.6.221:8002/review/30162")
+      .then(res => res.json())
+      .then(res => {
+        this.setState({ review: res.Review_list });
+      });
+  };
+
   componentDidMount() {
     fetch(`http://10.58.7.201:8003/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(res => {
+        console.log(res);
         this.setState(
           {
             offer_data: res.data
@@ -75,36 +86,88 @@ export default class Offer extends Component {
         );
       });
 
+    fetch("http://10.58.6.221:8002/product/search")
+      .then(res => res.json())
+      .then(res => {
+        this.setState(
+          {
+            product_data: res.product_data[0].offers
+          },
+          () => {
+            console.log("2", this.state.product_data);
+          }
+        );
+      });
+    this.handleGet();
     window.addEventListener("scroll", this.handleScroll);
   }
-
   componentWillMount() {
     window.removeEventListener("scroll", this.handleScroll);
   }
 
   handleScroll = () => {
+    let navmode = "";
     const currentScrollpos = window.pageYOffset;
     const visible = 220 > currentScrollpos;
     const fixed = 95 > currentScrollpos;
-    const bottom = document.querySelector(".offer_reviews_bar").offsetTop;
+    const bottom =
+      document.querySelector(".offer_num") !== null &&
+      document.querySelector(".offer_num").offsetTop;
+
+    if (
+      currentScrollpos >
+      document.querySelector(".offer_main").offsetTop - 800
+    ) {
+      navmode = "product";
+    }
+    if (
+      currentScrollpos >
+      document.querySelector(".offer_main_course").offsetTop - 700
+    ) {
+      navmode = "course";
+    }
+    if (
+      currentScrollpos >
+      document.querySelector(".offer_main_require").offsetTop - 200
+    ) {
+      navmode = "require";
+    }
+    if (
+      currentScrollpos >
+      document.querySelector(".offer_main_reviews").offsetTop - 200
+    ) {
+      navmode = "review";
+    }
 
     this.setState({
       prevScrollpos: currentScrollpos,
       visible,
       fixed,
-      bottom
+      bottom,
+      navmode: navmode
     });
   };
 
   render() {
+    const stars = [];
+    const getStars = rating => {
+      for (let i = 0; i < rating; i++) {
+        stars.push(<MdStar key={i} className="star_blue" />);
+      }
+      for (let i = 0; i < 5 - rating; i++) {
+        stars.push(<MdStarBorder key={i + 100} className="star_blue" />);
+      }
+      return stars;
+    };
+
     return (
       <>
-        <Header />
+        <Header></Header>
         <div className="offer">
           <OfferNav
             visible={this.state.visible}
             navmode={this.state.navmode}
-            onClick={this.navClick}
+            onClick={value => this.navClick(value)}
           />
           <div className="offer_container">
             <div className="offer_container_box">
@@ -138,13 +201,14 @@ export default class Offer extends Component {
                     <MdStar className="star_blue" />
                     <MdStar className="star_blue" />
                   </div>
-                  <p>후기 112개</p>
+                  <p>후기 {this.state.review.length}개</p>
                 </div>
                 <OfferPhoto
                   data={
                     this.state.offer_data.image_info !== undefined &&
                     this.state.offer_data.image_info
                   }
+                  data2={this.state.offer_data}
                 />
                 <hr />
                 <OfferPrice />
@@ -157,7 +221,9 @@ export default class Offer extends Component {
                 <hr />
                 <div className="offer_main_mini-reviews">
                   <div className="offer_main_mini-reviews-left">
-                    <p className="mini-reviews-rate">4.9</p>
+                    <p className="mini-reviews-rate">
+                      {Number(this.state.offer_data.average_rating).toFixed(1)}
+                    </p>
                     <div className="offer_main_mini-reviews-sub">
                       <div className="mini-reviews-star-rating">
                         <MdStar className="star_black" />
@@ -166,27 +232,26 @@ export default class Offer extends Component {
                         <MdStar className="star_black" />
                         <MdStar className="star_black" />
                       </div>
-                      <p>후기 112개</p>
+                      <p>후기 {this.state.review.length}개</p>
                     </div>
                   </div>
                   <div className="offer_main_mini-reviews-right">
                     <div className="mini-reviews-star">
-                      <MdStar className="star_blue" />
-                      <MdStar className="star_blue" />
-                      <MdStar className="star_blue" />
-                      <MdStar className="star_blue" />
-                      <MdStar className="star_blue" />
-                      <p>이**</p>
+                      {this.state.review[0] !== undefined &&
+                        getStars(this.state.review[0].rating)}
+                      <p>
+                        {this.state.review[0] !== undefined &&
+                          this.state.review[0].name.slice(0, 1)}
+                        **
+                      </p>
                     </div>
                     <div className="mini-reviews-stats">
-                      40대 ∙ 혼자 가는 여행 ∙ 2020-02-21
+                      {this.state.review[0] !== undefined &&
+                        this.state.review[0].date.slice(0, 10)}
                     </div>
                     <div className="mini-reviews-content">
-                      가우디와 그의 주변에 관한 꼭 필요한 설명을 편안하게
-                      해주셔서 좋았습니다. 반일 일정이 저에게는 알맞았고,
-                      흥미롭고 관심가는 곳은 다시 방문하면 좋을 것 같습니다.
-                      투어 마치고 추천해 주신 식당에서의 점심식사도
-                      만족스러웠습니다.
+                      {this.state.review[0] !== undefined &&
+                        this.state.review[0].content}
                     </div>
                     <div className="mini-reviews-with-more">
                       <Show
@@ -205,7 +270,9 @@ export default class Offer extends Component {
                 <div className="offer_main_others">
                   <h5>여행자들이 함께 본 상품</h5>
                   <div>
-                    <OfferSlider></OfferSlider>
+                    <OfferSlider
+                      product_data={this.state.product_data}
+                    ></OfferSlider>
                   </div>
                 </div>
                 <hr />
@@ -231,7 +298,7 @@ export default class Offer extends Component {
                   }
                 />
                 <hr className="offer_reviews_bar" ref={this.scrollDiv} />
-                <OfferReviews />
+                <OfferReviews data={this.state.offer_data} />
               </div>
               <OfferSide
                 fixed={this.state.fixed}

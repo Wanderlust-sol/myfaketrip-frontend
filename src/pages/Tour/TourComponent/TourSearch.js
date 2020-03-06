@@ -19,7 +19,7 @@ class Search extends Component {
     });
   };
   componentDidMount = () => {
-    fetch("http://10.58.6.221:8000/product/search?query=Barcelona")
+    fetch("http://10.58.6.221:8001/product/search?query=Barcelona")
       .then(res => res.json())
       .then(res => {
         console.log(res);

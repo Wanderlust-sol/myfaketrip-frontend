@@ -9,8 +9,10 @@ header {
   height: 123px;
   z-index: 100;
   position: relative;
-  border-bottom: 1px solid #1583db;
 
+  &.noone {
+    border-bottom: 1px solid #1583db;
+  }
   .headerTop {
     height: 73px;
     display: flex;
@@ -18,13 +20,15 @@ header {
     align-items: center;
     .logo {
       h1 {
-        a {
+        button {
           display: block;
           width: 128px;
           height: 28px;
+          text-indent: -9999px;
+          border: none;
+          cursor: pointer;
           background: url(../../img/myfaketrip_logo.png) no-repeat;
           background-size: contain;
-          text-indent: -9999px;
         }
       }
     }
@@ -34,17 +38,20 @@ header {
         &:nth-child(2) {
           margin-left: 10px;
         }
-        a {
+        button {
           display: block;
           height: 36px;
+          padding: 6px 12px;
           font-size: 15px;
           color: #fff;
           font-weight: 600;
           line-height: 22px;
-          padding: 6px 12px;
-          border-radius: 2px;
+          border: none;
+          cursor: pointer;
           transition: 0.5s;
+          background-color: rgba(0, 0, 0, 0);
           &:hover {
+            border-radius: 2px;
             background-color: rgba(255, 255, 255, 0.2);
           }
         }
@@ -54,7 +61,7 @@ header {
       div:last-child {
         margin-left: 20px;
         margin-right: 20px;
-        a {
+        button {
           padding: 6px 32px;
           font-size: 14px;
           border: 1px solid #fff;
@@ -84,6 +91,55 @@ header {
             &:hover {
               box-sizing: border-box;
               border-bottom: 3px solid rgba(255, 255, 255, 0.7);
+            }
+          }
+        }
+      }
+    }
+  }
+  &.loginHeader {
+    border-bottom: 1px solid #dee2e6;
+    .headerTop {
+      .logo {
+        h1 {
+          button {
+            background: url(../../img/myfaketrip_logo_color.png) no-repeat;
+            background-size: contain;
+          }
+        }
+      }
+      .myPage {
+        div {
+          button {
+            color: #666d75;
+            &:hover {
+              background-color: #f5f6f7;
+            }
+          }
+          &:last-child {
+            button {
+              color: #2b96ed;
+              border: 1px solid #a7d4f9;
+              &:hover {
+                background-color: #f5fbff;
+              }
+            }
+          }
+        }
+      }
+    }
+    .menu {
+      div {
+        ul {
+          li {
+            div {
+              color: rgba(73, 80, 86, 0.7);
+              &:hover {
+                border-bottom-color: rgba(43, 150, 237, 0.7);
+              }
+              &.color {
+                border-bottom: 3px solid rgba(43, 150, 237, 0.7);
+              }
             }
           }
         }

@@ -5,24 +5,13 @@ class SearchPlaceHeader extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      select_place: [],
-      button: true
+      buttonShow: true
     };
   }
 
-  componentDidMount = () => {
-    fetch("http://10.58.6.221:8000/product/search")
-      .then(res => res.json())
-      .then(res => {
-        this.setState({
-          select_place: res.background_data[0].city_list
-        });
-      });
-  };
-
   handleClick = () => {
     this.setState({
-      button: !this.state.button
+      buttonShow: !this.state.buttonShow
     });
   };
   render() {
@@ -50,11 +39,14 @@ class SearchPlaceHeader extends Component {
                     alt=""
                   />
                 </button>
-                <div style={{ display: !this.state.button ? "block" : "none" }}>
+                <div
+                  style={{ display: !this.state.buttonShow ? "block" : "none" }}
+                >
                   <ul>
-                    {this.state.select_place.map((city, i) => {
-                      return <li key={i}>{city}</li>;
-                    })}
+                    {this.props.data.city_list &&
+                      this.props.data.city_list.map((city, i) => {
+                        return <li key={i}>{city}</li>;
+                      })}
                   </ul>
                 </div>
               </div>

@@ -24,16 +24,7 @@ class SearchProduct extends Component {
       product_place: []
     };
   }
-  // componentDidMount = () => {
-  //   fetch("http://10.58.6.221:8002/product/search")
-  //     .then(res => res.json())
-  //     .then(res => {
-  //       this.setState({
-  //         product_place: res.product_data[0].offers
-  //       });
-  //       console.log("rr", res.product_data);
-  //     });
-  // };
+
   render() {
     console.log("data", this.props.data);
     return (

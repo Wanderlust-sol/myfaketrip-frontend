@@ -16,7 +16,7 @@ class Search extends Component {
 
   componentDidMount = () => {
     const queryId = this.props.location.search.split("=")[1];
-    fetch(`http://10.58.6.221:8000/product/search?query=${queryId}`)
+    fetch(`http://10.58.6.221:8001/product/search?query=${queryId}`)
       .then(res => res.json())
       .then(res => {
         this.setState(

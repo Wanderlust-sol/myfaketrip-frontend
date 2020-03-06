@@ -2,21 +2,21 @@ import React, { Component } from "react";
 import { Slide } from "react-slideshow-image";
 import "./PackageSlider.scss";
 
+const slideImages = [
+  "https://d2ur7st6jjikze.cloudfront.net/cms/1094_original_1582875838.jpg?1582875838",
+  "https://d2ur7st6jjikze.cloudfront.net/cms/679_original_1582875839.jpg?1582875839",
+  "https://d2ur7st6jjikze.cloudfront.net/cms/1096_original_1582876070.jpg?1582876070"
+];
+
+const properties = {
+  duration: 5000,
+  transitionDuration: 500,
+  infinite: true,
+  indicators: true,
+  arrows: true
+};
 class PackageSlider extends Component {
   render() {
-    const slideImages = [
-      "https://d2ur7st6jjikze.cloudfront.net/cms/1094_original_1582875838.jpg?1582875838",
-      "https://d2ur7st6jjikze.cloudfront.net/cms/679_original_1582875839.jpg?1582875839",
-      "https://d2ur7st6jjikze.cloudfront.net/cms/1096_original_1582876070.jpg?1582876070"
-    ];
-
-    const properties = {
-      duration: 5000,
-      transitionDuration: 500,
-      infinite: true,
-      indicators: true,
-      arrows: true
-    };
     return (
       <div className="package_banner_container">
         <div className="package_slider">
