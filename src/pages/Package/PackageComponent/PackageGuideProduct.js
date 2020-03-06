@@ -3,6 +3,7 @@ import Product from "../../../components/Product/Product";
 import ArrowNext from "../../../components/ArrowButton/ArrowNext";
 import ArrowPrev from "../../../components/ArrowButton/ArrowPrev";
 import Slider from "react-slick";
+import { address } from "Config/config";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./PackageGuideProduct.scss";
@@ -27,7 +28,7 @@ class PackageGuideProduct extends Component {
   }
 
   componentDidMount = () => {
-    fetch("http://10.58.6.221:8001/product")
+    fetch(`${address}product/tour`)
       .then(res => res.json())
       .then(res => {
         console.log("product_package: ", res.product_guide);

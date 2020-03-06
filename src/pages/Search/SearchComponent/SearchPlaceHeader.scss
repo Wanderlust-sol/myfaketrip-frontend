@@ -14,7 +14,15 @@
     padding-top: 123px;
     margin-top: -123px;
   }
-
+  .totalborder {
+    width: 100%;
+    display: block;
+    height: 1px;
+    border-top: 1px solid #fff;
+    position: absolute;
+    top: 122px;
+    z-index: 123;
+  }
   .search_place_container {
     position: absolute;
     z-index: 10;

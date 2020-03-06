@@ -126,9 +126,9 @@ class PackageSelect extends Component {
               <div>
                 <img
                   src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZmlsbD0iI0ZGRDc0RSIgZD0iTTMxIDVIMXY3Ljk3NGMxLjQyNi4yODYgMi41IDEuNTMyIDIuNSAzLjAyNiAwIDEuNDk0LTEuMDc0IDIuNzM5LTIuNSAzLjAyNlYyN2gzMHYtNy45NzRjLTEuNDI2LS4yODctMi41LTEuNTMyLTIuNS0zLjAyNiAwLTEuNDk0IDEuMDc0LTIuNzQgMi41LTMuMDI2VjV6Ii8+CiAgICAgICAgPHBhdGggZmlsbD0iI0JGODAzQiIgZD0iTTE0LjY2IDEzLjY0NGw1LjM3NyA0Ljk5NGgxLjUzN2M0LjYwOSAwIDMuMDkuNzkgMy4wOS43OWgtMTQuMDJsLTIuNjg4LTMuNjYzIDMuODQgMi44NzNoNC4wMTdsLTEuMTUzLTQuOTk0eiIvPgogICAgICAgIDxwYXRoIGZpbGw9IiNGNzgwMDAiIHN0cm9rZT0iI0Y3ODAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjIuNSIgZD0iTTE0LjY2IDEzbDUuMzc3IDQuOTk1aDEuNTM3YzQuNjA5IDAgMy4wOS43OSAzLjA5Ljc5aC0xNC4wMkw3Ljk1NiAxNS4xMmwzLjg0IDIuODc0aDQuMDE3TDE0LjY2IDEzeiIvPgogICAgPC9nPgo8L3N2Zz4K"
-                  alt="항공권/승성권 상품 보러 가기"
+                  alt="항공권/승선권 상품 보러 가기"
                 />
-                항공권/승성권
+                항공권/승선권
               </div>
               <div>
                 <img

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Layout from "../Layout/Layout";
+import Layout from "components/Layout/Layout";
 import SearchPlaceHeader from "./SearchComponent/SearchPlaceHeader";
 import ProductCategories from "./SearchComponent/ProductCategories";
 import SearchProduct from "./SearchComponent/SearchProduct";
@@ -16,7 +16,7 @@ class Search extends Component {
 
   componentDidMount = () => {
     const queryId = this.props.location.search.split("=")[1];
-    fetch(`http://10.58.6.221:8001/product/search?query=${queryId}`)
+    fetch(`http://10.58.6.221:8080/product/cities/search?query=${queryId}`)
       .then(res => res.json())
       .then(res => {
         this.setState(

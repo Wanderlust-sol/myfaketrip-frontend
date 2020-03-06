@@ -42,7 +42,7 @@ class Product extends Component {
     };
     return (
       <div className="product_container">
-        <Link to={`/product/${this.props.data.id}`}>
+        <Link to={`/product/:${this.props.data.id}`}>
           <div className="product_img">
             <img src={this.props.data.thumnail} alt="productimg" />
           </div>

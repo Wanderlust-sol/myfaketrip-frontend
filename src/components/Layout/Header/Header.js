@@ -49,16 +49,16 @@ class Header extends Component {
     });
   };
   loginClick = () => {
-    this.props.history.push("/login/:3");
+    this.props.history.push("/login/:30162");
   };
   signupClick = () => {
-    this.props.history.push("/signup/:3");
+    this.props.history.push("/signup/:30162");
   };
   logoClick = () => {
     this.props.history.push("/");
   };
   mypageClick = () => {
-    this.props.history.push("/mypage/:3");
+    this.props.history.push("/mypage/:30162");
     window.location.reload();
   };
   logoutClick = () => {
@@ -68,10 +68,10 @@ class Header extends Component {
   };
 
   render() {
-    console.log(this.props.location);
+    // console.log(this.props.location);
     const pathnameSplit = this.props.location.pathname.split(":")[1];
-    const pathname = pathnameSplit === "3" ? "loginHeader" : "noone";
-    const searchBox = pathnameSplit === "3" && <Search />;
+    const pathname = pathnameSplit === "30162" ? "loginHeader" : "noone";
+    const searchBox = pathnameSplit === "30162" && <Search />;
     return (
       <header className={pathname}>
         {/* header */}

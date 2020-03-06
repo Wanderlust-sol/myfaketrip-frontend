@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Product from "../../../components/Product/Product";
 import ArrowNext from "../../../components/ArrowButton/ArrowNext";
 import ArrowPrev from "../../../components/ArrowButton/ArrowPrev";
+import { address } from "Config/config";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -27,7 +28,7 @@ class ProductSlider extends Component {
     };
   }
   componentDidMount = () => {
-    fetch("http://10.58.6.221:8001/product")
+    fetch(`${address}product/tour`)
       .then(res => res.json())
       .then(res => {
         console.log("fir: ", res.data);
