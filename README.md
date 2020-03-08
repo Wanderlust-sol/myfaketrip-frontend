@@ -9,7 +9,7 @@
 
 ## Demo(Image Click)
 
-<img src="img/screen_shot.png" alt="screenshot" href="https://www.youtube.com/watch?v=DQS73OiWkKM" target="_blank" width="600px" height="400px"/>
+[![마이리얼트립](https://k.kakaocdn.net/dn/t8jNH/btqCyndYMRG/kG3rxJjM6kM8wrwLzu8ZL0/img.png)](https://youtu.be/DQS73OiWkKM)
 
 ## Technologies
 
@@ -19,23 +19,23 @@
 
 ## Features
 
-### Common
+### `Common`
 
-- Fetch API(GET, POST)
+- Fetch API(GET, POST, DELETE)
 - Dynamic Routing (used Query parameters and URL parameters)
 
-### Sign-up / Sign-in
+### `Sign-up / Sign-in`
 
 - Bcrypt Encryption
 - Get JWT Access Token from Back Server upon successful login
 
-### Main Page
+### `Main Page`
 
 - Show products by using Slick Library
 - Search Function(Ex: 바르셀로나)
 - Wish-list Heart Feature only after Login
 
-### Product Page
+### `Product Page`
 
 - Changing Nav-menu or moving to other location by Scrolling Function
 - Photo Slider by Slider and Modal
