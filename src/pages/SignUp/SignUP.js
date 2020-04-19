@@ -30,7 +30,6 @@ export default class SignUp extends Component {
 
   //약관동의
   clickHandler = e => {
-    console.log("clicked");
     if (e.target.name === "allAgree") {
       if (this.state.allAgree === false) {
         this.setState({

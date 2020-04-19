@@ -33,7 +33,6 @@ export default class Mypage extends Component {
     }
   };
   render() {
-    console.log(address, "aa");
     return (
       <>
         <Layout>

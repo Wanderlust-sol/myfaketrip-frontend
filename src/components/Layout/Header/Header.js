@@ -68,7 +68,6 @@ class Header extends Component {
   };
 
   render() {
-    // console.log(this.props.location);
     const pathnameSplit = this.props.location.pathname.split(":")[1];
     const pathname = pathnameSplit === "30162" ? "loginHeader" : "noone";
     const searchBox = pathnameSplit === "30162" && <Search />;

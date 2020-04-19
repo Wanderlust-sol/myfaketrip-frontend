@@ -31,7 +31,6 @@ class PackageGuideProduct extends Component {
     fetch(`${address}product/tour`)
       .then(res => res.json())
       .then(res => {
-        console.log("product_package: ", res.product_guide);
         this.setState({
           product_guide: res.data[1].offers,
           product_package: res.data[2].offers

@@ -22,7 +22,6 @@ class LandmarkSlider extends Component {
         this.setState({
           landmark: res.landmark
         });
-        console.log("fir: ", res.lnadmark);
       });
   };
   render() {

@@ -26,7 +26,6 @@ class SearchProduct extends Component {
   }
 
   render() {
-    console.log("data", this.props.data);
     return (
       <>
         <div className="search_product_container">

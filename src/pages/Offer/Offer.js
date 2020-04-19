@@ -68,27 +68,16 @@ export default class Offer extends Component {
     fetch(`${address}product/tour/${this.props.match.params.id.slice(1, 6)}`)
       .then(res => res.json())
       .then(res => {
-        console.log(res);
-        this.setState(
-          {
-            offer_data: res.data
-          },
-          () => {
-            console.log(this.state.offer_data);
-          }
-        );
+        this.setState({
+          offer_data: res.data
+        });
       });
     fetch(`${address}product/tour`)
       .then(res => res.json())
       .then(res => {
-        this.setState(
-          {
-            product_data: res.data[1].offers
-          },
-          () => {
-            console.log("2", this.state.product_data);
-          }
-        );
+        this.setState({
+          product_data: res.data[1].offers
+        });
       });
     this.handleGet();
     window.addEventListener("scroll", this.handleScroll);
