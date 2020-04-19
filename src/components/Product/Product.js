@@ -20,23 +20,14 @@ class Product extends Component {
   render() {
     const stars = [];
     const getStars = rating => {
-      if (rating !== Math.floor(rating)) {
-        for (let i = 0; i < Math.floor(rating); i++) {
-          stars.push(<MdStar key={i + 200} className="star_blue" />);
-        }
-        for (let i = 0; i < Math.ceil(rating) - Math.floor(rating); i++) {
-          stars.push(<MdStarHalf key={i + 100} className="star_blue" />);
-        }
-        for (let i = 0; i < 5 - Math.ceil(rating); i++) {
-          stars.push(<MdStarBorder key={i} className="star_blue" />);
-        }
-      } else {
-        for (let i = 0; i < Math.floor(rating); i++) {
-          stars.push(<MdStar key={i} className="star_blue" />);
-        }
-        for (let i = 0; i < 5 - Math.floor(rating); i++) {
-          stars.push(<MdStarBorder key={i + 100} className="star_blue" />);
-        }
+      for (let i = 0; i < Math.floor(rating); i++) {
+        stars.push(<MdStar key={i + 200} className="star_blue" />);
+      }
+      for (let i = 0; i < Math.ceil(rating) - Math.floor(rating); i++) {
+        stars.push(<MdStarHalf key={i + 100} className="star_blue" />);
+      }
+      for (let i = 0; i < 5 - Math.ceil(rating); i++) {
+        stars.push(<MdStarBorder key={i} className="star_blue" />);
       }
       return stars;
     };
