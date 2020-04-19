@@ -25,17 +25,7 @@ class OfferReviews extends Component {
   };
 
   editReview = (id, grade, content) => {
-    console.log(id, grade, content);
-    this.setState(
-      { review_id: id, grade: Number(grade), comments: content },
-      () => {
-        console.log(
-          this.state.review_id,
-          this.state.grade,
-          this.state.comments
-        );
-      }
-    );
+    this.setState({ review_id: id, grade: Number(grade), comments: content });
   };
 
   deleteReview = id => {
@@ -47,7 +37,6 @@ class OfferReviews extends Component {
       }
     })
       .then(res => {
-        console.log(res);
         res.status === 401
           ? this.setState({ review_toggle: true })
           : this.handleGet();
@@ -69,9 +58,7 @@ class OfferReviews extends Component {
     fetch(`${address}review/30162`)
       .then(res => res.json())
       .then(res => {
-        this.setState({ review_list: res.Review_list }, () => {
-          console.log("third", this.state.review_list);
-        });
+        this.setState({ review_list: res.Review_list });
       })
       .catch(error => {
         console.error(error);
@@ -93,7 +80,6 @@ class OfferReviews extends Component {
       })
         // .then(res => res.json())
         .then(res => {
-          console.log(res);
           this.handleGet();
         })
         .catch(error => {

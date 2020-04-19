@@ -17,7 +17,6 @@ class Search extends Component {
           search_place: res.search_data[0].place,
           search_product: res.search_data[0].product
         });
-        console.log("place", res.search_data[0].place);
       });
   };
   searchPlace = () => {

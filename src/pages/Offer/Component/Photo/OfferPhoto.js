@@ -11,7 +11,6 @@ class OfferPhoto extends Component {
   }
 
   showModal = e => {
-    console.log(e.target);
     this.setState({ show: !this.state.show });
   };
 

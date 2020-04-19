@@ -23,7 +23,6 @@ class Tour extends Component {
     fetch(`${address}product/tour`)
       .then(res => res.json())
       .then(res => {
-        console.log("firstly: ", res.product);
         this.setState({
           product: res.data[1].offers
         });

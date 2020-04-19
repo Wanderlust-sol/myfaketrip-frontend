@@ -31,7 +31,6 @@ class ProductSlider extends Component {
     fetch(`${address}product/tour`)
       .then(res => res.json())
       .then(res => {
-        console.log("fir: ", res.data);
         this.setState({
           product_winter: res.data[0].offers,
           product_barcelona: res.data[1].offers,

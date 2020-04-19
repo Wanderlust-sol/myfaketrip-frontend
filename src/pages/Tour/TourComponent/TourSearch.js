@@ -15,7 +15,6 @@ class Search extends Component {
   }
   keywordClick = value => {
     this.setState({ search_keyword: value }, () => {
-      console.log("검색", this.state.search_keyword);
       this.props.history.push("/search?query=Barcelona");
     });
   };
@@ -23,12 +22,10 @@ class Search extends Component {
     fetch(`${address}product/cities/search?query=Barcelona`)
       .then(res => res.json())
       .then(res => {
-        console.log(res);
         this.setState({
           search_place: res.recommendation_data[0].local_list,
           search_product: res.recommendation_data[0].place_list
         });
-        console.log("place", res.recommendation_data[0].place_list);
       });
   };
 
@@ -36,7 +33,6 @@ class Search extends Component {
     let resultPlace = this.state.search_place.filter(keywords =>
       keywords.includes(this.state.keyword)
     );
-    console.log(resultPlace);
     let resultPlaceMap = resultPlace.map((keyword, i) => {
       return (
         <>
@@ -61,7 +57,6 @@ class Search extends Component {
     let resultProduct = this.state.search_product.filter(keywords =>
       keywords.includes(this.state.keyword)
     );
-    console.log(resultProduct);
     let resultProductMap = resultProduct.map((keyword, i) => {
       return (
         <>

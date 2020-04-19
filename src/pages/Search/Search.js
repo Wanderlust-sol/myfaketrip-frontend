@@ -20,15 +20,10 @@ class Search extends Component {
     fetch(`${address}product/cities/search?query=${queryId}`)
       .then(res => res.json())
       .then(res => {
-        this.setState(
-          {
-            header_data: res.background_data[0],
-            main_data: res.product_data[0]
-          },
-          () => {
-            console.log(this.state.main_data);
-          }
-        );
+        this.setState({
+          header_data: res.background_data[0],
+          main_data: res.product_data[0]
+        });
       });
   };
 
